@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-ink-2/70 via-transparent to-black/10" />
 
       {/* badge de status de funcionamento */}
-      <div className="absolute left-4 top-20 z-10 md:left-7 md:top-24">
+      <div className="absolute left-4 top-32 z-10 md:left-7 md:top-24">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
