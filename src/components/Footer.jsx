@@ -85,6 +85,15 @@ export default function Footer() {
       <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-sand/15 pt-6 text-xs text-sand/50 sm:flex-row">
         <span>© 2026 Rotieh · América Dourada, BA</span>
         <span>Aberto sábados, domingos e feriados · 9h às 17h</span>
+        <a
+          href="/gestao"
+          className="inline-flex items-center gap-2 rounded-full border border-gold/40 px-4 py-2 font-semibold text-gold transition hover:bg-gold hover:text-ink-2"
+        >
+          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <rect x="4" y="10" width="16" height="10" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" />
+          </svg>
+          Área da gerente · demo
+        </a>
         <span>Protótipo — Clickwave</span>
       </div>
     </footer>
