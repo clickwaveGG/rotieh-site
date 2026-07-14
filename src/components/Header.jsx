@@ -10,13 +10,13 @@ export default function Header() {
   return (
     <>
       {/* aba branca central com o logo, cortando o hero (estilo Wanderlust) */}
-      <div className="absolute left-1/2 top-0 z-30 -translate-x-1/2 rounded-b-3xl bg-sand px-8 pb-3 pt-4 md:px-12">
-        <a href="#" className="flex flex-col items-center leading-none">
-          <SunMark />
-          <span className="mt-1 text-lg font-extrabold tracking-wide text-ink">Rotieh</span>
-          <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-gold-deep">
-            América Dourada · BA
-          </span>
+      <div className="absolute left-1/2 top-0 z-30 -translate-x-1/2 rounded-b-3xl bg-sand px-8 pb-4 pt-4 md:px-12">
+        <a href="#" className="block h-16 w-16 overflow-hidden rounded-full md:h-20 md:w-20">
+          <img
+            src="/logo.png"
+            alt="Rotieh — Hospedagem e Lazer"
+            className="h-full w-full scale-[1.22] object-cover"
+          />
         </a>
       </div>
 
@@ -74,15 +74,6 @@ export default function Header() {
         </div>
       )}
     </>
-  )
-}
-
-function SunMark() {
-  return (
-    <svg viewBox="0 0 48 24" className="h-5 w-10">
-      <circle cx="24" cy="14" r="7" fill="var(--color-gold)" />
-      <path d="M2 22c6-6 12-6 18 0M28 22c6-6 12-6 18 0" fill="none" stroke="var(--color-aqua)" strokeWidth="3" strokeLinecap="round" />
-    </svg>
   )
 }
 

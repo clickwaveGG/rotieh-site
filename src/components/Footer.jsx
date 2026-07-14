@@ -6,8 +6,17 @@ export default function Footer() {
     <footer className="mx-3 mb-3 rounded-[28px] bg-ink px-8 py-12 text-sand md:mx-4 md:mb-4 md:px-14 md:py-16">
       <div className="grid gap-12 md:grid-cols-[1.2fr_2fr]">
         <div>
-          <p className="text-2xl font-extrabold tracking-wide">Rotieh</p>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-sand/60">
+          <div className="flex items-center gap-4">
+            <span className="block h-16 w-16 overflow-hidden rounded-full">
+              <img
+                src="/logo.png"
+                alt="Rotieh — Hospedagem e Lazer"
+                className="h-full w-full scale-[1.22] object-cover"
+              />
+            </span>
+            <p className="text-2xl font-extrabold tracking-wide">Rotieh</p>
+          </div>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-sand/60">
             Parque aquático, pousada e haras em América Dourada — BA.
             O oásis da região de Irecê.
           </p>
