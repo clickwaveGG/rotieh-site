@@ -7,52 +7,100 @@ export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real do Rotieh
 export const wa = (msg) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
 
+// Fotos reais do empreendimento (acervo do Instagram oficial @rotieh.americadourada)
 export const IMG = {
-  hero: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=2000&q=80',
-  parqueA: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=1200&q=80',
-  parqueB: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=80',
-  haras: 'https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=1200&q=80',
-  harasAlt: 'https://images.unsplash.com/photo-1450052590821-8bf91254a353?w=1200&q=80',
-  restaurante: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
-  eventos: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&q=80',
-  instaCta: 'https://images.unsplash.com/photo-1509233725247-49e657c54213?w=2000&q=80',
-  instaCard: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80',
+  hero: '/fotos/hero-desktop.webp',
+  heroMobile: '/fotos/hero-mobile.webp',
+  heroPoster: '/fotos/piscina-principal.webp',
+  parqueA: '/fotos/piscina-panorama.webp',
+  parqueB: '/fotos/dayuse-inflaveis.webp',
+  haras: '/fotos/haras-cavalo-por-do-sol.webp',
+  harasAlt: '/fotos/haras-cavalo-passeio.webp',
+  restaurante: '/fotos/lazer-pizzas.webp',
+  eventos: '/fotos/eventos-casamento.webp',
+  instaCta: '/fotos/natureza-por-do-sol.webp',
+  instaCard: '/fotos/dayuse-mae-filha.webp',
 }
 
 export const QUARTOS = [
   {
-    nome: 'Chalé Família',
-    desc: 'Espaço de sobra pra família toda, com varanda voltada pro verde do haras. Madeira, conforto e o jeito acolhedor do interior — a poucos passos das piscinas.',
-    img: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1400&q=80',
-    thumb: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80',
-    capacidade: 'Até 5 pessoas',
+    nome: 'Chalé Rotieh',
+    desc: 'Arquitetura moderna no meio do verde: chalé com varanda, conforto de hotel e o silêncio do interior. A poucos passos das piscinas e do haras.',
+    img: '/fotos/pousada-chale-exterior.webp',
+    thumb: '/fotos/pousada-chale-arquitetura.webp',
+    capacidade: 'Até 4 pessoas',
     preco: 'R$ 380',
   },
   {
     nome: 'Suíte Casal',
-    desc: 'Pra quem quer descansar de verdade: cama king, ar-condicionado e café da manhã regional incluso. Perfeita pra escapada de fim de semana.',
-    img: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1400&q=80',
-    thumb: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80',
+    desc: 'Pra quem quer descansar de verdade: cama confortável, ar-condicionado, TV e café da manhã regional incluso. Perfeita pra escapada de fim de semana.',
+    img: '/fotos/pousada-quarto-casal.webp',
+    thumb: '/fotos/pousada-quarto-tv.webp',
     capacidade: 'Até 2 pessoas',
     preco: 'R$ 240',
   },
   {
-    nome: 'Chalé Pôr do Sol',
-    desc: 'O melhor fim de tarde do sertão, visto da sua varanda. Deck privativo, rede e o dourado da golden hour de América Dourada todos os dias.',
-    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=80',
-    thumb: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80',
-    capacidade: 'Até 4 pessoas',
-    preco: 'R$ 320',
+    nome: 'Experiência Romântica',
+    desc: 'Suíte com decoração especial pra datas que merecem capricho: pedidos, aniversários de namoro, lua de mel. A equipe prepara tudo antes de vocês chegarem.',
+    img: '/fotos/pousada-suite-romantica.webp',
+    thumb: '/fotos/pousada-chale-varanda.webp',
+    capacidade: 'Casal',
+    preco: 'Sob consulta',
   },
 ]
 
 export const ATRACOES = [
   'Piscina adulto',
   'Piscina kids',
-  'Toboáguas',
-  'Quiosques e bar molhado',
+  'Brinquedos infláveis',
+  'Sala de jogos',
+  'Redário e lounge',
   'Restaurante regional',
   'Estacionamento gratuito',
+]
+
+// Galeria de experiências reais (fotos do Instagram oficial)
+export const EXPERIENCIAS = [
+  {
+    img: '/fotos/lazer-redario.webp',
+    titulo: 'Noites no redário',
+    desc: 'Rede, luz baixa e conversa boa depois de um dia de piscina.',
+  },
+  {
+    img: '/fotos/camping-tendas.webp',
+    titulo: 'Acampamento',
+    desc: 'Barracas no gramado, céu do sertão e amanhecer na natureza.',
+  },
+  {
+    img: '/fotos/lazer-sinuca.webp',
+    titulo: 'Sala de jogos',
+    desc: 'Sinuca e pebolim pra família inteira, a qualquer hora.',
+  },
+  {
+    img: '/fotos/lazer-pizzas.webp',
+    titulo: 'Sabores da casa',
+    desc: 'Pizzas, petiscos e pratos regionais sem sair do parque.',
+  },
+  {
+    img: '/fotos/dayuse-familia.webp',
+    titulo: 'Dia em família',
+    desc: 'Mesa na beira da piscina e criançada solta, com segurança.',
+  },
+  {
+    img: '/fotos/lazer-bebidas.webp',
+    titulo: 'Bar na piscina',
+    desc: 'Bebida gelada servida onde você está: dentro da água.',
+  },
+  {
+    img: '/fotos/eventos-debutante.webp',
+    titulo: 'Festas inesquecíveis',
+    desc: '15 anos, casamentos e formaturas com cenário de interior chique.',
+  },
+  {
+    img: '/fotos/natureza-silhueta.webp',
+    titulo: 'Pôr do sol dourado',
+    desc: 'O fim de tarde que deu nome à cidade, todos os dias.',
+  },
 ]
 
 export const PRECOS = [

@@ -5,6 +5,7 @@ import Pousada from './components/Pousada.jsx'
 import Parque from './components/Parque.jsx'
 import Precos from './components/Precos.jsx'
 import Haras from './components/Haras.jsx'
+import Experiencias from './components/Experiencias.jsx'
 import Eventos from './components/Eventos.jsx'
 import Faq from './components/Faq.jsx'
 import InstaCta from './components/InstaCta.jsx'
@@ -26,6 +27,7 @@ export default function App() {
       <Parque />
       <Precos />
       <Haras />
+      <Experiencias />
       <Eventos />
       <Faq />
       <InstaCta />

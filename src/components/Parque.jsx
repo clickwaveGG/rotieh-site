@@ -48,7 +48,7 @@ export default function Parque() {
             </a>
           </div>
           <img src={IMG.parqueA} alt="Piscinas do parque" className="h-72 w-full rounded-[28px] object-cover md:h-auto" />
-          <img src={IMG.parqueB} alt="Vista aérea do complexo" className="h-72 w-full rounded-[28px] object-cover md:h-auto" />
+          <img src={IMG.parqueB} alt="Brinquedos infláveis do parque" className="h-72 w-full rounded-[28px] object-cover md:h-auto" />
         </div>
       </div>
     </section>

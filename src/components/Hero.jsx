@@ -3,7 +3,10 @@ import { IMG, wa, INSTAGRAM } from '../data.js'
 export default function Hero() {
   return (
     <section className="relative h-[92vh] min-h-[600px] overflow-hidden rounded-[28px]">
-      <img src={IMG.hero} alt="Piscinas do Rotieh" className="absolute inset-0 h-full w-full object-cover" />
+      <picture>
+        <source media="(max-width: 767px)" srcSet={IMG.heroMobile} />
+        <img src={IMG.hero} alt="Piscina principal do Rotieh" className="absolute inset-0 h-full w-full object-cover" />
+      </picture>
       <div className="absolute inset-0 bg-gradient-to-t from-ink-2/70 via-transparent to-black/10" />
 
       {/* badge de status de funcionamento */}
