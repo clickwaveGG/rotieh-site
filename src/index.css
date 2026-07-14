@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-sand: #FAF6EE;
+  --color-sand-2: #F2EADB;
+  --color-ink: #0D3B49;
+  --color-ink-2: #092C38;
+  --color-aqua: #0FA3C4;
+  --color-aqua-deep: #0B6E86;
+  --color-gold: #E3A63B;
+  --color-gold-deep: #B97F1C;
+  --color-terra: #7C4F2C;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-sand text-ink font-sans antialiased;
+}
+
+::selection {
+  background: var(--color-aqua);
+  color: white;
+}
