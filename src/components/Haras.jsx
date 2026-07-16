@@ -2,7 +2,7 @@ import { IMG, wa } from '../data.js'
 
 export default function Haras() {
   return (
-    <section id="haras" className="mx-3 rounded-[28px] bg-ink-2 px-6 py-16 md:mx-4 md:py-24">
+    <section id="haras" className="bg-ink-2 px-6 pb-16 pt-8 md:pb-24 md:pt-12">
       <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
         <img src={IMG.haras} alt="Cavalo do Haras Rotieh" className="h-80 w-full rounded-[28px] object-cover md:h-[460px]" />
         <div>
