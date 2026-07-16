@@ -1,41 +1,57 @@
 import { IMG, wa } from '../data.js'
+import { Sw, Label, Num, Frame, Oval } from './ui.jsx'
+
+const VIVENCIAS = [
+  'Cavalgada ao pôr do sol',
+  'Passeio de pônei para as crianças',
+  'Vivência rural e fotos com os cavalos',
+]
 
 export default function Haras() {
   return (
-    <section id="haras" className="bg-ink-2 px-6 pb-16 pt-8 md:pb-24 md:pt-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-        <img src={IMG.haras} alt="Cavalo do Haras Rotieh" className="h-80 w-full rounded-[28px] object-cover md:h-[460px]" />
+    <section id="haras" className="bg-bark-2 px-6 pb-20 pt-10 md:pb-28 md:pt-14">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+        <Frame tone="cream">
+          <img
+            src={IMG.haras}
+            alt="Cavalo do Haras Rotieh ao pôr do sol"
+            className="h-80 w-full object-cover md:h-[520px]"
+            loading="lazy"
+          />
+        </Frame>
+
         <div>
-          <span className="text-sm font-semibold text-gold">[Haras Rotieh]</span>
-          <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-sand md:text-4xl">
-            Tudo começou com os cavalos
+          <Label tone="gold">Haras Rotieh</Label>
+          <h2 className="mt-4 font-display text-4xl uppercase leading-[1.05] tracking-[0.03em] text-cream md:text-6xl">
+            Tudo começ<Sw>o</Sw>u
+            <br />
+            com os cav<Sw>a</Sw>los
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-sand/70">
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
             Antes do parque, o Rotieh já era haras — e essa é a nossa assinatura.
-            Nenhum outro lazer da região oferece a vivência rural de verdade:
-            cavalgada no sertão, contato com os animais e o pôr do sol dourado
-            que deu nome à cidade.
+            Nenhum outro lazer da região oferece a vivência rural de verdade,
+            com o pôr do sol dourado que deu nome à cidade.
           </p>
-          <ul className="mt-6 space-y-3">
-            {[
-              'Cavalgada ao pôr do sol',
-              'Passeio de pônei para as crianças',
-              'Vivência rural e fotos com os cavalos',
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-3 text-sm font-medium text-sand/90">
-                <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-                {item}
+
+          <ul className="mt-8 border-t border-cream/20">
+            {VIVENCIAS.map((item, idx) => (
+              <li key={item} className="flex items-baseline gap-4 border-b border-cream/20 py-4">
+                <Num n={idx + 1} tone="cream" />
+                <span className="text-[13px] font-medium uppercase tracking-[0.15em] text-cream/90">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
-          <a
+
+          <Oval
             href={wa('Olá! Quero agendar uma experiência no Haras Rotieh 🐎')}
             target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-block rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink-2 transition hover:bg-gold-deep hover:text-white"
+            dark
+            className="mt-9"
           >
             Agendar experiência
-          </a>
+          </Oval>
         </div>
       </div>
     </section>

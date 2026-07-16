@@ -1,27 +1,29 @@
 import { FAQ } from '../data.js'
+import { Sw, Label } from './ui.jsx'
 
 export default function Faq() {
   return (
-    <section className="mx-auto max-w-4xl px-6 pb-16 md:pb-24">
-      <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
-        Perguntas que todo mundo faz
-      </h2>
-      <p className="mt-2 text-sm text-ink/60">
-        Antes de mandar mensagem, dá uma olhada — a resposta provavelmente já está aqui.
-      </p>
+    <section className="mx-auto max-w-4xl px-6 py-20 md:py-28">
+      <div className="flex flex-col items-center text-center">
+        <Label>Antes de vir</Label>
+        <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-6xl">
+          Pergunt<Sw>a</Sw>s?
+        </h2>
+      </div>
 
-      <div className="mt-8 divide-y divide-ink/10 rounded-[28px] border border-ink/10 bg-white px-7">
-        {FAQ.map(({ q, a }) => (
-          <details key={q} className="group py-5">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-ink md:text-base">
-              {q}
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ink/15 transition group-open:rotate-45 group-open:bg-ink group-open:text-sand">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
+      <div className="mt-12 border-t border-bark/15">
+        {FAQ.map(({ q, a }, idx) => (
+          <details key={q} className="group border-b border-bark/15 py-6">
+            <summary className="flex cursor-pointer list-none items-baseline gap-5">
+              <span className="font-display text-sm italic text-bark/50">
+                {String(idx + 1).padStart(2, '0')}
+              </span>
+              <span className="flex-1 text-[15px] font-medium text-bark">{q}</span>
+              <span className="font-display text-2xl leading-none text-bark/60 transition group-open:rotate-45">
+                +
               </span>
             </summary>
-            <p className="mt-3 pr-12 text-sm leading-relaxed text-ink/70">{a}</p>
+            <p className="mt-4 pl-10 pr-8 text-sm leading-relaxed text-bark/65">{a}</p>
           </details>
         ))}
       </div>

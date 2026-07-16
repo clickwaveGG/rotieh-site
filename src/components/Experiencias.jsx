@@ -1,49 +1,76 @@
+import { useRef } from 'react'
 import { EXPERIENCIAS, wa } from '../data.js'
+import { Sw, Label, Arrow, Frame, Oval } from './ui.jsx'
 
 export default function Experiencias() {
+  const track = useRef(null)
+  const scroll = (dir) =>
+    track.current?.scrollBy({ left: dir * (track.current.clientWidth * 0.7), behavior: 'smooth' })
+
   return (
-    <section id="experiencias" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="grid gap-8 md:grid-cols-[auto_1fr_1fr] md:gap-12">
-        <span className="text-sm font-semibold text-ink/50">[Experiências]</span>
-        <h2 className="text-3xl font-bold leading-tight tracking-tight text-ink md:text-4xl">
-          Um dia não dá pra viver tudo
-        </h2>
-        <div>
-          <p className="text-sm leading-relaxed text-ink/70">
-            Piscina é só o começo. Redário, acampamento, sala de jogos, comida boa e
-            fim de tarde dourado — cada canto do Rotieh foi feito pra você ficar
-            mais um pouco.
-          </p>
-          <a
-            href={wa('Olá! Quero saber mais sobre as experiências do Rotieh ✨')}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-sand transition hover:bg-ink-2"
-          >
-            Planejar minha visita
-          </a>
+    <section id="experiencias" className="overflow-hidden py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <Label>Experiências</Label>
+            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
+              Um dia não d<Sw>á</Sw>
+              <br />
+              pra viver tud<Sw>o</Sw>
+            </h2>
+          </div>
+          <div className="flex items-center gap-3 md:pb-3">
+            <button
+              onClick={() => scroll(-1)}
+              aria-label="Anterior"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
+            >
+              <Arrow flip className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => scroll(1)}
+              aria-label="Próximo"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
+            >
+              <Arrow className="h-4 w-4" />
+            </button>
+          </div>
         </div>
       </div>
 
-      <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-        {EXPERIENCIAS.map((e) => (
-          <figure
-            key={e.titulo}
-            className="group relative aspect-[3/4] overflow-hidden rounded-[22px] md:rounded-[28px]"
-          >
-            <img
-              src={e.img}
-              alt={e.titulo}
-              loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-2/85 via-ink-2/10 to-transparent" />
-            <figcaption className="absolute inset-x-0 bottom-0 p-4 md:p-5">
-              <h3 className="text-sm font-bold text-white md:text-base">{e.titulo}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-white/75">{e.desc}</p>
-            </figcaption>
-          </figure>
+      <div
+        ref={track}
+        className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto px-6 pb-4 [scrollbar-width:none] md:px-[max(1.5rem,calc((100vw-72rem)/2))]"
+      >
+        {EXPERIENCIAS.map((e, idx) => (
+          <Frame key={e.titulo} className="w-64 shrink-0 snap-start md:w-72">
+            <figure>
+              <img
+                src={e.img}
+                alt={e.titulo}
+                loading="lazy"
+                className="h-72 w-full object-cover md:h-80"
+              />
+              <figcaption className="pt-4">
+                <div className="flex items-baseline justify-between">
+                  <h3 className="text-[13px] font-semibold uppercase tracking-[0.15em] text-bark">
+                    {e.titulo}
+                  </h3>
+                  <span className="font-display text-xs italic text-bark/50">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <p className="mt-1.5 text-xs leading-relaxed text-bark/60">{e.desc}</p>
+              </figcaption>
+            </figure>
+          </Frame>
         ))}
+      </div>
+
+      <div className="mt-8 flex justify-center">
+        <Oval href={wa('Olá! Quero saber mais sobre as experiências do Rotieh ✨')} target="_blank">
+          Planejar minha visita
+        </Oval>
       </div>
     </section>
   )

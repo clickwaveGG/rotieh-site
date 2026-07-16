@@ -88,7 +88,7 @@ export default function GaleriaZoom() {
   if (reduceMotion) return <GaleriaEstatica />
 
   return (
-    <section aria-label="Galeria do Rotieh" ref={container} className="relative h-[300vh] bg-ink-2">
+    <section aria-label="Galeria do Rotieh" ref={container} className="relative h-[300vh] bg-bark-2">
       <div className="sticky top-0 h-screen overflow-hidden">
         {FOTOS.map((foto, index) => (
           <motion.div
@@ -110,7 +110,7 @@ export default function GaleriaZoom() {
         {/* dica de scroll no início */}
         <motion.p
           style={{ opacity: hintOpacity }}
-          className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-xs font-semibold uppercase tracking-[0.25em] text-sand/80"
+          className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] font-semibold uppercase tracking-[0.35em] text-cream/80"
         >
           Continue rolando
         </motion.p>
@@ -118,14 +118,12 @@ export default function GaleriaZoom() {
         {/* revelação final: frase + atalhos pras próximas seções */}
         <motion.div
           style={{ opacity: finalOpacity, pointerEvents: finalPointer }}
-          className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-ink-2 via-ink-2/40 to-transparent px-6 pb-16 text-center md:pb-24"
+          className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-bark-2 via-bark-2/40 to-transparent px-6 pb-16 text-center md:pb-24"
         >
           <motion.div style={{ y: finalY }} className="flex flex-col items-center">
-            <span className="text-sm font-semibold text-gold">[O Rotieh inteiro]</span>
-            <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-tight tracking-tight text-sand md:text-5xl">
-              O dia de piscina é só o começo
-            </h2>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-sand/70">
+            <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( O Rotieh inteiro )</span>
+            <h2 className="mt-4 max-w-3xl font-display text-4xl uppercase leading-[1.05] tracking-[0.03em] text-cream md:text-6xl">O dia de piscina é só o começo</h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/70">
               Quando o sol começa a se pôr, o Rotieh mostra o que tem de mais raro:
               cavalos, céu limpo e o interior do jeito que a memória guarda.
             </p>
@@ -134,7 +132,7 @@ export default function GaleriaZoom() {
                 <a
                   key={href}
                   href={href}
-                  className="rounded-full border border-sand/30 bg-sand/10 px-5 py-2.5 text-sm font-semibold text-sand backdrop-blur-sm transition hover:border-gold hover:bg-gold hover:text-ink-2"
+                  className="rounded-full border border-cream/40 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:border-cream hover:bg-cream hover:text-bark"
                 >
                   {label}
                 </a>
@@ -150,12 +148,10 @@ export default function GaleriaZoom() {
 // Fallback acessível: grid simples pra quem prefere menos movimento
 function GaleriaEstatica() {
   return (
-    <section aria-label="Galeria do Rotieh" className="bg-ink-2 px-6 py-16 md:py-24">
+    <section aria-label="Galeria do Rotieh" className="bg-bark-2 px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <span className="text-sm font-semibold text-gold">[O Rotieh inteiro]</span>
-        <h2 className="mt-3 max-w-2xl text-3xl font-bold leading-tight tracking-tight text-sand md:text-5xl">
-          O dia de piscina é só o começo
-        </h2>
+        <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( O Rotieh inteiro )</span>
+        <h2 className="mt-4 max-w-3xl font-display text-4xl uppercase leading-[1.05] tracking-[0.03em] text-cream md:text-6xl">O dia de piscina é só o começo</h2>
         <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
           {FOTOS.map((foto) => (
             <img
@@ -172,7 +168,7 @@ function GaleriaEstatica() {
             <a
               key={href}
               href={href}
-              className="rounded-full border border-sand/30 bg-sand/10 px-5 py-2.5 text-sm font-semibold text-sand transition hover:border-gold hover:bg-gold hover:text-ink-2"
+              className="rounded-full border border-cream/40 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:border-cream hover:bg-cream hover:text-bark"
             >
               {label}
             </a>

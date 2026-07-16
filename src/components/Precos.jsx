@@ -1,62 +1,67 @@
 import { PRECOS, wa } from '../data.js'
+import { Sw, Label, Num, Oval } from './ui.jsx'
 
 export default function Precos() {
   return (
-    <section id="dayuse" className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <h2 className="text-3xl font-bold tracking-tight text-ink md:text-5xl">Day Use</h2>
-        <p className="max-w-sm text-sm text-ink/60">
-          Chegou, pagou, aproveitou. Sábados, domingos e feriados — das 9h às 17h.
+    <section id="dayuse" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="flex flex-wrap items-end justify-between gap-6">
+        <div>
+          <Label>Day Use</Label>
+          <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
+            Chegou, pag<Sw>o</Sw>u,
+            <br />
+            aproveit<Sw>o</Sw>u
+          </h2>
+        </div>
+        <p className="max-w-xs text-sm leading-relaxed text-bark/60">
+          Sábados, domingos e feriados, das 9h às 17h. Sem reserva pra day use —
+          só chegar.
         </p>
       </div>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {PRECOS.map((p) => (
+      <div className="mt-14 grid border-t border-bark/15 md:grid-cols-3">
+        {PRECOS.map((p, idx) => (
           <div
             key={p.titulo}
-            className={`flex flex-col rounded-[28px] p-8 ${
-              p.destaque ? 'bg-aqua text-white' : 'border border-ink/10 bg-white text-ink'
+            className={`flex flex-col border-b border-bark/15 px-0 py-9 md:border-b-0 md:border-r md:px-9 md:first:pl-0 md:last:border-r-0 ${
+              p.destaque ? 'md:bg-olive/10' : ''
             }`}
           >
-            <span className={`text-sm font-semibold ${p.destaque ? 'text-white/80' : 'text-ink/50'}`}>
-              {p.titulo}
-            </span>
-            <p className="mt-2 text-4xl font-bold tracking-tight">
+            <div className="flex items-baseline justify-between">
+              <Num n={idx + 1} />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-bark/50">
+                {p.titulo}
+              </span>
+            </div>
+            <p className="mt-8 font-display text-6xl text-bark md:text-7xl">
               {p.preco}
-              <span className="text-base font-medium opacity-60">{p.sufixo}</span>
+              {p.sufixo && (
+                <span className="ml-1 font-sans text-xs font-medium uppercase tracking-[0.2em] text-bark/50">
+                  {p.sufixo}
+                </span>
+              )}
             </p>
-            <ul className={`mt-6 space-y-2.5 text-sm ${p.destaque ? 'text-white/85' : 'text-ink/70'}`}>
+            <ul className="mt-8 space-y-3 border-t border-bark/15 pt-6">
               {p.itens.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <Check className={`mt-0.5 h-4 w-4 shrink-0 ${p.destaque ? 'text-white' : 'text-aqua'}`} />
+                <li key={item} className="text-[13px] leading-relaxed text-bark/70">
                   {item}
                 </li>
               ))}
             </ul>
-            <a
+            <Oval
               href={wa(`Olá! Quero garantir meu Day Use no Rotieh (${p.titulo}) 🌊`)}
               target="_blank"
-              rel="noreferrer"
-              className={`mt-8 rounded-full px-6 py-3 text-center text-sm font-semibold transition ${
-                p.destaque
-                  ? 'bg-white text-aqua-deep hover:bg-sand'
-                  : 'bg-ink text-sand hover:bg-ink-2'
-              }`}
+              solid={p.destaque}
+              className="mt-9 w-fit"
             >
               Garantir ingresso
-            </a>
+            </Oval>
           </div>
         ))}
       </div>
-      <p className="mt-4 text-xs text-ink/40">*Valores ilustrativos do protótipo — sujeitos a confirmação.</p>
+      <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-bark/40">
+        *Valores ilustrativos do protótipo — sujeitos a confirmação
+      </p>
     </section>
-  )
-}
-
-function Check({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 6 9 17l-5-5" />
-    </svg>
   )
 }

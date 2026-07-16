@@ -17,12 +17,8 @@ import WhatsFloat from './components/WhatsFloat.jsx'
 export default function App() {
   return (
     <div className="relative">
-      <div className="p-3 md:p-4">
-        <div className="relative">
-          <Header />
-          <Hero />
-        </div>
-      </div>
+      <Header />
+      <Hero />
       <BookingBar />
       <Pousada />
       <Parque />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { QUARTOS, wa } from '../data.js'
+import { Sw, Label, Arrow, Oval } from './ui.jsx'
 
 export default function Pousada() {
   const [i, setI] = useState(0)
@@ -8,80 +9,76 @@ export default function Pousada() {
   const prev = () => setI((i - 1 + QUARTOS.length) % QUARTOS.length)
 
   return (
-    <section id="pousada" className="mx-auto max-w-6xl px-6 pb-16 md:pb-24">
-      <div className="grid items-stretch gap-8 md:grid-cols-[1.15fr_1fr] md:gap-12">
-        <img
-          src={q.img}
-          alt={q.nome}
-          className="h-72 w-full rounded-[28px] object-cover md:h-[440px]"
-        />
+    <section id="pousada" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
+      <div className="flex flex-col items-center text-center">
+        <Label>Pousada</Label>
+        <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
+          Acorde no <Sw>o</Sw>ásis
+        </h2>
+        <p className="mt-5 max-w-lg text-sm leading-relaxed text-bark/70">
+          Chalés e suítes a poucos passos das piscinas e do haras — com café
+          regional e acesso livre ao parque durante toda a estadia.
+        </p>
+      </div>
 
-        <div className="flex flex-col">
-          <h3 className="text-2xl font-bold tracking-tight text-ink md:text-3xl">{q.nome}</h3>
+      <div className="mt-12 grid items-stretch gap-0 md:grid-cols-[1.25fr_1fr]">
+        <div className="relative overflow-hidden">
+          <img
+            key={q.img}
+            src={q.img}
+            alt={q.nome}
+            className="h-80 w-full object-cover md:h-[540px]"
+          />
+        </div>
 
-          <div className="mt-3 flex flex-wrap gap-2">
-            {[q.capacidade, 'Café da manhã incluso', 'Acesso livre ao parque'].map((b) => (
-              <span key={b} className="rounded-full bg-sand-2 px-3 py-1 text-xs font-semibold text-ink/70">
-                {b}
-              </span>
+        <div className="flex flex-col border border-bark/15 bg-cream p-8 md:border-l-0 md:p-10">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-bark/50">
+            {String(i + 1).padStart(2, '0')} / {String(QUARTOS.length).padStart(2, '0')}
+          </span>
+          <h3 className="mt-3 font-display text-3xl text-bark md:text-4xl">{q.nome}</h3>
+
+          <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-bark/15 py-5">
+            {[
+              ['Capacidade', q.capacidade],
+              ['Diária', `${q.preco}*`],
+              ['Café da manhã', 'Incluso'],
+              ['Parque aquático', 'Acesso livre'],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <dt className="text-[10px] font-semibold uppercase tracking-[0.25em] text-bark/50">{k}</dt>
+                <dd className="mt-1 text-sm font-medium text-bark">{v}</dd>
+              </div>
             ))}
-          </div>
+          </dl>
 
-          <p className="mt-4 text-sm leading-relaxed text-ink/70">{q.desc}</p>
+          <p className="mt-5 text-sm leading-relaxed text-bark/70">{q.desc}</p>
 
-          <p className="mt-4 text-sm text-ink/60">
-            a partir de{' '}
-            <span className="text-2xl font-bold text-ink">{q.preco}</span>
-            <span className="font-medium">/noite*</span>
-          </p>
-
-          <a
-            href={wa(`Olá! Quero reservar a acomodação "${q.nome}" na pousada do Rotieh 🏡`)}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-block w-fit rounded-full bg-aqua px-6 py-3 text-sm font-semibold text-white transition hover:bg-aqua-deep"
-          >
-            Reservar esta acomodação
-          </a>
-
-          <div className="mt-auto flex items-end justify-between pt-8">
-            <img
-              src={QUARTOS[(i + 1) % QUARTOS.length].thumb}
-              alt="Próxima acomodação"
-              className="h-24 w-36 cursor-pointer rounded-2xl object-cover transition hover:opacity-80"
-              onClick={next}
-            />
-            <div className="flex items-center gap-4">
-              <span className="text-sm font-medium text-ink/50">
-                {i + 1} / {QUARTOS.length}
-              </span>
+          <div className="mt-auto flex items-center justify-between pt-8">
+            <Oval href={wa(`Olá! Quero reservar a acomodação "${q.nome}" na pousada do Rotieh 🏡`)} target="_blank">
+              Reservar
+            </Oval>
+            <div className="flex items-center gap-2">
               <button
                 onClick={prev}
-                aria-label="Anterior"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/20 text-ink transition hover:bg-sand-2"
+                aria-label="Acomodação anterior"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
               >
-                <Arrow flip />
+                <Arrow flip className="h-4 w-4" />
               </button>
               <button
                 onClick={next}
-                aria-label="Próxima"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-ink text-sand transition hover:bg-ink-2"
+                aria-label="Próxima acomodação"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
               >
-                <Arrow />
+                <Arrow className="h-4 w-4" />
               </button>
             </div>
           </div>
         </div>
       </div>
-      <p className="mt-4 text-xs text-ink/40">*Valores ilustrativos do protótipo — sujeitos a confirmação.</p>
+      <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-bark/40">
+        *Valores ilustrativos do protótipo — sujeitos a confirmação
+      </p>
     </section>
-  )
-}
-
-function Arrow({ flip }) {
-  return (
-    <svg viewBox="0 0 24 24" className={`h-4 w-4 ${flip ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-      <path d="M5 12h14m-6-6 6 6-6 6" />
-    </svg>
   )
 }
