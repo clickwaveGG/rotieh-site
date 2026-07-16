@@ -4,6 +4,7 @@ import BookingBar from './components/BookingBar.jsx'
 import Pousada from './components/Pousada.jsx'
 import Parque from './components/Parque.jsx'
 import Precos from './components/Precos.jsx'
+import GaleriaZoom from './components/GaleriaZoom.jsx'
 import Haras from './components/Haras.jsx'
 import Experiencias from './components/Experiencias.jsx'
 import Eventos from './components/Eventos.jsx'
@@ -26,6 +27,7 @@ export default function App() {
       <Pousada />
       <Parque />
       <Precos />
+      <GaleriaZoom />
       <Haras />
       <Experiencias />
       <Eventos />
