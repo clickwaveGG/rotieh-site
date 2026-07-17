@@ -223,12 +223,14 @@ export const FAQ = [
   },
 ]
 
+// Distâncias rodoviárias verificadas no Google Maps (sede de América Dourada,
+// 2026-07-17) — refinar quando o cliente mandar o pin exato da propriedade.
 export const DISTANCIAS = [
-  ['Irecê', '± 35 km'],
-  ['João Dourado', '± 20 km'],
-  ['Central', '± 30 km'],
-  ['Lapão', '± 40 km'],
-  ['Cafarnaum', '± 45 km'],
+  ['João Dourado', '± 29 km'],
+  ['Cafarnaum', '± 37 km'],
+  ['Lapão', '± 50 km'],
+  ['Irecê', '± 52 km'],
+  ['Central', '± 86 km'],
 ]
 
 export const NAV = [
