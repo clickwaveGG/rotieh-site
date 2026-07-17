@@ -1,5 +1,5 @@
-// ⚠️ DADOS DE PROTÓTIPO — preços, horários, distâncias e contatos são
-// ilustrativos e devem ser confirmados no discovery com o cliente.
+// ⚠️ Contatos ainda de protótipo — WhatsApp e @ do Instagram a confirmar.
+// Valores e regras atualizados com as informações oficiais do cliente (2026-07-16).
 
 export const WHATSAPP = '5574999999999' // TODO: número real do Rotieh
 export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real do Rotieh
@@ -7,7 +7,7 @@ export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real do Rotieh
 export const wa = (msg) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
 
-// Fotos reais do empreendimento (acervo do Instagram oficial @rotieh.americadourada)
+// Fotos reais do empreendimento (acervo do Instagram oficial)
 export const IMG = {
   hero: '/fotos/hero-desktop.webp',
   heroMobile: '/fotos/hero-mobile.webp',
@@ -22,41 +22,126 @@ export const IMG = {
   instaCard: '/fotos/dayuse-mae-filha.webp',
 }
 
-export const QUARTOS = [
+// 10 quartos padronizados. Diária = 24h a partir do check-in escolhido.
+export const QUARTO = {
+  preco: 'R$ 350',
+  precoGrupo: 'R$ 300',
+  total: 10,
+  capacidade: 'Até 2 pessoas',
+  excecao: 'Casal com 1 criança pequena pode ficar no mesmo quarto',
+  estrutura: ['Cama de casal', 'TV', 'Wi-Fi', 'Frigobar', 'Ar-condicionado', 'Banheiro privativo'],
+  fotos: [
+    '/fotos/pousada-quarto-casal.webp',
+    '/fotos/pousada-chale-exterior.webp',
+    '/fotos/pousada-quarto-tv.webp',
+    '/fotos/pousada-suite-romantica.webp',
+    '/fotos/pousada-chale-varanda.webp',
+  ],
+}
+
+export const MODALIDADES = [
   {
-    nome: 'Chalé Rotieh',
-    desc: 'Arquitetura moderna no meio do verde: chalé com varanda, conforto de hotel e o silêncio do interior. A poucos passos das piscinas e do haras.',
-    img: '/fotos/pousada-chale-exterior.webp',
-    thumb: '/fotos/pousada-chale-arquitetura.webp',
-    capacidade: 'Até 4 pessoas',
-    preco: 'R$ 380',
+    id: 'locacao',
+    titulo: 'Locação completa',
+    preco: 'R$ 2.000',
+    sufixo: '/diária',
+    resumo: 'O espaço inteiro, com exclusividade, pra até 100 pessoas.',
+    itens: [
+      'Diária das 8h às 17h',
+      'Adicional noturno (18h às 8h): R$ 1.000',
+      'Acima de 100 pessoas: R$ 20 por pessoa',
+      'Quartos opcionais: R$ 150 por quarto',
+      'Camping em barracas incluso',
+      'Restaurante no local ou cozinhas à disposição',
+    ],
+    ideal: 'Eventos, confraternizações, retiros, acampamentos e encontros de família',
   },
   {
-    nome: 'Suíte Casal',
-    desc: 'Pra quem quer descansar de verdade: cama confortável, ar-condicionado, TV e café da manhã regional incluso. Perfeita pra escapada de fim de semana.',
-    img: '/fotos/pousada-quarto-casal.webp',
-    thumb: '/fotos/pousada-quarto-tv.webp',
-    capacidade: 'Até 2 pessoas',
-    preco: 'R$ 240',
+    id: 'quartos',
+    titulo: 'Reserva de quartos',
+    preco: 'R$ 350',
+    sufixo: '/quarto',
+    destaque: true,
+    resumo: 'Hospedagem com acesso completo a toda a estrutura.',
+    itens: [
+      'Diária de 24h — check-in no seu horário',
+      '10 quartos: casal, TV, Wi-Fi, frigobar, ar e banheiro',
+      'Fechando os 10 quartos: R$ 300 cada + espaço exclusivo',
+      'Até 2 pessoas por quarto (casal + criança pequena ok)',
+      'Restaurante no local (refeições à parte)',
+    ],
+    ideal: 'Casais, famílias pequenas e grupos de amigos',
   },
   {
-    nome: 'Experiência Romântica',
-    desc: 'Suíte com decoração especial pra datas que merecem capricho: pedidos, aniversários de namoro, lua de mel. A equipe prepara tudo antes de vocês chegarem.',
-    img: '/fotos/pousada-suite-romantica.webp',
-    thumb: '/fotos/pousada-chale-varanda.webp',
-    capacidade: 'Casal',
-    preco: 'Sob consulta',
+    id: 'camping',
+    titulo: 'Camping avulso',
+    preco: 'R$ 200',
+    sufixo: '/barraca',
+    resumo: 'A experiência de acampar sob o céu do sertão.',
+    itens: [
+      'Até 3 pessoas por barraca',
+      'Acesso à estrutura do espaço',
+      'Na locação completa, o camping é incluso',
+      'Restaurante e cozinhas de apoio',
+    ],
+    ideal: 'Quem quer natureza de verdade sem reservar tudo',
   },
 ]
 
-export const ATRACOES = [
-  'Piscina adulto',
-  'Piscina kids',
-  'Brinquedos infláveis',
-  'Sala de jogos',
-  'Redário e lounge',
-  'Restaurante regional',
-  'Estacionamento gratuito',
+export const ESTRUTURA = [
+  {
+    grupo: 'Lazer',
+    itens: [
+      'Piscina com área de convivência',
+      'Bar molhado integrado à piscina',
+      'Área gourmet com churrasqueira na piscina',
+      'Salão de jogos',
+      'Campo de futebol',
+      'Quadras de areia: futevôlei, futebol e beach tennis',
+      'Parquinho infantil',
+      'Brinquedos adaptados para crianças autistas',
+    ],
+  },
+  {
+    grupo: 'Descanso',
+    itens: [
+      'Praças de descanso',
+      'Redários',
+      'Espaços de convivência em meio à natureza',
+    ],
+  },
+  {
+    grupo: 'Alimentação',
+    itens: [
+      'Restaurante próprio',
+      'Duas cozinhas para preparo de alimentos',
+      'Três áreas com churrasqueiras',
+    ],
+  },
+  {
+    grupo: 'Infraestrutura',
+    itens: [
+      '10 quartos para hospedagem',
+      '18 banheiros pelo espaço',
+      'Área destinada ao camping',
+    ],
+  },
+]
+
+export const OCASIOES = [
+  'Férias e dias em família',
+  'Confraternizações de amigos e empresas',
+  'Casamentos e mini weddings',
+  'Batizados',
+  'Formaturas',
+  'Eventos corporativos e reuniões de equipe',
+  'Ensaios fotográficos e produções audiovisuais',
+]
+
+export const EXTRAS = [
+  ['Passeio a cavalo', 'R$ 30 por pessoa'],
+  ['Ensaio fotográfico externo', 'R$ 400'],
+  ['Ensaio fotográfico interno', 'R$ 600'],
 ]
 
 // Galeria de experiências reais (fotos do Instagram oficial)
@@ -73,13 +158,13 @@ export const EXPERIENCIAS = [
   },
   {
     img: '/fotos/lazer-sinuca.webp',
-    titulo: 'Sala de jogos',
+    titulo: 'Salão de jogos',
     desc: 'Sinuca e pebolim pra família inteira, a qualquer hora.',
   },
   {
     img: '/fotos/lazer-pizzas.webp',
     titulo: 'Sabores da casa',
-    desc: 'Pizzas, petiscos e pratos regionais sem sair do parque.',
+    desc: 'Do café da manhã ao açaí — restaurante dentro do espaço.',
   },
   {
     img: '/fotos/dayuse-familia.webp',
@@ -88,7 +173,7 @@ export const EXPERIENCIAS = [
   },
   {
     img: '/fotos/lazer-bebidas.webp',
-    titulo: 'Bar na piscina',
+    titulo: 'Bar molhado',
     desc: 'Bebida gelada servida onde você está: dentro da água.',
   },
   {
@@ -103,52 +188,38 @@ export const EXPERIENCIAS = [
   },
 ]
 
-export const PRECOS = [
-  {
-    titulo: 'Adulto',
-    preco: 'R$ 40',
-    sufixo: '/pessoa',
-    itens: ['Acesso a todas as piscinas', 'Área de descanso e quiosques', 'Estacionamento incluso'],
-  },
-  {
-    titulo: 'Criança (5 a 11)',
-    preco: 'R$ 20',
-    sufixo: '/pessoa',
-    itens: ['Até 4 anos não paga', 'Piscina kids monitorada', 'Área de sombra pra família'],
-    destaque: true,
-  },
-  {
-    titulo: 'Grupos & Excursões',
-    preco: 'Sob consulta',
-    sufixo: '',
-    itens: ['Pacote por pessoa', 'Escolas, igrejas e empresas', 'Atendimento dedicado'],
-  },
-]
-
 export const FAQ = [
   {
-    q: 'Pode levar comida e bebida?',
-    a: 'Alimentos leves são permitidos em áreas específicas. Bebidas em vidro não entram — temos quiosques e restaurante com preços acessíveis dentro do parque.',
+    q: 'Posso pagar só a entrada e passar o dia?',
+    a: 'No momento não trabalhamos com entrada individual. O espaço funciona com reserva de quartos, locação completa ou camping avulso — assim cada grupo aproveita com tranquilidade e exclusividade.',
   },
   {
     q: 'Quais os dias e horários de funcionamento?',
-    a: 'Sábados, domingos e feriados, das 9h às 17h. Em alta temporada e férias escolares, abrimos em dias extras — acompanhe os avisos aqui no site e no Instagram.',
+    a: 'Funcionamos todos os dias, sem exceção — sempre com reserva antecipada. Na locação completa, a diária vai das 8h às 17h, com adicional noturno das 18h às 8h.',
   },
   {
-    q: 'Criança paga entrada?',
-    a: 'Crianças até 4 anos não pagam. De 5 a 11 anos pagam meia. A partir de 12 anos, valor inteiro.',
+    q: 'Como funciona o check-in dos quartos?',
+    a: 'Você escolhe o horário de entrada e a diária vale 24 horas. Entrou às 15h, sai às 15h do dia seguinte — vale também para estadias mais longas.',
   },
   {
-    q: 'Tem salva-vidas e equipe de segurança?',
-    a: 'Sim. Todas as piscinas contam com equipe de salva-vidas durante todo o horário de funcionamento.',
+    q: 'A diária do quarto inclui café da manhã?',
+    a: 'Não — o Rotieh não opera no formato tradicional de hotelaria. O restaurante do espaço serve café da manhã, almoço, jantar, lanches, sorvetes, açaís e bebidas, vendidos à parte.',
   },
   {
-    q: 'Aceita Pix e cartão?',
-    a: 'Aceitamos Pix, cartão de débito e crédito, tanto na entrada quanto nos quiosques e restaurante.',
+    q: 'Posso levar comida e bebida?',
+    a: 'Pode! Quem reserva pode trazer alimentos e bebidas. Na locação completa, dá até pra trazer panelas e utensílios e usar nossas duas cozinhas. Só pedimos que avise a equipe com antecedência sobre a logística.',
   },
   {
-    q: 'A diária da pousada inclui o acesso ao parque?',
-    a: 'Sim — hóspedes têm acesso livre ao parque aquático durante toda a estadia, além do café da manhã regional.',
+    q: 'Quantas pessoas cabem na locação completa?',
+    a: 'A diária cobre até 100 pessoas. Passando disso, é cobrado R$ 20 por pessoa adicional.',
+  },
+  {
+    q: 'Como funcionam os quartos na locação completa?',
+    a: 'Os quartos são opcionais: R$ 150 por quarto durante a locação. E quem preferir pode acampar em barracas, sem custo por barraca.',
+  },
+  {
+    q: 'Tem algum serviço cobrado à parte?',
+    a: 'Só o passeio a cavalo: R$ 30 por pessoa. Ensaios fotográficos têm valores próprios — R$ 400 (externo) e R$ 600 (ambientes internos).',
   },
 ]
 
@@ -161,8 +232,8 @@ export const DISTANCIAS = [
 ]
 
 export const NAV = [
-  ['O Parque', '#parque'],
-  ['Day Use', '#dayuse'],
+  ['O Espaço', '#parque'],
+  ['Reservas', '#modalidades'],
   ['Pousada', '#pousada'],
   ['Haras', '#haras'],
   ['Eventos', '#eventos'],

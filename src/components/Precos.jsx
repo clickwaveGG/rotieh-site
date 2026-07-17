@@ -1,66 +1,63 @@
-import { PRECOS, wa } from '../data.js'
+import { MODALIDADES } from '../data.js'
 import { Sw, Label, Num, Oval } from './ui.jsx'
 
 export default function Precos() {
   return (
-    <section id="dayuse" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <section id="modalidades" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <Label>Day Use</Label>
+          <Label>Reservas</Label>
           <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
-            Chegou, pag<Sw>o</Sw>u,
+            Três jeitos de
             <br />
-            aproveit<Sw>o</Sw>u
+            viver <Sw>o</Sw> Rotieh
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-bark/60">
-          Sábados, domingos e feriados, das 9h às 17h. Sem reserva pra day use —
-          só chegar.
+          Funcionamos todos os dias, sempre com reserva antecipada — cada grupo
+          aproveita o espaço com exclusividade e tranquilidade.
         </p>
       </div>
 
       <div className="mt-14 grid border-t border-bark/15 md:grid-cols-3">
-        {PRECOS.map((p, idx) => (
+        {MODALIDADES.map((m, idx) => (
           <div
-            key={p.titulo}
+            key={m.id}
             className={`flex flex-col border-b border-bark/15 px-0 py-9 md:border-b-0 md:border-r md:px-9 md:first:pl-0 md:last:border-r-0 ${
-              p.destaque ? 'md:bg-olive/10' : ''
+              m.destaque ? 'md:bg-olive/10' : ''
             }`}
           >
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-baseline justify-between gap-3">
               <Num n={idx + 1} />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-bark/50">
-                {p.titulo}
+              <span className="text-right text-[10px] font-semibold uppercase tracking-[0.3em] text-bark/50">
+                {m.titulo}
               </span>
             </div>
-            <p className="mt-8 font-display text-6xl text-bark md:text-7xl">
-              {p.preco}
-              {p.sufixo && (
-                <span className="ml-1 font-sans text-xs font-medium uppercase tracking-[0.2em] text-bark/50">
-                  {p.sufixo}
-                </span>
-              )}
+            <p className="mt-8 font-display text-5xl text-bark md:text-6xl">
+              {m.preco}
+              <span className="ml-1 font-sans text-xs font-medium uppercase tracking-[0.2em] text-bark/50">
+                {m.sufixo}
+              </span>
             </p>
-            <ul className="mt-8 space-y-3 border-t border-bark/15 pt-6">
-              {p.itens.map((item) => (
+            <p className="mt-3 text-sm leading-relaxed text-bark/70">{m.resumo}</p>
+            <ul className="mt-7 flex-1 space-y-3 border-t border-bark/15 pt-6">
+              {m.itens.map((item) => (
                 <li key={item} className="text-[13px] leading-relaxed text-bark/70">
                   {item}
                 </li>
               ))}
             </ul>
-            <Oval
-              href={wa(`Olá! Quero garantir meu Day Use no Rotieh (${p.titulo}) 🌊`)}
-              target="_blank"
-              solid={p.destaque}
-              className="mt-9 w-fit"
-            >
-              Garantir ingresso
+            <p className="mt-6 text-[10px] font-medium uppercase leading-[1.8] tracking-[0.2em] text-bark/45">
+              Ideal para: {m.ideal}
+            </p>
+            <Oval href="#reserva" solid={m.destaque} className="mt-7 w-fit">
+              Montar reserva
             </Oval>
           </div>
         ))}
       </div>
       <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-bark/40">
-        *Valores ilustrativos do protótipo — sujeitos a confirmação
+        Sem entrada individual — o espaço é sempre reservado
       </p>
     </section>
   )

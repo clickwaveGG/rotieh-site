@@ -32,11 +32,11 @@ export default function Hero() {
         </h1>
 
         <p className="mt-7 max-w-md text-[13px] leading-relaxed text-cream/85 md:text-sm">
-          Parque aquático, pousada e haras num só lugar — água fresca o ano
-          inteiro no coração da região de Irecê.
+          Um destino pra desacelerar, celebrar e reunir quem importa — natureza
+          e sofisticação juntas, no coração da região de Irecê.
         </p>
 
-        <Oval href="#planejar" dark className="mt-9">
+        <Oval href="#reserva" dark className="mt-9">
           Planejar minha visita
         </Oval>
       </div>
@@ -51,7 +51,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
           </span>
-          Aberto sáb · dom · feriados — 9h às 17h
+          Aberto todos os dias — reservas antecipadas
         </span>
       </div>
     </section>

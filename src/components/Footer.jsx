@@ -45,7 +45,8 @@ export default function Footer() {
             <FooterCol
               title="Visite"
               links={[
-                ['Day Use & Preços', '#dayuse'],
+                ['Modalidades & Valores', '#modalidades'],
+                ['Montar reserva', '#reserva'],
                 ['Experiências', '#experiencias'],
                 ['Como chegar', '#contato'],
               ]}

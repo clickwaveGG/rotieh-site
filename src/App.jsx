@@ -8,6 +8,7 @@ import GaleriaZoom from './components/GaleriaZoom.jsx'
 import Haras from './components/Haras.jsx'
 import Experiencias from './components/Experiencias.jsx'
 import Eventos from './components/Eventos.jsx'
+import Questionario from './components/Questionario.jsx'
 import Faq from './components/Faq.jsx'
 import InstaCta from './components/InstaCta.jsx'
 import ComoChegar from './components/ComoChegar.jsx'
@@ -27,6 +28,7 @@ export default function App() {
       <Haras />
       <Experiencias />
       <Eventos />
+      <Questionario />
       <Faq />
       <InstaCta />
       <ComoChegar />
