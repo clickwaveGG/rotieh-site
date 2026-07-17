@@ -21,13 +21,13 @@ export default function App() {
       <Header />
       <Hero />
       <BookingBar />
-      <Pousada />
+      <Eventos />
       <Parque />
       <Precos />
+      <Pousada />
       <GaleriaZoom />
       <Haras />
       <Experiencias />
-      <Eventos />
       <Questionario />
       <Faq />
       <InstaCta />

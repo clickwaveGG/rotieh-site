@@ -8,7 +8,7 @@ export default function Precos() {
         <div>
           <Label>Reservas</Label>
           <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
-            Três jeitos de
+            Quatro jeitos de
             <br />
             viver <Sw>o</Sw> Rotieh
           </h2>
@@ -19,11 +19,11 @@ export default function Precos() {
         </p>
       </div>
 
-      <div className="mt-14 grid border-t border-bark/15 md:grid-cols-3">
+      <div className="mt-14 grid border-t border-bark/15 md:grid-cols-2">
         {MODALIDADES.map((m, idx) => (
           <div
             key={m.id}
-            className={`flex flex-col border-b border-bark/15 px-0 py-9 md:border-b-0 md:border-r md:px-9 md:first:pl-0 md:last:border-r-0 ${
+            className={`flex flex-col border-b border-bark/15 px-0 py-9 md:p-10 md:odd:border-r ${
               m.destaque ? 'md:bg-olive/10' : ''
             }`}
           >
@@ -33,21 +33,26 @@ export default function Precos() {
                 {m.titulo}
               </span>
             </div>
-            <p className="mt-8 font-display text-5xl text-bark md:text-6xl">
+            <p className="mt-7 font-display text-5xl text-bark md:text-6xl">
               {m.preco}
               <span className="ml-1 font-sans text-xs font-medium uppercase tracking-[0.2em] text-bark/50">
                 {m.sufixo}
               </span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-bark/70">{m.resumo}</p>
-            <ul className="mt-7 flex-1 space-y-3 border-t border-bark/15 pt-6">
+            <ul className="mt-6 flex-1 space-y-2.5 border-t border-bark/15 pt-5">
               {m.itens.map((item) => (
                 <li key={item} className="text-[13px] leading-relaxed text-bark/70">
                   {item}
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[10px] font-medium uppercase leading-[1.8] tracking-[0.2em] text-bark/45">
+            {m.nota && (
+              <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.18em] text-bark/45">
+                {m.nota}
+              </p>
+            )}
+            <p className="mt-4 text-[10px] font-medium uppercase leading-[1.8] tracking-[0.2em] text-bark/45">
               Ideal para: {m.ideal}
             </p>
             <Oval href="#reserva" solid={m.destaque} className="mt-7 w-fit">

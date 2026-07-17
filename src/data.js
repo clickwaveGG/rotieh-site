@@ -41,6 +41,24 @@ export const QUARTO = {
 
 export const MODALIDADES = [
   {
+    id: 'eventos',
+    titulo: 'Casamentos & Eventos',
+    preco: 'R$ 2.000',
+    sufixo: '/diária',
+    destaque: true,
+    resumo: 'O espaço inteiro vestido pra celebrar — do altar à festa.',
+    itens: [
+      'Casamentos, mini weddings, batizados e formaturas',
+      'Confraternizações e eventos corporativos',
+      'Exclusividade total: diária das 8h às 17h',
+      'Festa avançando a noite: adicional de R$ 1.000',
+      'Até 100 pessoas (acima: R$ 20 por pessoa)',
+      'Quartos para noivos e convidados: R$ 150 cada',
+    ],
+    ideal: 'O seu grande dia com a paisagem mais bonita da região',
+    nota: 'Reserva pela modalidade de locação completa do espaço',
+  },
+  {
     id: 'locacao',
     titulo: 'Locação completa',
     preco: 'R$ 2.000',
@@ -61,7 +79,6 @@ export const MODALIDADES = [
     titulo: 'Reserva de quartos',
     preco: 'R$ 350',
     sufixo: '/quarto',
-    destaque: true,
     resumo: 'Hospedagem com acesso completo a toda a estrutura.',
     itens: [
       'Diária de 24h — check-in no seu horário',

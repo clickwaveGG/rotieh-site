@@ -9,7 +9,7 @@ const MODOS = [
   { id: 'quartos', label: 'Reserva de quartos' },
   { id: 'locacao', label: 'Locação completa do espaço' },
   { id: 'camping', label: 'Camping avulso' },
-  { id: 'evento', label: 'Evento ou celebração' },
+  { id: 'evento', label: 'Casamento ou evento' },
 ]
 
 const ALIMENTACAO = [

@@ -15,7 +15,7 @@ export default function BookingBar() {
         </p>
         <span aria-hidden className="mt-10 block h-16 w-px bg-bark/25" />
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Oval href="#modalidades">Ver modalidades</Oval>
+          <Oval href="#eventos">Casamentos & Eventos</Oval>
           <Oval href="#reserva" solid>
             Montar minha reserva
           </Oval>
