@@ -73,8 +73,8 @@ export function Frame({ children, tone = 'bark', pad = 'p-3 md:p-4', className =
 /** Número editorial: ( 1 ) */
 export function Num({ n, tone = 'bark' }) {
   return (
-    <span className={`font-display text-base italic ${tone === 'cream' ? 'text-cream/70' : 'text-bark/60'}`}>
-      (&thinsp;{n}&thinsp;)
+    <span className={`whitespace-nowrap font-display text-base italic ${tone === 'cream' ? 'text-cream/70' : 'text-bark/60'}`}>
+      (&#8239;{n}&#8239;)
     </span>
   )
 }

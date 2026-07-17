@@ -52,7 +52,7 @@ export default function Eventos() {
                   <dt className="text-[12px] font-medium uppercase tracking-[0.18em] text-cream/90">
                     {servico}
                   </dt>
-                  <dd className="font-display text-base italic text-cream">{valor}</dd>
+                  <dd className="whitespace-nowrap font-display text-base italic text-cream">{valor}</dd>
                 </div>
               ))}
             </dl>

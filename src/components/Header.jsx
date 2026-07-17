@@ -80,7 +80,7 @@ export default function Header() {
                 className="flex items-baseline justify-between py-5"
               >
                 <span className="font-display text-3xl text-bark">{label}</span>
-                <span className="font-display text-sm italic text-bark/50">(&thinsp;{String(i + 1).padStart(2, '0')}&thinsp;)</span>
+                <span className="whitespace-nowrap font-display text-sm italic text-bark/50">(&#8239;{String(i + 1).padStart(2, '0')}&#8239;)</span>
               </a>
             ))}
           </nav>
