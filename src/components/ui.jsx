@@ -1,9 +1,11 @@
 // Primitivas do design editorial (ref. premium residences):
 // labels entre parênteses, botões ovais, letras swash e molduras com cantoneiras.
 
-/** Letra caligráfica mesclada no display serif — ex.: <Sw>O</Sw>ÁSIS */
+/** Ex-letra caligráfica (Pinyon) — desativada a pedido do cliente:
+ *  a letra agora segue a mesma fonte do título. Mantido como componente
+ *  pra preservar os call sites e permitir reativar depois se quiser. */
 export function Sw({ children }) {
-  return <span className="font-swash font-normal">{children}</span>
+  return <>{children}</>
 }
 
 /** Label de seção: ( TEXTO ) com parênteses elegantes */
