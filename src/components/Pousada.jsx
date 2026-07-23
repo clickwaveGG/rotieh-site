@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { QUARTO, wa } from '../data.js'
+import { QUARTO, selecionarModalidade } from '../data.js'
 import { Sw, Label, Arrow, Oval } from './ui.jsx'
 
 export default function Pousada() {
@@ -16,8 +16,9 @@ export default function Pousada() {
           Acorde no <Sw>o</Sw>ásis
         </h2>
         <p className="mt-5 max-w-lg text-sm leading-relaxed text-bark/70">
-          10 quartos padronizados, com diária de 24 horas a partir do horário
-          de check-in que você escolher — e acesso completo a toda a estrutura.
+          Não precisa de festa pra viver o Rotieh: alugue um chalé pra dois e
+          acorde aqui. São 10 quartos com diária de 24 horas a partir do
+          check-in que você escolher — e acesso completo a toda a estrutura.
         </p>
       </div>
 
@@ -39,8 +40,8 @@ export default function Pousada() {
 
           <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-bark/15 py-5">
             {[
-              ['Diária (24h)', `${QUARTO.preco}*`],
-              ['Fechando os 10', `${QUARTO.precoGrupo} cada`],
+              ['Diária', '24 horas completas'],
+              ['Quartos', `${QUARTO.total} disponíveis*`],
               ['Capacidade', QUARTO.capacidade],
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
@@ -66,7 +67,9 @@ export default function Pousada() {
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-8">
-            <Oval href="#reserva">Reservar quarto</Oval>
+            <Oval href="#reserva" onClick={() => selecionarModalidade('quartos')}>
+              Saber mais
+            </Oval>
             <div className="flex items-center gap-2">
               <button
                 onClick={prev}

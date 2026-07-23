@@ -32,19 +32,25 @@ export default function Hero() {
         </h1>
 
         <p className="mt-7 max-w-md text-[13px] leading-relaxed text-cream/85 md:text-sm">
-          Um destino pra desacelerar, celebrar e reunir quem importa — natureza
-          e sofisticação juntas, no coração da região de Irecê.
+          O lugar da região pra celebrar: casamentos, aniversários e festas com
+          o espaço inteiro só pro seu grupo — e chalés pra quem quer escapar a
+          dois.
         </p>
 
-        <Oval href="#reserva" dark className="mt-9">
-          Planejar minha visita
-        </Oval>
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+          <Oval href="#eventos" dark>
+            Quero celebrar aqui
+          </Oval>
+          <Oval href="#pousada" dark>
+            Chalé pra dois
+          </Oval>
+        </div>
       </div>
 
       {/* meta editorial nos cantos inferiores */}
       <div className="absolute inset-x-0 bottom-0 z-10 hidden items-end justify-between px-10 pb-8 md:flex">
         <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-cream/70">
-          Parque aquático · Pousada · Haras
+          Casamentos & Festas · Pousada · Haras
         </span>
         <span className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.3em] text-cream/70">
           <span className="relative flex h-2 w-2">

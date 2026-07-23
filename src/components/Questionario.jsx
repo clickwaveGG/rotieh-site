@@ -1,15 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { wa } from '../data.js'
 import { Sw, Label } from './ui.jsx'
 
-// Questionário de reserva: o cliente monta o pedido e envia uma
-// mensagem estruturada pro WhatsApp — a equipe recebe a prévia pronta.
+// Pré-atendimento: o cliente responde as perguntas antes de ir pro
+// WhatsApp — a equipe recebe a mensagem estruturada e o atendimento
+// já começa com as informações principais (valores são passados lá).
 
 const MODOS = [
-  { id: 'quartos', label: 'Reserva de quartos' },
+  { id: 'evento', label: 'Casamento, aniversário ou festa' },
   { id: 'locacao', label: 'Locação completa do espaço' },
+  { id: 'quartos', label: 'Chalé / quartos' },
   { id: 'camping', label: 'Camping avulso' },
-  { id: 'evento', label: 'Casamento ou evento' },
+]
+
+const TIPOS_EVENTO = [
+  'Casamento',
+  'Aniversário',
+  '15 anos',
+  'Formatura',
+  'Batizado',
+  'Confraternização',
+  'Evento corporativo',
+  'Outro',
 ]
 
 const ALIMENTACAO = [
@@ -19,15 +31,16 @@ const ALIMENTACAO = [
 ]
 
 const EXTRAS_OPCOES = [
-  'Passeio a cavalo (R$ 30/pessoa)',
-  'Ensaio fotográfico externo (R$ 400)',
-  'Ensaio fotográfico interno (R$ 600)',
+  'Passeio a cavalo',
+  'Ensaio fotográfico externo',
+  'Ensaio fotográfico interno',
 ]
 
 const fmt = (d) => (d ? d.split('-').reverse().join('/') : '')
 
 export default function Questionario() {
-  const [modo, setModo] = useState('quartos')
+  const [modo, setModo] = useState('evento')
+  const [tipoEvento, setTipoEvento] = useState(TIPOS_EVENTO[0])
   const [nome, setNome] = useState('')
   const [entrada, setEntrada] = useState('')
   const [saida, setSaida] = useState('')
@@ -42,12 +55,22 @@ export default function Questionario() {
   const toggleExtra = (e) =>
     setExtras((xs) => (xs.includes(e) ? xs.filter((x) => x !== e) : [...xs, e]))
 
+  // Botões "Saber mais" dos produtos pré-selecionam a modalidade aqui
+  useEffect(() => {
+    const onModalidade = (e) => {
+      if (MODOS.some((m) => m.id === e.detail)) setModo(e.detail)
+    }
+    window.addEventListener('rotieh:modalidade', onModalidade)
+    return () => window.removeEventListener('rotieh:modalidade', onModalidade)
+  }, [])
+
   const modoLabel = MODOS.find((m) => m.id === modo).label
 
   const linhas = [
     `Olá, Rotieh! Quero montar uma reserva 🌴`,
     ``,
     `• Modalidade: ${modoLabel}`,
+    modo === 'evento' && `• Tipo de festa: ${tipoEvento}`,
     nome && `• Nome: ${nome}`,
     entrada && `• Chegada: ${fmt(entrada)}${saida ? ` · Saída: ${fmt(saida)}` : ''}`,
     pessoas && `• Pessoas: ±${pessoas}`,
@@ -74,8 +97,9 @@ export default function Questionario() {
             que você imagina
           </h2>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/70">
-            Responda rapidinho e a mensagem chega pronta no nosso WhatsApp —
-            com tudo que a equipe precisa pra confirmar sua reserva.
+            Responda rapidinho e a mensagem chega pronta no nosso WhatsApp.
+            Com as informações principais em mãos, a equipe já responde com
+            valores, disponibilidade e os próximos passos.
           </p>
         </div>
 
@@ -101,6 +125,21 @@ export default function Questionario() {
                 </button>
               ))}
             </div>
+            {modo === 'evento' && (
+              <div className="mt-2 grid grid-cols-1">
+                <Campo label="Que festa vamos receber?">
+                  <select
+                    value={tipoEvento}
+                    onChange={(e) => setTipoEvento(e.target.value)}
+                    className={inp + ' appearance-none [&>option]:text-bark'}
+                  >
+                    {TIPOS_EVENTO.map((t) => (
+                      <option key={t}>{t}</option>
+                    ))}
+                  </select>
+                </Campo>
+              </div>
+            )}
 
             {/* datas e pessoas */}
             <p className="mt-9 text-[10px] font-semibold uppercase tracking-[0.3em] text-cream/60">

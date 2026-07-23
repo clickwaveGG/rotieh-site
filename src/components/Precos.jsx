@@ -1,5 +1,9 @@
-import { MODALIDADES } from '../data.js'
+import { MODALIDADES, selecionarModalidade } from '../data.js'
 import { Sw, Label, Num, Oval } from './ui.jsx'
+
+// Modalidades sem preços: cada produto apresenta o que é e o botão
+// "Saber mais" leva ao pré-atendimento (#reserva) com a modalidade
+// já selecionada — valores só na conversa do WhatsApp.
 
 export default function Precos() {
   return (
@@ -14,8 +18,9 @@ export default function Precos() {
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-bark/60">
-          Funcionamos todos os dias, sempre com reserva antecipada — cada grupo
-          aproveita o espaço com exclusividade e tranquilidade.
+          Das grandes festas à escapada a dois. Funcionamos todos os dias,
+          sempre com reserva antecipada — cada grupo aproveita o espaço com
+          exclusividade e tranquilidade.
         </p>
       </div>
 
@@ -30,15 +35,12 @@ export default function Precos() {
             <div className="flex items-baseline justify-between gap-3">
               <Num n={idx + 1} />
               <span className="text-right text-[10px] font-semibold uppercase tracking-[0.3em] text-bark/50">
-                {m.titulo}
+                {m.destaque ? 'Carro-chefe' : m.convite ? 'Você é bem-vindo' : m.chamada}
               </span>
             </div>
-            <p className="mt-7 font-display text-5xl text-bark md:text-6xl">
-              {m.preco}
-              <span className="ml-1 font-sans text-xs font-medium uppercase tracking-[0.2em] text-bark/50">
-                {m.sufixo}
-              </span>
-            </p>
+            <h3 className="mt-7 font-display text-4xl uppercase leading-[1.05] tracking-[0.02em] text-bark md:text-5xl">
+              {m.titulo}
+            </h3>
             <p className="mt-3 text-sm leading-relaxed text-bark/70">{m.resumo}</p>
             <ul className="mt-6 flex-1 space-y-2.5 border-t border-bark/15 pt-5">
               {m.itens.map((item) => (
@@ -47,22 +49,23 @@ export default function Precos() {
                 </li>
               ))}
             </ul>
-            {m.nota && (
-              <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.18em] text-bark/45">
-                {m.nota}
-              </p>
-            )}
             <p className="mt-4 text-[10px] font-medium uppercase leading-[1.8] tracking-[0.2em] text-bark/45">
               Ideal para: {m.ideal}
             </p>
-            <Oval href="#reserva" solid={m.destaque} className="mt-7 w-fit">
-              Montar reserva
+            <Oval
+              href="#reserva"
+              solid={m.destaque}
+              className="mt-7 w-fit"
+              onClick={() => selecionarModalidade(m.id)}
+            >
+              Saber mais
             </Oval>
           </div>
         ))}
       </div>
       <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-bark/40">
-        Sem entrada individual — o espaço é sempre reservado
+        Sem entrada individual — o espaço é sempre reservado · Valores direto com a
+        equipe no WhatsApp
       </p>
     </section>
   )

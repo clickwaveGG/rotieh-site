@@ -7,6 +7,11 @@ export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real do Rotieh
 export const wa = (msg) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
 
+// Pré-seleciona a modalidade no questionário (#reserva) — usado pelos
+// botões "Saber mais" dos produtos. O Questionario escuta este evento.
+export const selecionarModalidade = (id) =>
+  window.dispatchEvent(new CustomEvent('rotieh:modalidade', { detail: id }))
+
 // Fotos reais do empreendimento (acervo do Instagram oficial)
 export const IMG = {
   hero: '/fotos/hero-desktop.webp',
@@ -23,9 +28,8 @@ export const IMG = {
 }
 
 // 10 quartos padronizados. Diária = 24h a partir do check-in escolhido.
+// Política do site: sem preços — valores só no atendimento via WhatsApp.
 export const QUARTO = {
-  preco: 'R$ 350',
-  precoGrupo: 'R$ 300',
   total: 10,
   capacidade: 'Até 2 pessoas',
   excecao: 'Casal com 1 criança pequena pode ficar no mesmo quarto',
@@ -41,60 +45,56 @@ export const QUARTO = {
 
 export const MODALIDADES = [
   {
-    id: 'eventos',
-    titulo: 'Casamentos & Eventos',
-    preco: 'R$ 2.000',
-    sufixo: '/diária',
+    id: 'evento',
+    titulo: 'Casamentos & Festas',
+    chamada: 'O espaço inteiro, só seu',
     destaque: true,
-    resumo: 'O espaço inteiro vestido pra celebrar — do altar à festa.',
+    resumo:
+      'O carro-chefe do Rotieh: o espaço completo, com exclusividade, vestido pra celebrar — do altar à festa.',
     itens: [
-      'Casamentos, mini weddings, batizados e formaturas',
-      'Confraternizações e eventos corporativos',
-      'Exclusividade total: diária das 8h às 17h',
-      'Festa avançando a noite: adicional de R$ 1.000',
-      'Até 100 pessoas (acima: R$ 20 por pessoa)',
-      'Quartos para noivos e convidados: R$ 150 cada',
+      'Casamentos, aniversários, 15 anos e formaturas',
+      'Batizados, confraternizações e eventos corporativos',
+      'Exclusividade total: nenhum outro grupo no espaço',
+      'Diária das 8h às 17h — festa pode avançar a noite',
+      'Até 100 convidados (grupos maiores sob consulta)',
+      'Quartos pra noivos e convidados + camping incluso',
     ],
     ideal: 'O seu grande dia com a paisagem mais bonita da região',
-    nota: 'Reserva pela modalidade de locação completa do espaço',
   },
   {
     id: 'locacao',
     titulo: 'Locação completa',
-    preco: 'R$ 2.000',
-    sufixo: '/diária',
-    resumo: 'O espaço inteiro, com exclusividade, pra até 100 pessoas.',
+    chamada: 'Um dia inteiro de exclusividade',
+    resumo: 'O espaço inteiro reservado pro seu grupo — sem festa marcada, só liberdade.',
     itens: [
-      'Diária das 8h às 17h',
-      'Adicional noturno (18h às 8h): R$ 1.000',
-      'Acima de 100 pessoas: R$ 20 por pessoa',
-      'Quartos opcionais: R$ 150 por quarto',
-      'Camping em barracas incluso',
-      'Restaurante no local ou cozinhas à disposição',
+      'Diária das 8h às 17h, com pernoite opcional',
+      'Piscina, quadras, campo e salão de jogos só pro grupo',
+      'Quartos opcionais e camping em barracas incluso',
+      'Restaurante no local ou duas cozinhas à disposição',
     ],
-    ideal: 'Eventos, confraternizações, retiros, acampamentos e encontros de família',
+    ideal: 'Retiros, acampamentos, encontros de família e de empresas',
   },
   {
     id: 'quartos',
-    titulo: 'Reserva de quartos',
-    preco: 'R$ 350',
-    sufixo: '/quarto',
-    resumo: 'Hospedagem com acesso completo a toda a estrutura.',
+    titulo: 'Chalé pra dois',
+    chamada: 'A escapada a dois',
+    convite: true,
+    resumo:
+      'Não precisa de festa pra vir: alugue um chalé pra duas pessoas e viva o oásis no seu ritmo.',
     itens: [
-      'Diária de 24h — check-in no seu horário',
+      'Diária de 24h — check-in no horário que você escolher',
       '10 quartos: casal, TV, Wi-Fi, frigobar, ar e banheiro',
-      'Fechando os 10 quartos: R$ 300 cada + espaço exclusivo',
-      'Até 2 pessoas por quarto (casal + criança pequena ok)',
-      'Restaurante no local (refeições à parte)',
+      'Acesso completo a piscina, áreas de lazer e natureza',
+      'Casal com 1 criança pequena fica no mesmo quarto',
+      'Fechando os 10 quartos, o espaço fica exclusivo',
     ],
     ideal: 'Casais, famílias pequenas e grupos de amigos',
   },
   {
     id: 'camping',
     titulo: 'Camping avulso',
-    preco: 'R$ 200',
-    sufixo: '/barraca',
-    resumo: 'A experiência de acampar sob o céu do sertão.',
+    chamada: 'Sob o céu do sertão',
+    resumo: 'A experiência de acampar com estrutura completa por perto.',
     itens: [
       'Até 3 pessoas por barraca',
       'Acesso à estrutura do espaço',
@@ -156,9 +156,9 @@ export const OCASIOES = [
 ]
 
 export const EXTRAS = [
-  ['Passeio a cavalo', 'R$ 30 por pessoa'],
-  ['Ensaio fotográfico externo', 'R$ 400'],
-  ['Ensaio fotográfico interno', 'R$ 600'],
+  ['Passeio a cavalo', 'por pessoa'],
+  ['Ensaio fotográfico externo', 'sob consulta'],
+  ['Ensaio fotográfico interno', 'sob consulta'],
 ]
 
 // Galeria de experiências reais (fotos do Instagram oficial)
@@ -228,15 +228,19 @@ export const FAQ = [
   },
   {
     q: 'Quantas pessoas cabem na locação completa?',
-    a: 'A diária cobre até 100 pessoas. Passando disso, é cobrado R$ 20 por pessoa adicional.',
+    a: 'A estrutura recebe até 100 pessoas com folga. Grupos maiores também são bem-vindos — é só alinhar com a equipe na hora da reserva.',
   },
   {
     q: 'Como funcionam os quartos na locação completa?',
-    a: 'Os quartos são opcionais: R$ 150 por quarto durante a locação. E quem preferir pode acampar em barracas, sem custo por barraca.',
+    a: 'Os quartos são opcionais e reservados à parte durante a locação — perfeitos pra noivos, aniversariantes e convidados que ficam. E quem preferir pode acampar em barracas, já incluso na locação.',
+  },
+  {
+    q: 'Quanto custa cada modalidade?',
+    a: 'Os valores variam conforme a modalidade, a data e o tamanho do grupo. Monte sua reserva aqui no site e a equipe responde no WhatsApp com valores e disponibilidade — sem compromisso.',
   },
   {
     q: 'Tem algum serviço cobrado à parte?',
-    a: 'Só o passeio a cavalo: R$ 30 por pessoa. Ensaios fotográficos têm valores próprios — R$ 400 (externo) e R$ 600 (ambientes internos).',
+    a: 'O passeio a cavalo e os ensaios fotográficos têm valores próprios — a equipe passa tudo certinho no atendimento pelo WhatsApp.',
   },
 ]
 
@@ -251,10 +255,10 @@ export const DISTANCIAS = [
 ]
 
 export const NAV = [
+  ['Festas & Eventos', '#eventos'],
   ['O Espaço', '#parque'],
   ['Reservas', '#modalidades'],
   ['Pousada', '#pousada'],
   ['Haras', '#haras'],
-  ['Eventos', '#eventos'],
   ['Contato', '#contato'],
 ]

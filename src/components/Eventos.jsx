@@ -1,14 +1,14 @@
-import { IMG, OCASIOES } from '../data.js'
+import { IMG, OCASIOES, selecionarModalidade } from '../data.js'
 import { Sw, Label, Num, Frame, Oval } from './ui.jsx'
 
-// Carro-chefe do Rotieh: casamentos, confraternizações e eventos.
-// Reserva pela modalidade de locação completa do espaço.
+// Carro-chefe do Rotieh: casamentos, aniversários e festas em geral.
+// Sem preços no site — valores na conversa do WhatsApp, após o pré-atendimento.
 
 const FICHA = [
-  ['Diária do espaço', 'R$ 2.000 · 8h às 17h'],
-  ['Festa noite adentro', '+ R$ 1.000 · 18h às 8h'],
-  ['Capacidade', 'Até 100 pessoas'],
-  ['Quartos p/ convidados', 'R$ 150 por quarto'],
+  ['Exclusividade', 'O espaço inteiro, só do seu grupo'],
+  ['Horários', 'Diária 8h às 17h · noite opcional'],
+  ['Capacidade', 'Até 100 convidados — ou mais'],
+  ['Hospedagem', 'Quartos p/ noivos e convidados'],
 ]
 
 export default function Eventos() {
@@ -21,9 +21,10 @@ export default function Eventos() {
             Feito pra <Sw>c</Sw>elebrar
           </h2>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-bark/70">
-            O carro-chefe do Rotieh: o espaço inteiro, com exclusividade, pro
-            seu casamento, confraternização ou grande evento — natureza,
-            estrutura completa e a paisagem mais bonita da região.
+            O Rotieh existe pra isso: o espaço inteiro, com exclusividade, pro
+            seu casamento, aniversário, confraternização ou festa — natureza,
+            estrutura completa e a paisagem mais bonita da região, só pro seu
+            grupo.
           </p>
         </div>
 
@@ -38,19 +39,20 @@ export default function Eventos() {
               />
             </Frame>
 
-            {/* ficha de valores — mesmas condições da locação completa */}
+            {/* ficha do produto — sem valores; detalhes na conversa */}
             <dl className="mt-8 border-t border-bark/15">
               {FICHA.map(([k, v]) => (
                 <div key={k} className="flex items-baseline justify-between gap-4 border-b border-bark/15 py-3.5">
                   <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-bark/55">
                     {k}
                   </dt>
-                  <dd className="whitespace-nowrap font-display text-base italic text-bark">{v}</dd>
+                  <dd className="text-right font-display text-base italic text-bark">{v}</dd>
                 </div>
               ))}
             </dl>
             <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] text-bark/45">
-              A reserva segue a modalidade de locação completa do espaço
+              Conte seu plano no pré-atendimento — a equipe responde com tudo no
+              WhatsApp
             </p>
           </div>
 
@@ -69,8 +71,8 @@ export default function Eventos() {
               ))}
             </ul>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Oval href="#reserva" solid>
-                Montar meu evento
+              <Oval href="#reserva" solid onClick={() => selecionarModalidade('evento')}>
+                Saber mais
               </Oval>
               <Oval href="#modalidades">Ver todas as modalidades</Oval>
             </div>
