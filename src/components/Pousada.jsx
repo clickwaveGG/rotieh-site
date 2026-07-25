@@ -11,14 +11,14 @@ export default function Pousada() {
   return (
     <section id="pousada" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
       <div className="flex flex-col items-center text-center">
-        <Label>Pousada</Label>
+        <Label>Chalés</Label>
         <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
           Acorde no <Sw>o</Sw>ásis
         </h2>
         <p className="mt-5 max-w-lg text-sm leading-relaxed text-bark/70">
-          Não precisa de festa pra viver o Rotieh: alugue um chalé pra dois e
-          acorde aqui. São 10 quartos com diária de 24 horas a partir do
-          check-in que você escolher — e acesso completo a toda a estrutura.
+          Alugue um chalé e acorde aqui: são 10 chalés com diária de 24 horas
+          a partir do check-in que você escolher — e acesso completo a piscina,
+          lounges, redários e toda a estrutura do espaço.
         </p>
       </div>
 
@@ -27,7 +27,7 @@ export default function Pousada() {
           <img
             key={fotos[i]}
             src={fotos[i]}
-            alt="Quarto da pousada Rotieh"
+            alt="Chalé do Rotieh"
             className="h-80 w-full object-cover md:h-[560px]"
           />
           <span className="absolute bottom-4 left-4 bg-cream/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-bark">
@@ -36,12 +36,12 @@ export default function Pousada() {
         </div>
 
         <div className="flex flex-col border border-bark/15 bg-cream p-8 md:border-l-0 md:p-10">
-          <h3 className="font-display text-3xl text-bark md:text-4xl">Quarto Rotieh</h3>
+          <h3 className="font-display text-3xl text-bark md:text-4xl">Chalé Rotieh</h3>
 
           <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-bark/15 py-5">
             {[
               ['Diária', '24 horas completas'],
-              ['Quartos', `${QUARTO.total} disponíveis*`],
+              ['Chalés', `${QUARTO.total} disponíveis*`],
               ['Capacidade', QUARTO.capacidade],
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
@@ -61,9 +61,9 @@ export default function Pousada() {
           </ul>
 
           <p className="mt-5 text-[13px] leading-relaxed text-bark/70">
-            Reservando os 10 quartos, a estrutura fica exclusiva pro seu grupo.
-            Café da manhã e refeições à parte no restaurante do espaço — ou
-            traga seus alimentos. {QUARTO.excecao}.
+            Reservando os 10 chalés, a estrutura fica exclusiva pro seu grupo —
+            perfeito pra famílias e turmas de amigos. Café da manhã e refeições
+            à parte no restaurante do espaço, ou traga seus alimentos.
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-8">
@@ -90,7 +90,7 @@ export default function Pousada() {
         </div>
       </div>
       <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-bark/40">
-        *Em breve também quartos família, triplos e com camas individuais
+        *Em breve também chalés família, triplos e com camas individuais
       </p>
     </section>
   )

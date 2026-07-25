@@ -1,6 +1,7 @@
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import BookingBar from './components/BookingBar.jsx'
+import Ambientes from './components/Ambientes.jsx'
 import Pousada from './components/Pousada.jsx'
 import Parque from './components/Parque.jsx'
 import Precos from './components/Precos.jsx'
@@ -21,10 +22,11 @@ export default function App() {
       <Header />
       <Hero />
       <BookingBar />
+      <Pousada />
+      <Ambientes />
       <Eventos />
       <Parque />
       <Precos />
-      <Pousada />
       <GaleriaZoom />
       <Haras />
       <Experiencias />

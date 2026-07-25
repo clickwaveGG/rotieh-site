@@ -12,7 +12,8 @@ export const wa = (msg) =>
 export const selecionarModalidade = (id) =>
   window.dispatchEvent(new CustomEvent('rotieh:modalidade', { detail: id }))
 
-// Fotos reais do empreendimento (acervo do Instagram oficial)
+// Fotos reais do empreendimento (acervo do Instagram + acervo enviado pela
+// cliente em 2026-07-25, otimizado por scripts/otimizar-fotos.mjs)
 export const IMG = {
   hero: '/fotos/hero-desktop.webp',
   heroMobile: '/fotos/hero-mobile.webp',
@@ -20,44 +21,142 @@ export const IMG = {
   parqueA: '/fotos/piscina-panorama.webp',
   parqueB: '/fotos/dayuse-inflaveis.webp',
   haras: '/fotos/haras-cavalo-por-do-sol.webp',
-  harasAlt: '/fotos/haras-cavalo-passeio.webp',
+  harasAlt: '/fotos/haras-casal-cavalo.webp',
   restaurante: '/fotos/lazer-pizzas.webp',
-  eventos: '/fotos/eventos-casamento.webp',
+  eventos: '/fotos/casamento-cerimonia.webp',
   instaCta: '/fotos/natureza-por-do-sol.webp',
   instaCard: '/fotos/dayuse-mae-filha.webp',
 }
 
-// 10 quartos padronizados. Diária = 24h a partir do check-in escolhido.
+// 10 chalés padronizados. Diária = 24h a partir do check-in escolhido.
 // Política do site: sem preços — valores só no atendimento via WhatsApp.
+// Narrativa: hospedagem pra qualquer perfil — a capacidade é só ficha técnica.
 export const QUARTO = {
   total: 10,
-  capacidade: 'Até 2 pessoas',
-  excecao: 'Casal com 1 criança pequena pode ficar no mesmo quarto',
+  capacidade: 'Até 2 pessoas + criança pequena',
+  excecao: 'Casal com 1 criança pequena pode ficar no mesmo chalé',
   estrutura: ['Cama de casal', 'TV', 'Wi-Fi', 'Frigobar', 'Ar-condicionado', 'Banheiro privativo'],
   fotos: [
-    '/fotos/pousada-quarto-casal.webp',
-    '/fotos/pousada-chale-exterior.webp',
-    '/fotos/pousada-quarto-tv.webp',
-    '/fotos/pousada-suite-romantica.webp',
-    '/fotos/pousada-chale-varanda.webp',
+    '/fotos/pousada-chale-arquitetura.webp',
+    '/fotos/quarto-led.webp',
+    '/fotos/chale-varanda.webp',
+    '/fotos/quarto-vista-palmeiras.webp',
+    '/fotos/chales-noite.webp',
+    '/fotos/quarto-toalhas.webp',
   ],
 }
 
+// Ambientes do empreendimento — pedido direto da cliente (2026-07-25):
+// "uma parte informando sobre todos esses ambientes, complementada com fotos".
+// Descrições inferidas do acervo fotográfico — validar texto oficial com a cliente.
+export const AMBIENTES = [
+  {
+    img: '/fotos/chales-noite.webp',
+    nome: 'Chalés',
+    desc: 'Chalés modernos com varanda, fachada de vidro e conforto completo.',
+  },
+  {
+    img: '/fotos/piscina-guarda-sol.webp',
+    nome: 'Piscina & bar molhado',
+    desc: 'Piscina ampla com espreguiçadeiras, guarda-sóis e bebida servida na água.',
+  },
+  {
+    img: '/fotos/salao-restaurante.webp',
+    nome: 'Restaurante & salão',
+    desc: 'Salão coberto com sofás, mesas de madeira e cozinha própria.',
+  },
+  {
+    img: '/fotos/sala-jogos.webp',
+    nome: 'Salão de jogos',
+    desc: 'Sinuca, pebolim e sofás com vista pra área externa.',
+  },
+  {
+    img: '/fotos/quadra-society.webp',
+    nome: 'Quadra society',
+    desc: 'Quadra coberta de grama sintética pra bola rolar a qualquer hora.',
+  },
+  {
+    img: '/fotos/cabanas-lounge.webp',
+    nome: 'Lounges & pergolados',
+    desc: 'Cabanas e pergolados com sofás espalhados pelos jardins.',
+  },
+  {
+    img: '/fotos/alameda-redes.webp',
+    nome: 'Redários',
+    desc: 'Alameda de redes entre os coqueiros pra tardes sem pressa.',
+  },
+  {
+    img: '/fotos/hidro-noite.webp',
+    nome: 'Hidromassagem',
+    desc: 'Banheira de hidromassagem ao ar livre sob o céu do sertão.',
+  },
+  {
+    img: '/fotos/casinha-arvore.webp',
+    nome: 'Casinha na árvore',
+    desc: 'Casinha suspensa e parquinho pra criançada gastar energia.',
+  },
+  {
+    img: '/fotos/haras-pergolado-cavalo.webp',
+    nome: 'Haras & picadeiro',
+    desc: 'Cavalos pastando, picadeiro e passeios em meio à natureza.',
+  },
+  {
+    img: '/fotos/festa-deck-decorado.webp',
+    nome: 'Espaço de eventos',
+    desc: 'Deck e salão que se vestem pra casamentos e festas.',
+  },
+  {
+    img: '/fotos/camping-deck.webp',
+    nome: 'Camping',
+    desc: 'Deck pra barracas com toda a estrutura do espaço por perto.',
+  },
+]
+
+// Galerias de celebrações reais no espaço — fotos enviadas pela cliente.
+export const CASAMENTO_FOTOS = [
+  ['/fotos/casamento-noiva-veu.webp', 'Noiva diante da mesa de doces no salão ornamentado'],
+  ['/fotos/casamento-casal-jardim.webp', 'Casal de noivos no banco do jardim entre as flores'],
+  ['/fotos/casamento-buque.webp', 'Noiva jogando o buquê na festa à beira da piscina'],
+  ['/fotos/casamento-casal-buque.webp', 'Casal sorrindo com o buquê no jardim do Rotieh'],
+]
+
+export const FESTA_FOTOS = [
+  ['/fotos/festa-pista-danca.webp', 'Pista de dança iluminada em festa de 15 anos'],
+  ['/fotos/festa-corredor-fogos.webp', 'Debutante entrando entre fogos frios'],
+  ['/fotos/festa-bolo.webp', 'Bolo de festa de quatro andares decorado com flores'],
+  ['/fotos/festa-debutante.webp', 'Debutante na luz dourada do fim de tarde'],
+]
+
 export const MODALIDADES = [
+  {
+    id: 'quartos',
+    titulo: 'Chalés Rotieh',
+    chamada: 'Hospede-se no oásis',
+    destaque: true,
+    resumo:
+      'Alugue um chalé e viva o Rotieh no seu ritmo: piscina, natureza e sossego, com diária de 24 horas.',
+    itens: [
+      'Diária de 24h — check-in no horário que você escolher',
+      '10 chalés: cama de casal, TV, Wi-Fi, frigobar, ar e banheiro',
+      'Acesso completo a piscina, áreas de lazer e natureza',
+      'Casal com 1 criança pequena fica no mesmo chalé',
+      'Fechando os 10 chalés, o espaço fica exclusivo pro grupo',
+    ],
+    ideal: 'Descanso, férias, comemorações e escapadas da rotina',
+  },
   {
     id: 'evento',
     titulo: 'Casamentos & Festas',
     chamada: 'O espaço inteiro, só seu',
-    destaque: true,
     resumo:
-      'O carro-chefe do Rotieh: o espaço completo, com exclusividade, vestido pra celebrar — do altar à festa.',
+      'O espaço completo, com exclusividade, vestido pra celebrar — do altar à festa.',
     itens: [
       'Casamentos, aniversários, 15 anos e formaturas',
       'Batizados, confraternizações e eventos corporativos',
       'Exclusividade total: nenhum outro grupo no espaço',
       'Diária das 8h às 17h — festa pode avançar a noite',
       'Até 100 convidados (grupos maiores sob consulta)',
-      'Quartos pra noivos e convidados + camping incluso',
+      'Chalés pra noivos e convidados + camping incluso',
     ],
     ideal: 'O seu grande dia com a paisagem mais bonita da região',
   },
@@ -69,26 +168,10 @@ export const MODALIDADES = [
     itens: [
       'Diária das 8h às 17h, com pernoite opcional',
       'Piscina, quadras, campo e salão de jogos só pro grupo',
-      'Quartos opcionais e camping em barracas incluso',
+      'Chalés opcionais e camping em barracas incluso',
       'Restaurante no local ou duas cozinhas à disposição',
     ],
     ideal: 'Retiros, acampamentos, encontros de família e de empresas',
-  },
-  {
-    id: 'quartos',
-    titulo: 'Chalé pra dois',
-    chamada: 'A escapada a dois',
-    convite: true,
-    resumo:
-      'Não precisa de festa pra vir: alugue um chalé pra duas pessoas e viva o oásis no seu ritmo.',
-    itens: [
-      'Diária de 24h — check-in no horário que você escolher',
-      '10 quartos: casal, TV, Wi-Fi, frigobar, ar e banheiro',
-      'Acesso completo a piscina, áreas de lazer e natureza',
-      'Casal com 1 criança pequena fica no mesmo quarto',
-      'Fechando os 10 quartos, o espaço fica exclusivo',
-    ],
-    ideal: 'Casais, famílias pequenas e grupos de amigos',
   },
   {
     id: 'camping',
@@ -174,7 +257,7 @@ export const EXPERIENCIAS = [
     desc: 'Barracas no gramado, céu do sertão e amanhecer na natureza.',
   },
   {
-    img: '/fotos/lazer-sinuca.webp',
+    img: '/fotos/sala-jogos.webp',
     titulo: 'Salão de jogos',
     desc: 'Sinuca e pebolim pra família inteira, a qualquer hora.',
   },
@@ -184,9 +267,9 @@ export const EXPERIENCIAS = [
     desc: 'Do café da manhã ao açaí — restaurante dentro do espaço.',
   },
   {
-    img: '/fotos/dayuse-familia.webp',
+    img: '/fotos/familia-almoco-piscina.webp',
     titulo: 'Dia em família',
-    desc: 'Mesa na beira da piscina e criançada solta, com segurança.',
+    desc: 'Mesa farta na beira da piscina e criançada solta, com segurança.',
   },
   {
     img: '/fotos/lazer-bebidas.webp',
@@ -194,7 +277,7 @@ export const EXPERIENCIAS = [
     desc: 'Bebida gelada servida onde você está: dentro da água.',
   },
   {
-    img: '/fotos/eventos-debutante.webp',
+    img: '/fotos/festa-pista-danca.webp',
     titulo: 'Festas inesquecíveis',
     desc: '15 anos, casamentos e formaturas com cenário de interior chique.',
   },
@@ -255,10 +338,10 @@ export const DISTANCIAS = [
 ]
 
 export const NAV = [
+  ['Chalés', '#pousada'],
   ['Festas & Eventos', '#eventos'],
-  ['O Espaço', '#parque'],
+  ['Ambientes', '#ambientes'],
   ['Reservas', '#modalidades'],
-  ['Pousada', '#pousada'],
   ['Haras', '#haras'],
   ['Contato', '#contato'],
 ]

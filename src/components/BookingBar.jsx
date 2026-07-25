@@ -8,17 +8,17 @@ export default function BookingBar() {
           <Sw>R</Sw>
         </span>
         <p className="mt-6 max-w-2xl text-[11px] font-medium uppercase leading-[2.1] tracking-[0.22em] text-bark/70">
-          O Rotieh nasceu pra receber as suas celebrações: casamentos,
-          aniversários e festas com o espaço inteiro reservado pro seu grupo.
-          E quando a vontade é só desacelerar, um chalé pra dois te espera —
+          No Rotieh você aluga um chalé e vive dias sem pressa: piscina,
+          redários, natureza e todos os ambientes inclusos. E quando é dia de
+          celebrar, o espaço inteiro recebe casamentos, aniversários e festas —
           funcionamos todos os dias, sempre com reserva antecipada.
         </p>
         <span aria-hidden className="mt-10 block h-16 w-px bg-bark/25" />
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Oval href="#eventos" solid>
-            Casamentos & Festas
+          <Oval href="#pousada" solid>
+            Chalés
           </Oval>
-          <Oval href="#pousada">Chalé pra dois</Oval>
+          <Oval href="#eventos">Casamentos & Festas</Oval>
         </div>
       </div>
     </section>

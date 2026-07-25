@@ -18,9 +18,9 @@ export default function Precos() {
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-bark/60">
-          Das grandes festas à escapada a dois. Funcionamos todos os dias,
-          sempre com reserva antecipada — cada grupo aproveita o espaço com
-          exclusividade e tranquilidade.
+          Da hospedagem nos chalés às grandes festas. Funcionamos todos os
+          dias, sempre com reserva antecipada — cada grupo aproveita o espaço
+          com exclusividade e tranquilidade.
         </p>
       </div>
 

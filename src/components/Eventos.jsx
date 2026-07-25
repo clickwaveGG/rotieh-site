@@ -1,4 +1,4 @@
-import { IMG, OCASIOES, selecionarModalidade } from '../data.js'
+import { IMG, OCASIOES, CASAMENTO_FOTOS, FESTA_FOTOS, selecionarModalidade } from '../data.js'
 import { Sw, Label, Num, Frame, Oval } from './ui.jsx'
 
 // Carro-chefe do Rotieh: casamentos, aniversários e festas em geral.
@@ -8,7 +8,7 @@ const FICHA = [
   ['Exclusividade', 'O espaço inteiro, só do seu grupo'],
   ['Horários', 'Diária 8h às 17h · noite opcional'],
   ['Capacidade', 'Até 100 convidados — ou mais'],
-  ['Hospedagem', 'Quartos p/ noivos e convidados'],
+  ['Hospedagem', 'Chalés p/ noivos e convidados'],
 ]
 
 export default function Eventos() {
@@ -77,6 +77,38 @@ export default function Eventos() {
               <Oval href="#modalidades">Ver todas as modalidades</Oval>
             </div>
           </div>
+        </div>
+
+        {/* Galerias reais — pedido da cliente: mostrar o espaço ornamentado
+            e as festas que o Rotieh já recebeu */}
+        <div className="mt-20 grid gap-14 md:grid-cols-2 md:gap-16">
+          {[
+            ['Casamentos no Rotieh', 'O espaço ornamentado do altar à mesa de doces', CASAMENTO_FOTOS],
+            ['Festas & 15 anos', 'Pista de dança, fogos frios e bolos de festa', FESTA_FOTOS],
+          ].map(([titulo, sub, fotos]) => (
+            <div key={titulo}>
+              <div className="flex items-baseline justify-between gap-4 border-b border-bark/15 pb-4">
+                <h3 className="font-display text-2xl uppercase tracking-[0.03em] text-bark md:text-3xl">
+                  {titulo}
+                </h3>
+                <span className="hidden text-right text-[10px] font-medium uppercase tracking-[0.2em] text-bark/45 md:block">
+                  {sub}
+                </span>
+              </div>
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                {fotos.map(([src, alt]) => (
+                  <div key={src} className="overflow-hidden">
+                    <img
+                      src={src}
+                      alt={alt}
+                      loading="lazy"
+                      className="h-56 w-full object-cover transition duration-500 hover:scale-105 md:h-72"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
