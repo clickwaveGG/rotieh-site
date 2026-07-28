@@ -2,13 +2,13 @@ import { IMG, OCASIOES, CASAMENTO_FOTOS, FESTA_FOTOS, selecionarModalidade } fro
 import { Sw, Label, Num, Frame, Oval } from './ui.jsx'
 
 // Carro-chefe do Rotieh: casamentos, aniversários e festas em geral.
-// Sem preços no site — valores na conversa do WhatsApp, após o pré-atendimento.
+// Preços públicos desde a Story 1.7 — a ficha abre com o valor da diária.
 
 const FICHA = [
-  ['Exclusividade', 'O espaço inteiro, só do seu grupo'],
-  ['Horários', 'Diária 8h às 17h · noite opcional'],
-  ['Capacidade', 'Até 100 convidados — ou mais'],
-  ['Hospedagem', 'Chalés p/ noivos e convidados'],
+  ['Diária', 'R$ 2.000 — 8h às 17h'],
+  ['Noite adicional', 'R$ 1.000 — 18h às 8h'],
+  ['Capacidade', 'Até 100 convidados · + R$ 20 p/ pessoa'],
+  ['Hospedagem', 'Chalés p/ noivos e convidados: R$ 150'],
 ]
 
 export default function Eventos() {
@@ -39,7 +39,7 @@ export default function Eventos() {
               />
             </Frame>
 
-            {/* ficha do produto — sem valores; detalhes na conversa */}
+            {/* ficha do produto com os valores da locação */}
             <dl className="mt-8 border-t border-teal/15">
               {FICHA.map(([k, v]) => (
                 <div key={k} className="flex items-baseline justify-between gap-4 border-b border-teal/15 py-3.5">
@@ -51,8 +51,7 @@ export default function Eventos() {
               ))}
             </dl>
             <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] text-teal/45">
-              Conte seu plano no pré-atendimento — a equipe responde com tudo no
-              WhatsApp
+              Camping incluso · datas especiais a equipe confirma no WhatsApp
             </p>
           </div>
 
@@ -72,7 +71,7 @@ export default function Eventos() {
             </ul>
             <div className="mt-9 flex flex-wrap gap-4">
               <Oval href="#reserva" solid onClick={() => selecionarModalidade('evento')}>
-                Saber mais
+                Montar reserva
               </Oval>
               <Oval href="#modalidades">Ver todas as modalidades</Oval>
             </div>
