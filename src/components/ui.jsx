@@ -9,9 +9,9 @@ export function Sw({ children }) {
 }
 
 /** Label de seção: ( TEXTO ) com parênteses elegantes */
-export function Label({ children, tone = 'bark' }) {
+export function Label({ children, tone = 'teal' }) {
   const tones = {
-    bark: 'text-bark/60',
+    teal: 'text-teal/60',
     cream: 'text-cream/70',
     gold: 'text-gold',
   }
@@ -29,10 +29,10 @@ export function Oval({ href, children, dark, solid, target, onClick, className =
   const base =
     'inline-flex items-center justify-center gap-3 rounded-[50%_50%_50%_50%/100%_100%_100%_100%] rounded-full px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] transition'
   const look = solid
-    ? 'bg-bark text-cream hover:bg-bark-2'
+    ? 'bg-teal text-cream hover:bg-teal-deep'
     : dark
-      ? 'border border-cream/40 text-cream hover:bg-cream hover:text-bark'
-      : 'border border-bark/40 text-bark hover:bg-bark hover:text-cream'
+      ? 'border border-cream/40 text-cream hover:bg-cream hover:text-teal'
+      : 'border border-teal/40 text-teal hover:bg-teal hover:text-cream'
   return (
     <a
       href={href}
@@ -56,8 +56,8 @@ export function Arrow({ className = 'h-4 w-4', flip }) {
 }
 
 /** Moldura com cantoneiras nos 4 cantos (fotos do carrossel da referência) */
-export function Frame({ children, tone = 'bark', pad = 'p-3 md:p-4', className = '' }) {
-  const line = tone === 'cream' ? 'border-cream/50' : 'border-bark/40'
+export function Frame({ children, tone = 'teal', pad = 'p-3 md:p-4', className = '' }) {
+  const line = tone === 'cream' ? 'border-cream/50' : 'border-teal/40'
   const corner = `absolute h-5 w-5 ${line}`
   return (
     <div className={`relative ${pad} ${className}`}>
@@ -71,9 +71,9 @@ export function Frame({ children, tone = 'bark', pad = 'p-3 md:p-4', className =
 }
 
 /** Número editorial: ( 1 ) */
-export function Num({ n, tone = 'bark' }) {
+export function Num({ n, tone = 'teal' }) {
   return (
-    <span className={`whitespace-nowrap font-display text-base italic ${tone === 'cream' ? 'text-cream/70' : 'text-bark/60'}`}>
+    <span className={`whitespace-nowrap font-display text-base italic ${tone === 'cream' ? 'text-cream/70' : 'text-teal/60'}`}>
       (&#8239;{n}&#8239;)
     </span>
   )

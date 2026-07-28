@@ -4,13 +4,17 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
 
-  /* Paleta editorial (ref. premium residences) */
+  /* Paleta da marca — derivada da logo oficial (public/logo.png).
+     Os valores teal saem da amostragem do traço da logo; ver Story 1.6. */
   --color-cream: #FAF3E0;
   --color-cream-2: #F1E6CC;
-  --color-bark: #584C3F;
-  --color-bark-2: #3E342A;
-  --color-olive: #8A8A5C;
-  --color-olive-deep: #6E6E46;
+
+  /* Teal: cor do traço da logo (casa, palmeira, wordmark) */
+  --color-teal: #186569;        /* medido na logo — texto e UI principal */
+  --color-teal-deep: #0E4147;   /* escurecido — fundos escuros, footer */
+  --color-teal-soft: #4C8489;   /* traço claro da logo (#387A84) */
+
+  /* Âmbar: cor do sol da logo */
   --color-gold: #C9982F;
   --color-gold-deep: #A87C1E;
 
@@ -29,10 +33,10 @@ html {
 }
 
 body {
-  @apply bg-cream text-bark font-sans antialiased;
+  @apply bg-cream text-teal font-sans antialiased;
 }
 
 ::selection {
-  background: var(--color-bark);
+  background: var(--color-teal);
   color: var(--color-cream);
 }

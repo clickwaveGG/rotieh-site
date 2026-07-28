@@ -88,7 +88,7 @@ export default function GaleriaZoom() {
   if (reduceMotion) return <GaleriaEstatica />
 
   return (
-    <section aria-label="Galeria do Rotieh" ref={container} className="relative h-[300vh] bg-bark-2">
+    <section aria-label="Galeria do Rotieh" ref={container} className="relative h-[300vh] bg-teal-deep">
       <div className="sticky top-0 h-screen overflow-hidden">
         {FOTOS.map((foto, index) => (
           <motion.div
@@ -118,7 +118,7 @@ export default function GaleriaZoom() {
         {/* revelação final: frase + atalhos pras próximas seções */}
         <motion.div
           style={{ opacity: finalOpacity, pointerEvents: finalPointer }}
-          className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-bark-2 via-bark-2/40 to-transparent px-6 pb-16 text-center md:pb-24"
+          className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-teal-deep via-teal-deep/40 to-transparent px-6 pb-16 text-center md:pb-24"
         >
           <motion.div style={{ y: finalY }} className="flex flex-col items-center">
             <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( O Rotieh inteiro )</span>
@@ -132,7 +132,7 @@ export default function GaleriaZoom() {
                 <a
                   key={href}
                   href={href}
-                  className="rounded-full border border-cream/40 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:border-cream hover:bg-cream hover:text-bark"
+                  className="rounded-full border border-cream/40 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:border-cream hover:bg-cream hover:text-teal"
                 >
                   {label}
                 </a>
@@ -148,7 +148,7 @@ export default function GaleriaZoom() {
 // Fallback acessível: grid simples pra quem prefere menos movimento
 function GaleriaEstatica() {
   return (
-    <section aria-label="Galeria do Rotieh" className="bg-bark-2 px-6 py-16 md:py-24">
+    <section aria-label="Galeria do Rotieh" className="bg-teal-deep px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( O Rotieh inteiro )</span>
         <h2 className="mt-4 max-w-3xl font-display text-4xl uppercase leading-[1.05] tracking-[0.03em] text-cream md:text-6xl">O dia de piscina é só o começo</h2>
@@ -168,7 +168,7 @@ function GaleriaEstatica() {
             <a
               key={href}
               href={href}
-              className="rounded-full border border-cream/40 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:border-cream hover:bg-cream hover:text-bark"
+              className="rounded-full border border-cream/40 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:border-cream hover:bg-cream hover:text-teal"
             >
               {label}
             </a>

@@ -87,7 +87,7 @@ export default function Questionario() {
   const msg = linhas.join('\n')
 
   return (
-    <section id="reserva" className="bg-bark-2 py-20 md:py-28">
+    <section id="reserva" className="bg-teal-deep py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center text-center">
           <Label tone="gold">Monte sua reserva</Label>
@@ -117,7 +117,7 @@ export default function Questionario() {
                   onClick={() => setModo(m.id)}
                   className={`border px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-[0.2em] transition ${
                     modo === m.id
-                      ? 'border-gold bg-gold text-bark-2'
+                      ? 'border-gold bg-gold text-teal-deep'
                       : 'border-cream/30 text-cream/80 hover:border-cream/60'
                   }`}
                 >
@@ -131,7 +131,7 @@ export default function Questionario() {
                   <select
                     value={tipoEvento}
                     onChange={(e) => setTipoEvento(e.target.value)}
-                    className={inp + ' appearance-none [&>option]:text-bark'}
+                    className={inp + ' appearance-none [&>option]:text-teal'}
                   >
                     {TIPOS_EVENTO.map((t) => (
                       <option key={t}>{t}</option>
@@ -159,7 +159,7 @@ export default function Questionario() {
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {modo === 'quartos' && (
                 <Campo label="Quantos quartos? (10 disponíveis)">
-                  <select value={quartos} onChange={(e) => setQuartos(e.target.value)} className={inp + ' appearance-none [&>option]:text-bark'}>
+                  <select value={quartos} onChange={(e) => setQuartos(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
                     {['1','2','3','4','5','6','7','8','9','10 (espaço exclusivo)'].map((n) => <option key={n}>{n}</option>)}
                   </select>
                 </Campo>
@@ -173,7 +173,7 @@ export default function Questionario() {
                   >
                     {pernoite ? 'Sim — com adicional noturno' : 'Não — só o dia (8h às 17h)'}
                     <span className={`ml-3 inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition ${pernoite ? 'justify-end border-gold bg-gold' : 'justify-start border-cream/40'}`}>
-                      <span className={`mx-0.5 h-3.5 w-3.5 rounded-full ${pernoite ? 'bg-bark-2' : 'bg-cream/60'}`} />
+                      <span className={`mx-0.5 h-3.5 w-3.5 rounded-full ${pernoite ? 'bg-teal-deep' : 'bg-cream/60'}`} />
                     </span>
                   </button>
                 </Campo>
@@ -184,7 +184,7 @@ export default function Questionario() {
                 </Campo>
               )}
               <Campo label="Alimentação">
-                <select value={alimentacao} onChange={(e) => setAlimentacao(e.target.value)} className={inp + ' appearance-none [&>option]:text-bark'}>
+                <select value={alimentacao} onChange={(e) => setAlimentacao(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
                   {ALIMENTACAO.map((a) => <option key={a}>{a}</option>)}
                 </select>
               </Campo>
@@ -202,7 +202,7 @@ export default function Questionario() {
                   onClick={() => toggleExtra(e)}
                   className={`rounded-full border px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] transition ${
                     extras.includes(e)
-                      ? 'border-gold bg-gold text-bark-2'
+                      ? 'border-gold bg-gold text-teal-deep'
                       : 'border-cream/30 text-cream/75 hover:border-cream/60'
                   }`}
                 >
@@ -234,7 +234,7 @@ export default function Questionario() {
               href={wa(msg)}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gold px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-bark-2 transition hover:bg-cream"
+              className="mt-6 inline-flex items-center justify-center gap-3 rounded-full bg-gold px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-teal-deep transition hover:bg-cream"
             >
               Enviar no WhatsApp
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">

@@ -13,7 +13,7 @@ export default function Hero() {
         />
       </picture>
       {/* grade quente estilo editorial */}
-      <div className="absolute inset-0 bg-gradient-to-b from-bark-2/55 via-bark-2/10 to-bark-2/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-deep/55 via-teal-deep/10 to-teal-deep/60" />
 
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center">
         <span className="inline-flex items-baseline gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-cream/90 md:text-[11px]">
