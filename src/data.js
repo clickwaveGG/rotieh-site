@@ -231,7 +231,7 @@ export const ESTRUTURA = [
   {
     grupo: 'Infraestrutura',
     itens: [
-      '10 quartos para hospedagem',
+      '10 chalés para hospedagem',
       '18 banheiros pelo espaço',
       'Área destinada ao camping',
     ],
@@ -301,18 +301,18 @@ export const EXPERIENCIAS = [
 export const FAQ = [
   {
     q: 'Posso pagar só a entrada e passar o dia?',
-    a: 'No momento não trabalhamos com entrada individual. O espaço funciona com reserva de quartos, locação completa ou camping avulso — assim cada grupo aproveita com tranquilidade e exclusividade.',
+    a: 'No momento não trabalhamos com entrada individual. O espaço funciona com reserva de chalés, locação completa ou camping avulso — assim cada grupo aproveita com tranquilidade e exclusividade.',
   },
   {
     q: 'Quais os dias e horários de funcionamento?',
     a: 'Funcionamos todos os dias, sem exceção — sempre com reserva antecipada. Na locação completa, a diária vai das 8h às 17h, com adicional noturno das 18h às 8h.',
   },
   {
-    q: 'Como funciona o check-in dos quartos?',
+    q: 'Como funciona o check-in dos chalés?',
     a: 'Você escolhe o horário de entrada e a diária vale 24 horas. Entrou às 15h, sai às 15h do dia seguinte — vale também para estadias mais longas.',
   },
   {
-    q: 'A diária do quarto inclui café da manhã?',
+    q: 'A diária do chalé inclui café da manhã?',
     a: 'Não — o Rotieh não opera no formato tradicional de hotelaria. O restaurante do espaço serve café da manhã, almoço, jantar, lanches, sorvetes, açaís e bebidas, vendidos à parte.',
   },
   {
@@ -321,11 +321,11 @@ export const FAQ = [
   },
   {
     q: 'Quantas pessoas cabem na locação completa?',
-    a: 'A diária cobre até 100 pessoas. Passando disso, é cobrado R$ 20 por pessoa adicional.',
+    a: 'A estrutura comporta até 1.000 pessoas. A diária cobre até 100 — acima disso, o valor acompanha o tamanho do grupo (R$ 20 por pessoa adicional). É só alinhar com a equipe na hora da reserva.',
   },
   {
-    q: 'Como funcionam os quartos na locação completa?',
-    a: 'Os quartos são opcionais: R$ 150 por quarto durante a locação — perfeitos pra noivos, aniversariantes e convidados que ficam. E quem preferir pode acampar em barracas, sem custo por barraca.',
+    q: 'Como funcionam os chalés na locação completa?',
+    a: 'Os chalés são opcionais: R$ 150 por chalé durante a locação — perfeitos pra noivos, aniversariantes e pra quem quer viver a experiência de forma mais prolongada, ficando no espaço depois que a festa acaba. E quem preferir pode acampar em barracas, sem custo por barraca.',
   },
   {
     q: 'Quanto custa cada modalidade?',

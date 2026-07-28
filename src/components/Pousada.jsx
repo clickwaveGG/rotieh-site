@@ -42,7 +42,7 @@ export default function Pousada() {
             {[
               ['Diária (24h)', `${QUARTO.preco}*`],
               ['Fechando os 10', `${QUARTO.precoGrupo} cada`],
-              ['Capacidade', QUARTO.capacidade],
+              ['Chalés', `${QUARTO.total} disponíveis`],
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
               <div key={k}>

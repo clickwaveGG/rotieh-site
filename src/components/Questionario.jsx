@@ -10,7 +10,7 @@ import { Sw, Label } from './ui.jsx'
 const MODOS = [
   { id: 'evento', label: 'Casamento, aniversário ou festa' },
   { id: 'locacao', label: 'Locação completa do espaço' },
-  { id: 'quartos', label: 'Chalé / quartos' },
+  { id: 'quartos', label: 'Reserva de chalés' },
   { id: 'camping', label: 'Camping avulso' },
 ]
 
@@ -75,7 +75,7 @@ export default function Questionario() {
     nome && `• Nome: ${nome}`,
     entrada && `• Chegada: ${fmt(entrada)}${saida ? ` · Saída: ${fmt(saida)}` : ''}`,
     pessoas && `• Pessoas: ±${pessoas}`,
-    modo === 'quartos' && `• Quartos: ${quartos}`,
+    modo === 'quartos' && `• Chalés: ${quartos}`,
     (modo === 'locacao' || modo === 'evento') && `• Pernoite (18h às 8h): ${pernoite ? 'sim' : 'não'}`,
     modo === 'camping' && `• Barracas: ${barracas}`,
     `• Alimentação: ${alimentacao}`,
@@ -159,7 +159,7 @@ export default function Questionario() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {modo === 'quartos' && (
-                <Campo label="Quantos quartos? (10 disponíveis)">
+                <Campo label="Quantos chalés? (10 disponíveis)">
                   <select value={quartos} onChange={(e) => setQuartos(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
                     {['1','2','3','4','5','6','7','8','9','10 (espaço exclusivo)'].map((n) => <option key={n}>{n}</option>)}
                   </select>
