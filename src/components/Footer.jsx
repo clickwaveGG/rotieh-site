@@ -3,7 +3,7 @@ import { Sw } from './ui.jsx'
 
 export default function Footer() {
   return (
-    <footer className="bg-bark-2 px-6 pb-10 pt-16 text-cream md:px-12 md:pt-24">
+    <footer className="bg-teal-deep px-6 pb-10 pt-16 text-cream md:px-12 md:pt-24">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 border-b border-cream/15 pb-14 md:grid-cols-[1.3fr_2fr]">
           <div>

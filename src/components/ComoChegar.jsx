@@ -16,24 +16,24 @@ export default function ComoChegar() {
         </Frame>
         <div>
           <Label>Como chegar</Label>
-          <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-6xl">
+          <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-6xl">
             No centro d<Sw>a</Sw>
             <br />
             regi<Sw>ã</Sw>o
           </h2>
-          <p className="mt-6 max-w-md text-sm leading-relaxed text-bark/70">
+          <p className="mt-6 max-w-md text-sm leading-relaxed text-teal/70">
             Zona rural de América Dourada — BA, com acesso fácil pelas
             principais estradas da microrregião de Irecê. Vem de carro, moto ou
             excursão.
           </p>
 
-          <dl className="mt-8 border-t border-bark/15">
+          <dl className="mt-8 border-t border-teal/15">
             {DISTANCIAS.map(([cidade, dist]) => (
-              <div key={cidade} className="flex items-baseline justify-between border-b border-bark/15 py-3.5">
-                <dt className="text-[13px] font-medium uppercase tracking-[0.15em] text-bark">
+              <div key={cidade} className="flex items-baseline justify-between border-b border-teal/15 py-3.5">
+                <dt className="text-[13px] font-medium uppercase tracking-[0.15em] text-teal">
                   {cidade}
                 </dt>
-                <dd className="font-display text-sm italic text-bark/60">{dist}</dd>
+                <dd className="font-display text-sm italic text-teal/60">{dist}</dd>
               </div>
             ))}
           </dl>

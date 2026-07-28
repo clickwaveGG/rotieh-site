@@ -12,10 +12,10 @@ export default function Pousada() {
     <section id="pousada" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
       <div className="flex flex-col items-center text-center">
         <Label>Chalés</Label>
-        <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
+        <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
           Acorde no <Sw>o</Sw>ásis
         </h2>
-        <p className="mt-5 max-w-lg text-sm leading-relaxed text-bark/70">
+        <p className="mt-5 max-w-lg text-sm leading-relaxed text-teal/70">
           Alugue um chalé e acorde aqui: são 10 chalés com diária de 24 horas
           a partir do check-in que você escolher — e acesso completo a piscina,
           lounges, redários e toda a estrutura do espaço.
@@ -30,15 +30,15 @@ export default function Pousada() {
             alt="Chalé do Rotieh"
             className="h-80 w-full object-cover md:h-[560px]"
           />
-          <span className="absolute bottom-4 left-4 bg-cream/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-bark">
+          <span className="absolute bottom-4 left-4 bg-cream/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal">
             {String(i + 1).padStart(2, '0')} / {String(fotos.length).padStart(2, '0')}
           </span>
         </div>
 
-        <div className="flex flex-col border border-bark/15 bg-cream p-8 md:border-l-0 md:p-10">
-          <h3 className="font-display text-3xl text-bark md:text-4xl">Chalé Rotieh</h3>
+        <div className="flex flex-col border border-teal/15 bg-cream p-8 md:border-l-0 md:p-10">
+          <h3 className="font-display text-3xl text-teal md:text-4xl">Chalé Rotieh</h3>
 
-          <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-bark/15 py-5">
+          <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-teal/15 py-5">
             {[
               ['Diária', '24 horas completas'],
               ['Chalés', `${QUARTO.total} disponíveis*`],
@@ -46,21 +46,21 @@ export default function Pousada() {
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
               <div key={k}>
-                <dt className="text-[10px] font-semibold uppercase tracking-[0.25em] text-bark/50">{k}</dt>
-                <dd className="mt-1 text-sm font-medium text-bark">{v}</dd>
+                <dt className="text-[10px] font-semibold uppercase tracking-[0.25em] text-teal/50">{k}</dt>
+                <dd className="mt-1 text-sm font-medium text-teal">{v}</dd>
               </div>
             ))}
           </dl>
 
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
             {QUARTO.estrutura.map((item) => (
-              <li key={item} className="text-[11px] font-medium uppercase tracking-[0.18em] text-bark/60">
+              <li key={item} className="text-[11px] font-medium uppercase tracking-[0.18em] text-teal/60">
                 {item}
               </li>
             ))}
           </ul>
 
-          <p className="mt-5 text-[13px] leading-relaxed text-bark/70">
+          <p className="mt-5 text-[13px] leading-relaxed text-teal/70">
             Reservando os 10 chalés, a estrutura fica exclusiva pro seu grupo —
             perfeito pra famílias e turmas de amigos. Café da manhã e refeições
             à parte no restaurante do espaço, ou traga seus alimentos.
@@ -74,14 +74,14 @@ export default function Pousada() {
               <button
                 onClick={prev}
                 aria-label="Foto anterior"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-teal/30 text-teal transition hover:bg-teal hover:text-cream"
               >
                 <Arrow flip className="h-4 w-4" />
               </button>
               <button
                 onClick={next}
                 aria-label="Próxima foto"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-teal/30 text-teal transition hover:bg-teal hover:text-cream"
               >
                 <Arrow className="h-4 w-4" />
               </button>
@@ -89,7 +89,7 @@ export default function Pousada() {
           </div>
         </div>
       </div>
-      <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-bark/40">
+      <p className="mt-4 text-[10px] uppercase tracking-[0.2em] text-teal/40">
         *Em breve também chalés família, triplos e com camas individuais
       </p>
     </section>

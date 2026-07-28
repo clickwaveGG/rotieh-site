@@ -13,7 +13,7 @@ export default function Experiencias() {
         <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <Label>Experiências</Label>
-            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-bark md:text-7xl">
+            <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
               Um dia não d<Sw>á</Sw>
               <br />
               pra viver tud<Sw>o</Sw>
@@ -23,14 +23,14 @@ export default function Experiencias() {
             <button
               onClick={() => scroll(-1)}
               aria-label="Anterior"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-teal/30 text-teal transition hover:bg-teal hover:text-cream"
             >
               <Arrow flip className="h-4 w-4" />
             </button>
             <button
               onClick={() => scroll(1)}
               aria-label="Próximo"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-bark/30 text-bark transition hover:bg-bark hover:text-cream"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-teal/30 text-teal transition hover:bg-teal hover:text-cream"
             >
               <Arrow className="h-4 w-4" />
             </button>
@@ -53,14 +53,14 @@ export default function Experiencias() {
               />
               <figcaption className="pt-4">
                 <div className="flex items-baseline justify-between">
-                  <h3 className="text-[13px] font-semibold uppercase tracking-[0.15em] text-bark">
+                  <h3 className="text-[13px] font-semibold uppercase tracking-[0.15em] text-teal">
                     {e.titulo}
                   </h3>
-                  <span className="font-display text-xs italic text-bark/50">
+                  <span className="font-display text-xs italic text-teal/50">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <p className="mt-1.5 text-xs leading-relaxed text-bark/60">{e.desc}</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-teal/60">{e.desc}</p>
               </figcaption>
             </figure>
           </Frame>

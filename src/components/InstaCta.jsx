@@ -10,7 +10,7 @@ export default function InstaCta() {
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-bark-2/45" />
+      <div className="absolute inset-0 bg-teal-deep/45" />
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
         <span className="inline-flex items-baseline gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-cream/85">
@@ -31,7 +31,7 @@ export default function InstaCta() {
           href={INSTAGRAM}
           target="_blank"
           rel="noreferrer"
-          className="mt-9 inline-flex items-center gap-3 rounded-full border border-cream/50 px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:bg-cream hover:text-bark"
+          className="mt-9 inline-flex items-center gap-3 rounded-full border border-cream/50 px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream backdrop-blur-sm transition hover:bg-cream hover:text-teal"
         >
           <IgIcon />
           Seguir no Instagram

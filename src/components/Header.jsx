@@ -34,7 +34,7 @@ export default function Header() {
             href={wa('Olá! Quero reservar no Rotieh 👋')}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-3 rounded-full border border-white/50 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-white hover:text-bark lg:inline-flex"
+            className="hidden items-center gap-3 rounded-full border border-white/50 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-white hover:text-teal lg:inline-flex"
           >
             Reservar
             <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -57,13 +57,13 @@ export default function Header() {
       {open && (
         <div className="fixed inset-0 z-50 flex flex-col bg-cream px-6 py-6">
           <div className="flex items-center justify-between">
-            <span className="font-display text-2xl uppercase tracking-[0.18em] text-bark">
+            <span className="font-display text-2xl uppercase tracking-[0.18em] text-teal">
               R<Sw>o</Sw>tieh
             </span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Fechar menu"
-              className="flex h-11 w-11 items-center justify-center text-bark"
+              className="flex h-11 w-11 items-center justify-center text-teal"
             >
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
                 <path d="M6 6l12 12M18 6L6 18" />
@@ -71,7 +71,7 @@ export default function Header() {
             </button>
           </div>
 
-          <nav className="mt-10 flex flex-col divide-y divide-bark/10 border-y border-bark/10">
+          <nav className="mt-10 flex flex-col divide-y divide-teal/10 border-y border-teal/10">
             {NAV.map(([label, href], i) => (
               <a
                 key={href}
@@ -79,8 +79,8 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 className="flex items-baseline justify-between py-5"
               >
-                <span className="font-display text-3xl text-bark">{label}</span>
-                <span className="whitespace-nowrap font-display text-sm italic text-bark/50">(&#8239;{String(i + 1).padStart(2, '0')}&#8239;)</span>
+                <span className="font-display text-3xl text-teal">{label}</span>
+                <span className="whitespace-nowrap font-display text-sm italic text-teal/50">(&#8239;{String(i + 1).padStart(2, '0')}&#8239;)</span>
               </a>
             ))}
           </nav>
@@ -89,7 +89,7 @@ export default function Header() {
             href={wa('Olá! Quero reservar no Rotieh 👋')}
             target="_blank"
             rel="noreferrer"
-            className="mt-auto inline-flex items-center justify-center gap-3 rounded-full bg-bark px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream"
+            className="mt-auto inline-flex items-center justify-center gap-3 rounded-full bg-teal px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream"
           >
             Reservar no WhatsApp
           </a>

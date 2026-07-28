@@ -9,7 +9,7 @@ const VIVENCIAS = [
 
 export default function Haras() {
   return (
-    <section id="haras" className="bg-bark-2 px-6 pb-20 pt-10 md:pb-28 md:pt-14">
+    <section id="haras" className="bg-teal-deep px-6 pb-20 pt-10 md:pb-28 md:pt-14">
       <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
         <Frame tone="cream">
           <img
