@@ -40,8 +40,8 @@ export default function Pousada() {
 
           <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-teal/15 py-5">
             {[
-              ['Diária', '24 horas completas'],
-              ['Chalés', `${QUARTO.total} disponíveis*`],
+              ['Diária (24h)', `${QUARTO.preco}*`],
+              ['Fechando os 10', `${QUARTO.precoGrupo} cada`],
               ['Capacidade', QUARTO.capacidade],
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
@@ -68,7 +68,7 @@ export default function Pousada() {
 
           <div className="mt-auto flex items-center justify-between pt-8">
             <Oval href="#reserva" onClick={() => selecionarModalidade('quartos')}>
-              Saber mais
+              Reservar chalé
             </Oval>
             <div className="flex items-center gap-2">
               <button

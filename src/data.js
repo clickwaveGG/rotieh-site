@@ -8,7 +8,7 @@ export const wa = (msg) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
 
 // Pré-seleciona a modalidade no questionário (#reserva) — usado pelos
-// botões "Saber mais" dos produtos. O Questionario escuta este evento.
+// botões de reserva dos produtos. O Questionario escuta este evento.
 export const selecionarModalidade = (id) =>
   window.dispatchEvent(new CustomEvent('rotieh:modalidade', { detail: id }))
 
@@ -29,9 +29,11 @@ export const IMG = {
 }
 
 // 10 chalés padronizados. Diária = 24h a partir do check-in escolhido.
-// Política do site: sem preços — valores só no atendimento via WhatsApp.
 // Narrativa: hospedagem pra qualquer perfil — a capacidade é só ficha técnica.
+// Preços públicos desde a Story 1.7 (valores oficiais da cliente, 2026-07-16).
 export const QUARTO = {
+  preco: 'R$ 350',
+  precoGrupo: 'R$ 300',
   total: 10,
   capacidade: 'Até 2 pessoas + criança pequena',
   excecao: 'Casal com 1 criança pequena pode ficar no mesmo chalé',
@@ -132,6 +134,8 @@ export const MODALIDADES = [
     id: 'quartos',
     titulo: 'Chalés Rotieh',
     chamada: 'Hospede-se no oásis',
+    preco: 'R$ 350',
+    sufixo: '/chalé',
     destaque: true,
     resumo:
       'Alugue um chalé e viva o Rotieh no seu ritmo: piscina, natureza e sossego, com diária de 24 horas.',
@@ -140,7 +144,7 @@ export const MODALIDADES = [
       '10 chalés: cama de casal, TV, Wi-Fi, frigobar, ar e banheiro',
       'Acesso completo a piscina, áreas de lazer e natureza',
       'Casal com 1 criança pequena fica no mesmo chalé',
-      'Fechando os 10 chalés, o espaço fica exclusivo pro grupo',
+      'Fechando os 10 chalés: R$ 300 cada + espaço exclusivo',
     ],
     ideal: 'Descanso, férias, comemorações e escapadas da rotina',
   },
@@ -148,15 +152,17 @@ export const MODALIDADES = [
     id: 'evento',
     titulo: 'Casamentos & Festas',
     chamada: 'O espaço inteiro, só seu',
+    preco: 'R$ 2.000',
+    sufixo: '/diária',
     resumo:
       'O espaço completo, com exclusividade, vestido pra celebrar — do altar à festa.',
     itens: [
       'Casamentos, aniversários, 15 anos e formaturas',
       'Batizados, confraternizações e eventos corporativos',
       'Exclusividade total: nenhum outro grupo no espaço',
-      'Diária das 8h às 17h — festa pode avançar a noite',
-      'Até 100 convidados (grupos maiores sob consulta)',
-      'Chalés pra noivos e convidados + camping incluso',
+      'Diária das 8h às 17h — festa avançando a noite: + R$ 1.000',
+      'Até 100 convidados (acima: R$ 20 por pessoa)',
+      'Chalés pra noivos e convidados: R$ 150 cada · camping incluso',
     ],
     ideal: 'O seu grande dia com a paisagem mais bonita da região',
   },
@@ -164,11 +170,13 @@ export const MODALIDADES = [
     id: 'locacao',
     titulo: 'Locação completa',
     chamada: 'Um dia inteiro de exclusividade',
+    preco: 'R$ 2.000',
+    sufixo: '/diária',
     resumo: 'O espaço inteiro reservado pro seu grupo — sem festa marcada, só liberdade.',
     itens: [
-      'Diária das 8h às 17h, com pernoite opcional',
+      'Diária das 8h às 17h · adicional noturno (18h às 8h): R$ 1.000',
       'Piscina, quadras, campo e salão de jogos só pro grupo',
-      'Chalés opcionais e camping em barracas incluso',
+      'Chalés opcionais (R$ 150 cada) e camping em barracas incluso',
       'Restaurante no local ou duas cozinhas à disposição',
     ],
     ideal: 'Retiros, acampamentos, encontros de família e de empresas',
@@ -177,6 +185,8 @@ export const MODALIDADES = [
     id: 'camping',
     titulo: 'Camping avulso',
     chamada: 'Sob o céu do sertão',
+    preco: 'R$ 200',
+    sufixo: '/barraca',
     resumo: 'A experiência de acampar com estrutura completa por perto.',
     itens: [
       'Até 3 pessoas por barraca',
@@ -239,9 +249,9 @@ export const OCASIOES = [
 ]
 
 export const EXTRAS = [
-  ['Passeio a cavalo', 'por pessoa'],
-  ['Ensaio fotográfico externo', 'sob consulta'],
-  ['Ensaio fotográfico interno', 'sob consulta'],
+  ['Passeio a cavalo', 'R$ 30 por pessoa'],
+  ['Ensaio fotográfico externo', 'R$ 400'],
+  ['Ensaio fotográfico interno', 'R$ 600'],
 ]
 
 // Galeria de experiências reais (fotos do Instagram oficial)
@@ -311,19 +321,19 @@ export const FAQ = [
   },
   {
     q: 'Quantas pessoas cabem na locação completa?',
-    a: 'A estrutura recebe até 100 pessoas com folga. Grupos maiores também são bem-vindos — é só alinhar com a equipe na hora da reserva.',
+    a: 'A diária cobre até 100 pessoas. Passando disso, é cobrado R$ 20 por pessoa adicional.',
   },
   {
     q: 'Como funcionam os quartos na locação completa?',
-    a: 'Os quartos são opcionais e reservados à parte durante a locação — perfeitos pra noivos, aniversariantes e convidados que ficam. E quem preferir pode acampar em barracas, já incluso na locação.',
+    a: 'Os quartos são opcionais: R$ 150 por quarto durante a locação — perfeitos pra noivos, aniversariantes e convidados que ficam. E quem preferir pode acampar em barracas, sem custo por barraca.',
   },
   {
     q: 'Quanto custa cada modalidade?',
-    a: 'Os valores variam conforme a modalidade, a data e o tamanho do grupo. Monte sua reserva aqui no site e a equipe responde no WhatsApp com valores e disponibilidade — sem compromisso.',
+    a: 'Chalé: R$ 350 a diária de 24h (R$ 300 cada fechando os 10). Locação completa e eventos: R$ 2.000 a diária das 8h às 17h, com adicional noturno de R$ 1.000. Camping avulso: R$ 200 por barraca. Datas especiais e grupos grandes a equipe confirma no WhatsApp.',
   },
   {
     q: 'Tem algum serviço cobrado à parte?',
-    a: 'O passeio a cavalo e os ensaios fotográficos têm valores próprios — a equipe passa tudo certinho no atendimento pelo WhatsApp.',
+    a: 'Só o passeio a cavalo: R$ 30 por pessoa. Ensaios fotográficos têm valores próprios — R$ 400 (externo) e R$ 600 (ambientes internos).',
   },
 ]
 

@@ -4,7 +4,8 @@ import { Sw, Label } from './ui.jsx'
 
 // Pré-atendimento: o cliente responde as perguntas antes de ir pro
 // WhatsApp — a equipe recebe a mensagem estruturada e o atendimento
-// já começa com as informações principais (valores são passados lá).
+// já começa com as informações principais. Os valores estão no site
+// (Story 1.7); aqui a conversa é sobre data e disponibilidade.
 
 const MODOS = [
   { id: 'evento', label: 'Casamento, aniversário ou festa' },
@@ -55,7 +56,7 @@ export default function Questionario() {
   const toggleExtra = (e) =>
     setExtras((xs) => (xs.includes(e) ? xs.filter((x) => x !== e) : [...xs, e]))
 
-  // Botões "Saber mais" dos produtos pré-selecionam a modalidade aqui
+  // Botões de reserva dos produtos pré-selecionam a modalidade aqui
   useEffect(() => {
     const onModalidade = (e) => {
       if (MODOS.some((m) => m.id === e.detail)) setModo(e.detail)
@@ -99,7 +100,7 @@ export default function Questionario() {
           <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/70">
             Responda rapidinho e a mensagem chega pronta no nosso WhatsApp.
             Com as informações principais em mãos, a equipe já responde com
-            valores, disponibilidade e os próximos passos.
+            disponibilidade, condições da data e os próximos passos.
           </p>
         </div>
 

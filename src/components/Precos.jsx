@@ -1,9 +1,9 @@
 import { MODALIDADES, selecionarModalidade } from '../data.js'
 import { Sw, Label, Num, Oval } from './ui.jsx'
 
-// Modalidades sem preços: cada produto apresenta o que é e o botão
-// "Saber mais" leva ao pré-atendimento (#reserva) com a modalidade
-// já selecionada — valores só na conversa do WhatsApp.
+// Cada produto apresenta título, preço e condições. O botão leva ao
+// pré-atendimento (#reserva) com a modalidade já selecionada — o visitante
+// chega na conversa já sabendo o valor (Story 1.7).
 
 export default function Precos() {
   return (
@@ -41,6 +41,12 @@ export default function Precos() {
             <h3 className="mt-7 font-display text-4xl uppercase leading-[1.05] tracking-[0.02em] text-teal md:text-5xl">
               {m.titulo}
             </h3>
+            <p className="mt-3 flex items-baseline gap-1.5 font-display text-3xl text-teal md:text-4xl">
+              {m.preco}
+              <span className="font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-teal/50">
+                {m.sufixo}
+              </span>
+            </p>
             <p className="mt-3 text-sm leading-relaxed text-teal/70">{m.resumo}</p>
             <ul className="mt-6 flex-1 space-y-2.5 border-t border-teal/15 pt-5">
               {m.itens.map((item) => (
@@ -58,14 +64,14 @@ export default function Precos() {
               className="mt-7 w-fit"
               onClick={() => selecionarModalidade(m.id)}
             >
-              Saber mais
+              Montar reserva
             </Oval>
           </div>
         ))}
       </div>
       <p className="mt-5 text-[10px] uppercase tracking-[0.2em] text-teal/40">
-        Sem entrada individual — o espaço é sempre reservado · Valores direto com a
-        equipe no WhatsApp
+        Sem entrada individual — o espaço é sempre reservado · Datas especiais e
+        grupos grandes, confirme com a equipe
       </p>
     </section>
   )
