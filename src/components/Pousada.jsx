@@ -2,6 +2,9 @@ import { useState } from 'react'
 import { QUARTO, selecionarModalidade } from '../data.js'
 import { Sw, Label, Arrow, Oval } from './ui.jsx'
 
+// O padding superior entrou na Story 1.12: antes a seção vinha logo depois do
+// bloco de resumo e herdava o respiro dele; agora vem depois dos ambientes,
+// que fecham com borda.
 export default function Pousada() {
   const [i, setI] = useState(0)
   const fotos = QUARTO.fotos
@@ -9,7 +12,7 @@ export default function Pousada() {
   const prev = () => setI((i - 1 + fotos.length) % fotos.length)
 
   return (
-    <section id="pousada" className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
+    <section id="pousada" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
       <div className="flex flex-col items-center text-center">
         <Label>Chalés</Label>
         <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
