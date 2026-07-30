@@ -23,8 +23,8 @@ export default function Eventos() {
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-teal/70">
             A Rotieh existe pra isso: o espaço inteiro, com exclusividade, para
             o seu casamento, aniversário, confraternização ou festa. Aqui,
-            natureza, modernidade e sofisticação andam juntas — tudo isso com
-            exclusividade para você e o seu grupo.
+            natureza, modernidade e sofisticação andam juntas. Tudo isso com
+            exclusividade para você e seu grupo.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ export default function Pousada() {
           Acorde no <Sw>r</Sw>efúgio
         </h2>
         <p className="mt-5 max-w-lg text-sm leading-relaxed text-teal/70">
-          Alugue um chalé e acorde aqui: são 10 chalés com diária de 24 horas
+          Reserve um chalé e acorde aqui: são 10 chalés com diária de 24 horas
           a partir do check-in que você escolher — e acesso completo a piscina,
           lounges, redários e toda a estrutura do espaço.
         </p>

@@ -72,7 +72,7 @@ export const AMBIENTES = [
   {
     img: '/fotos/sala-jogos.webp',
     nome: 'Salão de jogos',
-    desc: 'Diversos brinquedos para deixar a diversão ainda mais incrível: sinuca, pebolim, tênis de mesa e muito mais. Sofás para interação, com vista para a área externa e de lazer.',
+    desc: 'Diversos brinquedos para tornar a diversão e o entretenimento ainda mais incríveis: sinuca, pebolim, tênis de mesa e muito mais. Sofás para interação, com vista para a área externa e de lazer.',
   },
   {
     img: '/fotos/quadra-society.webp',
@@ -145,7 +145,7 @@ export const MODALIDADES = [
     sufixo: '/chalé',
     destaque: true,
     resumo:
-      'Alugue um chalé e viva a Rotieh no seu ritmo: piscina, natureza e sossego, com diária de 24 horas.',
+      'Reserve um chalé e viva a Rotieh no seu ritmo: piscina, natureza e sossego, com diária de 24 horas.',
     itens: [
       'Diária de 24h — check-in no horário que você escolher',
       '10 chalés: cama de casal, TV, Wi-Fi, frigobar, ar e banheiro',
