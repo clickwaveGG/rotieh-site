@@ -68,18 +68,24 @@ export default function Footer() {
           R<Sw>o</Sw>tieh
         </p>
 
+        {/* Story 1.10: o atalho pro painel /gestao saiu daqui (o CRM virou
+            projeto proprio) e o selo de prototipo deu lugar ao credito da
+            agencia, no mesmo padrao do site da Vitallis. */}
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-cream/15 pt-6 text-[10px] uppercase tracking-[0.2em] text-cream/45 sm:flex-row">
           <span>© 2026 Rotieh · América Dourada, BA</span>
           <a
-            href="/gestao"
-            className="inline-flex items-center gap-2 font-semibold text-gold transition hover:text-cream"
+            href="https://www.instagram.com/clickwavegg/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 py-1 text-cream/70 transition hover:text-cream"
           >
-            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-              <rect x="4" y="10" width="16" height="10" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" />
+            Produzido por clickwave
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4.2" />
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
             </svg>
-            Área da gerente · demo
           </a>
-          <span>Protótipo — Clickwave</span>
         </div>
       </div>
     </footer>
