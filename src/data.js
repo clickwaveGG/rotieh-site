@@ -1,7 +1,7 @@
-// ⚠️ Contatos ainda de protótipo — WhatsApp e @ do Instagram a confirmar.
 // Valores e regras atualizados com as informações oficiais do cliente (2026-07-16).
 
-export const WHATSAPP = '5574999999999' // TODO: número real do Rotieh
+// WhatsApp oficial informado pela cliente em 2026-07-30: (74) 99912-9999.
+export const WHATSAPP = '5574999129999'
 export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real do Rotieh
 
 export const wa = (msg) =>
