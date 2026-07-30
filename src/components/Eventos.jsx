@@ -97,17 +97,25 @@ export default function Eventos() {
                   {sub}
                 </span>
               </div>
+              {/* Galeria em duas colunas. Com um número ímpar de fotos, a
+                  última ocupa a linha inteira em vez de ficar órfã ao lado de
+                  um vazio (story 1.13). */}
               <div className="mt-6 grid grid-cols-2 gap-4">
-                {fotos.map(([src, alt]) => (
-                  <div key={src} className="overflow-hidden">
-                    <img
-                      src={src}
-                      alt={alt}
-                      loading="lazy"
-                      className="h-56 w-full object-cover transition duration-500 hover:scale-105 md:h-72"
-                    />
-                  </div>
-                ))}
+                {fotos.map(([src, alt], i) => {
+                  const larga = fotos.length % 2 === 1 && i === fotos.length - 1
+                  return (
+                    <div key={src} className={`overflow-hidden ${larga ? 'col-span-2' : ''}`}>
+                      <img
+                        src={src}
+                        alt={alt}
+                        loading="lazy"
+                        className={`w-full object-cover transition duration-500 hover:scale-105 ${
+                          larga ? 'h-56 md:h-64' : 'h-56 md:h-72'
+                        }`}
+                      />
+                    </div>
+                  )
+                })}
               </div>
             </div>
           ))}
