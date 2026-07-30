@@ -123,11 +123,16 @@ export const AMBIENTES = [
 ]
 
 // Galerias de celebrações reais no espaço — fotos enviadas pela cliente.
+// Story 1.13: as três fotos que a cliente enviou substituíram três que não
+// sustentavam a galeria — duas eram de um casal à paisana (camiseta, bermuda e
+// tênis) num banco do jardim, que não lê como casamento, e a terceira era um
+// registro noturno de celular. Os arquivos seguem em public/fotos/ caso o
+// Leonardo queira alguma de volta.
 export const CASAMENTO_FOTOS = [
   ['/fotos/casamento-noiva-veu.webp', 'Noiva diante da mesa de doces no salão ornamentado'],
-  ['/fotos/casamento-casal-jardim.webp', 'Casal de noivos no banco do jardim entre as flores'],
-  ['/fotos/casamento-buque.webp', 'Noiva jogando o buquê na festa à beira da piscina'],
-  ['/fotos/casamento-casal-buque.webp', 'Casal sorrindo com o buquê no jardim da Rotieh'],
+  ['/fotos/casamento-saida-petalas.webp', 'Noivos saindo entre os convidados sob uma chuva de pétalas'],
+  ['/fotos/casamento-altar-entardecer.webp', 'Cerimônia no deck sob a árvore, com o céu alaranjado do fim de tarde'],
+  ['/fotos/casamento-mesa-doces.webp', 'Casal abraçado diante da mesa de doces sob o arranjo suspenso de flores'],
 ]
 
 export const FESTA_FOTOS = [

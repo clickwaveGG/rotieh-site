@@ -78,10 +78,22 @@ const LOTE_HIDRO = {
   ],
 }
 
+// Casamentos reais enviados pela cliente (2026-07-30, story 1.13) para ampliar
+// a galeria da seção de eventos.
+const LOTE_CASAMENTOS = {
+  origem: 'C:/Users/PC/Downloads/drive-download-20260730T223751Z-1-001',
+  fotos: [
+    ['IMG_5507.png', 'casamento-altar-entardecer'], // cerimônia no deck, céu alaranjado
+    ['IMG_5506.png', 'casamento-saida-petalas'], // saída dos noivos entre os convidados
+    ['IMG_5509.png', 'casamento-mesa-doces'], // única paisagem do lote — fecha a galeria
+  ],
+}
+
 // Cada lote carrega a própria pasta de origem; o primeiro aceita override por argv.
 const LOTES = [
   { origem: ORIGEM, fotos: SELECAO },
   LOTE_HIDRO,
+  LOTE_CASAMENTOS,
 ]
 
 mkdirSync(DESTINO, { recursive: true })
