@@ -59,18 +59,20 @@ export const AMBIENTES = [
   },
   {
     img: '/fotos/piscina-guarda-sol.webp',
-    nome: 'Piscina & bar molhado',
-    desc: 'Piscina ampla com espreguiçadeiras, guarda-sóis e bebida servida na água.',
+    nome: 'Piscina, área de lazer e bar molhado',
+    desc: 'Piscina ampla, integrada à área de lazer com espreguiçadeiras, guarda-sóis e uma vista privilegiada.',
   },
   {
+    // A cliente vai enviar a foto do restaurante quando ele estiver pronto —
+    // até lá o card segue com a foto do salão (story 1.9).
     img: '/fotos/salao-restaurante.webp',
-    nome: 'Restaurante & salão',
-    desc: 'Salão coberto com sofás, mesas de madeira e cozinha própria.',
+    nome: 'Restaurante & quiosque',
+    desc: 'Ambientes rústicos ao ar livre, sofisticados e integrados à natureza.',
   },
   {
     img: '/fotos/sala-jogos.webp',
     nome: 'Salão de jogos',
-    desc: 'Sinuca, pebolim e sofás com vista pra área externa.',
+    desc: 'Diversos brinquedos para deixar a diversão ainda mais incrível: sinuca, pebolim, tênis de mesa e muito mais. Sofás para interação, com vista para a área externa e de lazer.',
   },
   {
     img: '/fotos/quadra-society.webp',
@@ -88,29 +90,34 @@ export const AMBIENTES = [
     desc: 'Alameda de redes entre os coqueiros pra tardes sem pressa.',
   },
   {
-    img: '/fotos/hidro-noite.webp',
+    // Foto enviada pela cliente (2026-07-29): ela pediu a banheira em si, não o
+    // redário à noite com a hidro ao fundo.
+    img: '/fotos/hidro-banheira.webp',
     nome: 'Hidromassagem',
-    desc: 'Banheira de hidromassagem ao ar livre sob o céu do sertão.',
+    desc: 'Banheira de hidromassagem para tornar os seus momentos ainda mais relaxantes.',
   },
   {
+    // Pendência declarada pela cliente: falta a foto do parquinho infantil.
     img: '/fotos/casinha-arvore.webp',
-    nome: 'Casinha na árvore',
-    desc: 'Casinha suspensa e parquinho pra criançada gastar energia.',
+    nome: 'Casa na árvore',
+    desc: 'Casa na árvore integrada a parquinho infantil, com vários brinquedos para a diversão das crianças.',
   },
   {
+    // Renomeado a pedido da cliente (story 1.9): a foto é o pergolado com
+    // poltronas, não o picadeiro. O haras tem a sua própria seção no site.
     img: '/fotos/haras-pergolado-cavalo.webp',
-    nome: 'Haras & picadeiro',
-    desc: 'Cavalos pastando, picadeiro e passeios em meio à natureza.',
+    nome: 'Praças de interação em meio à natureza',
+    desc: 'Recantos com poltronas e sombra para conversar sem pressa, de frente para a área dos cavalos.',
   },
   {
     img: '/fotos/festa-deck-decorado.webp',
-    nome: 'Espaço de eventos',
-    desc: 'Deck e salão que se vestem pra casamentos e festas.',
+    nome: 'Espaço para eventos',
+    desc: 'Ambientes amplos e pré-ornamentados, para receber o seu evento e celebração.',
   },
   {
     img: '/fotos/camping-deck.webp',
-    nome: 'Camping',
-    desc: 'Deck pra barracas com toda a estrutura do espaço por perto.',
+    nome: 'Acampamento',
+    desc: 'Toda a estrutura disponível para você montar a sua barraca onde quiser e viver a melhor experiência de camping.',
   },
 ]
 
@@ -133,18 +140,18 @@ export const MODALIDADES = [
   {
     id: 'quartos',
     titulo: 'Chalés Rotieh',
-    chamada: 'Hospede-se no oásis',
+    chamada: 'Reserve um chalé',
     preco: 'R$ 350',
     sufixo: '/chalé',
     destaque: true,
     resumo:
-      'Alugue um chalé e viva o Rotieh no seu ritmo: piscina, natureza e sossego, com diária de 24 horas.',
+      'Alugue um chalé e viva a Rotieh no seu ritmo: piscina, natureza e sossego, com diária de 24 horas.',
     itens: [
       'Diária de 24h — check-in no horário que você escolher',
       '10 chalés: cama de casal, TV, Wi-Fi, frigobar, ar e banheiro',
       'Acesso completo a piscina, áreas de lazer e natureza',
       'Casal com 1 criança pequena fica no mesmo chalé',
-      'Fechando os 10 chalés: R$ 300 cada + espaço exclusivo',
+      'Reservando os 10 chalés: R$ 300 cada + espaço exclusivo',
     ],
     ideal: 'Descanso, férias, comemorações e escapadas da rotina',
   },
@@ -155,14 +162,14 @@ export const MODALIDADES = [
     preco: 'R$ 2.000',
     sufixo: '/diária',
     resumo:
-      'O espaço completo, com exclusividade, vestido pra celebrar — do altar à festa.',
+      'O espaço completo com exclusividade, feito para celebrar do seu jeito, do altar à festa.',
     itens: [
       'Casamentos, aniversários, 15 anos e formaturas',
       'Batizados, confraternizações e eventos corporativos',
       'Exclusividade total: nenhum outro grupo no espaço',
       'Diária das 8h às 17h — festa avançando a noite: + R$ 1.000',
       'Até 100 convidados (acima: R$ 20 por pessoa)',
-      'Chalés pra noivos e convidados: R$ 150 cada · camping incluso',
+      'Chalés pra noivos e convidados: R$ 150 cada · camping incluso na diária noturna',
     ],
     ideal: 'O seu grande dia com a paisagem mais bonita da região',
   },
@@ -172,12 +179,16 @@ export const MODALIDADES = [
     chamada: 'Um dia inteiro de exclusividade',
     preco: 'R$ 2.000',
     sufixo: '/diária',
-    resumo: 'O espaço inteiro reservado pro seu grupo — sem festa marcada, só liberdade.',
+    resumo: 'O espaço inteiro para o seu grupo.',
+    // Lista reescrita pela cliente (story 1.9). Atenção: o acampamento passou a
+    // ser incluso apenas no valor da diária noturna — antes o site dizia
+    // "camping incluso" sem condição.
     itens: [
-      'Diária das 8h às 17h · adicional noturno (18h às 8h): R$ 1.000',
-      'Piscina, quadras, campo e salão de jogos só pro grupo',
-      'Chalés opcionais (R$ 150 cada) e camping em barracas incluso',
-      'Restaurante no local ou duas cozinhas à disposição',
+      'Diária das 08h às 17h (R$ 2.000)',
+      'Diária das 18h às 08h (R$ 1.000)',
+      'Piscina, quadras, campo de futebol e tudo o que o nosso espaço oferece, só para o seu grupo',
+      'Acampamento em barracas incluso no valor da diária noturna · chalés opcionais (R$ 150 cada por noite)',
+      'Restaurante no local ou duas cozinhas à disposição para preparar os alimentos',
     ],
     ideal: 'Retiros, acampamentos, encontros de família e de empresas',
   },
@@ -191,7 +202,7 @@ export const MODALIDADES = [
     itens: [
       'Até 3 pessoas por barraca',
       'Acesso à estrutura do espaço',
-      'Na locação completa, o camping é incluso',
+      'Na diária noturna da locação completa, o camping é incluso',
       'Restaurante e cozinhas de apoio',
     ],
     ideal: 'Quem quer natureza de verdade sem reservar tudo',
@@ -325,11 +336,11 @@ export const FAQ = [
   },
   {
     q: 'Como funcionam os chalés na locação completa?',
-    a: 'Os chalés são opcionais: R$ 150 por chalé durante a locação — perfeitos pra noivos, aniversariantes e pra quem quer viver a experiência de forma mais prolongada, ficando no espaço depois que a festa acaba. E quem preferir pode acampar em barracas, sem custo por barraca.',
+    a: 'Os chalés são opcionais: R$ 150 por chalé durante a locação — perfeitos pra noivos, aniversariantes e pra quem quer viver a experiência de forma mais prolongada, ficando no espaço depois que a festa acaba. E quem preferir pode acampar em barracas, sem custo por barraca quando a reserva inclui a diária noturna.',
   },
   {
     q: 'Quanto custa cada modalidade?',
-    a: 'Chalé: R$ 350 a diária de 24h (R$ 300 cada fechando os 10). Locação completa e eventos: R$ 2.000 a diária das 8h às 17h, com adicional noturno de R$ 1.000. Camping avulso: R$ 200 por barraca. Datas especiais e grupos grandes a equipe confirma no WhatsApp.',
+    a: 'Chalé: R$ 350 a diária de 24h (R$ 300 cada reservando os 10). Locação completa e eventos: R$ 2.000 a diária das 8h às 17h, com adicional noturno de R$ 1.000. Camping avulso: R$ 200 por barraca. Datas especiais e grupos grandes a equipe confirma no WhatsApp.',
   },
   {
     q: 'Tem algum serviço cobrado à parte?',

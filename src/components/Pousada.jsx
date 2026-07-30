@@ -41,7 +41,7 @@ export default function Pousada() {
           <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-teal/15 py-5">
             {[
               ['Diária (24h)', `${QUARTO.preco}*`],
-              ['Fechando os 10', `${QUARTO.precoGrupo} cada`],
+              ['Reservando os 10', `${QUARTO.precoGrupo} cada`],
               ['Chalés', `${QUARTO.total} disponíveis`],
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
@@ -60,10 +60,13 @@ export default function Pousada() {
             ))}
           </ul>
 
+          {/* A ressalva "já preparados" é da cliente: nesta modalidade as
+              cozinhas não ficam disponíveis (story 1.9). */}
           <p className="mt-5 text-[13px] leading-relaxed text-teal/70">
             Reservando os 10 chalés, a estrutura fica exclusiva pro seu grupo —
             perfeito pra famílias e turmas de amigos. Café da manhã e refeições
-            à parte no restaurante do espaço, ou traga seus alimentos.
+            à parte no restaurante do espaço, ou traga os seus alimentos já
+            preparados.
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-8">

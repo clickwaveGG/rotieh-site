@@ -11,12 +11,13 @@ export default function Ambientes() {
         <div className="flex flex-col items-center text-center">
           <Label>Os Ambientes</Label>
           <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
-            Um mundo pra <Sw>e</Sw>xplorar
+            Um mundo para <Sw>e</Sw>xplorar
           </h2>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-teal/70">
-            O Rotieh é feito de muitos cantos: dos chalés à hidromassagem, da
-            quadra ao redário. Conheça cada ambiente — todos inclusos pra quem
-            se hospeda ou reserva o espaço.
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-teal/70">
+            Da piscina aos redários, da hidromassagem às quadras esportivas,
+            cada ambiente foi pensado para proporcionar conforto, lazer e
+            momentos especiais. Tudo isso está disponível para quem se hospeda
+            ou reserva toda a estrutura.
           </p>
         </div>
 
@@ -54,7 +55,8 @@ export default function Ambientes() {
           />
           <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-3 bg-gradient-to-t from-teal-deep/80 to-transparent px-6 pb-5 pt-16 md:px-8">
             <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-cream/85">
-              O complexo visto de cima — piscina, quadra, picadeiros e chalés
+              Toda a nossa estrutura vista de cima: ambientes diversificados,
+              lazer, diversão e descanso para todas as idades e momentos
             </span>
           </div>
         </div>

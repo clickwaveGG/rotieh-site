@@ -12,9 +12,9 @@ export default function Precos() {
         <div>
           <Label>Reservas</Label>
           <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
-            Quatro jeitos de
+            Quatro maneiras
             <br />
-            viver <Sw>o</Sw> Rotieh
+            de viver <Sw>a</Sw> Rotieh
           </h2>
         </div>
         <p className="max-w-xs text-sm leading-relaxed text-teal/60">
@@ -34,8 +34,10 @@ export default function Precos() {
           >
             <div className="flex items-baseline justify-between gap-3">
               <Num n={idx + 1} />
+              {/* O rótulo é sempre a chamada do produto: "Carro-chefe" era
+                  jargão interno e a cliente pediu um convite no lugar. */}
               <span className="text-right text-[10px] font-semibold uppercase tracking-[0.3em] text-teal/50">
-                {m.destaque ? 'Carro-chefe' : m.convite ? 'Você é bem-vindo' : m.chamada}
+                {m.chamada}
               </span>
             </div>
             <h3 className="mt-7 font-display text-4xl uppercase leading-[1.05] tracking-[0.02em] text-teal md:text-5xl">

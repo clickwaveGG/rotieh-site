@@ -9,9 +9,9 @@ export default function Parque() {
           <Label>A Estrutura</Label>
           <div>
             <h2 className="font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
-              O que o sertão
+              O que o nosso
               <br />
-              <Sw>o</Sw>ferece?
+              refúgio <Sw>o</Sw>ferece
             </h2>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-teal/70">
               Um destino completo em meio à natureza: piscina com bar molhado,

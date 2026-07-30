@@ -66,21 +66,43 @@ const SELECAO = [
   ['IMG_0494.jpg', 'casal-jardim-chales'],
 ]
 
+// Envio complementar da cliente (2026-07-29, story 1.9): ela pediu que o card de
+// hidromassagem mostrasse a banheira em si — a foto antiga (hidro-noite) mostrava
+// o redário à noite com a banheira ao fundo. Pasta de origem própria.
+const LOTE_HIDRO = {
+  origem: 'C:/Users/PC/Downloads/drive-download-20260730T003919Z-1-001',
+  fotos: [
+    ['IMG_5471.jpg', 'hidro-banheira'], // banheira sob o pergolado, de dia
+    // IMG_5470.jpg (casal na banheira à noite) recebida no mesmo envio, sem uso
+    // definido — a cliente pediu só a foto do ambiente.
+  ],
+}
+
+// Cada lote carrega a própria pasta de origem; o primeiro aceita override por argv.
+const LOTES = [
+  { origem: ORIGEM, fotos: SELECAO },
+  LOTE_HIDRO,
+]
+
 mkdirSync(DESTINO, { recursive: true })
 
+const TODAS = LOTES.flatMap(({ origem, fotos }) =>
+  fotos.map(([src, nome]) => [join(origem, src), nome]),
+)
+
 let ok = 0
-for (const [src, nome] of SELECAO) {
+for (const [entrada, nome] of TODAS) {
   const saida = join(DESTINO, `${nome}.webp`)
   try {
-    const info = await sharp(join(ORIGEM, src))
+    const info = await sharp(entrada)
       .rotate() // respeita EXIF
       .resize(1600, 1600, { fit: 'inside', withoutEnlargement: true })
       .webp({ quality: 78 })
       .toFile(saida)
     ok++
-    console.log(`${src} -> ${nome}.webp (${info.width}x${info.height}, ${(info.size / 1024).toFixed(0)}KB)`)
+    console.log(`${entrada} -> ${nome}.webp (${info.width}x${info.height}, ${(info.size / 1024).toFixed(0)}KB)`)
   } catch (e) {
-    console.error(`FALHA ${src}: ${e.message}`)
+    console.error(`FALHA ${entrada}: ${e.message}`)
   }
 }
-console.log(`\n${ok}/${SELECAO.length} fotos otimizadas em ${DESTINO}/`)
+console.log(`\n${ok}/${TODAS.length} fotos otimizadas em ${DESTINO}/`)
