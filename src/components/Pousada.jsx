@@ -13,10 +13,10 @@ export default function Pousada() {
       <div className="flex flex-col items-center text-center">
         <Label>Chalés</Label>
         <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
-          Acorde no <Sw>o</Sw>ásis
+          Acorde no <Sw>r</Sw>efúgio
         </h2>
         <p className="mt-5 max-w-lg text-sm leading-relaxed text-teal/70">
-          Alugue um chalé e acorde aqui: são 10 chalés com diária de 24 horas
+          Reserve um chalé e acorde aqui: são 10 chalés com diária de 24 horas
           a partir do check-in que você escolher — e acesso completo a piscina,
           lounges, redários e toda a estrutura do espaço.
         </p>
@@ -27,7 +27,7 @@ export default function Pousada() {
           <img
             key={fotos[i]}
             src={fotos[i]}
-            alt="Chalé do Rotieh"
+            alt="Chalé da Rotieh"
             className="h-80 w-full object-cover md:h-[560px]"
           />
           <span className="absolute bottom-4 left-4 bg-cream/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal">
@@ -41,7 +41,7 @@ export default function Pousada() {
           <dl className="mt-6 grid grid-cols-2 gap-y-4 border-y border-teal/15 py-5">
             {[
               ['Diária (24h)', `${QUARTO.preco}*`],
-              ['Fechando os 10', `${QUARTO.precoGrupo} cada`],
+              ['Reservando os 10', `${QUARTO.precoGrupo} cada`],
               ['Chalés', `${QUARTO.total} disponíveis`],
               ['Check-in', 'No seu horário'],
             ].map(([k, v]) => (
@@ -60,10 +60,13 @@ export default function Pousada() {
             ))}
           </ul>
 
+          {/* A ressalva "já preparados" é da cliente: nesta modalidade as
+              cozinhas não ficam disponíveis (story 1.9). */}
           <p className="mt-5 text-[13px] leading-relaxed text-teal/70">
             Reservando os 10 chalés, a estrutura fica exclusiva pro seu grupo —
             perfeito pra famílias e turmas de amigos. Café da manhã e refeições
-            à parte no restaurante do espaço, ou traga seus alimentos.
+            à parte no restaurante do espaço, ou traga os seus alimentos já
+            preparados.
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-8">

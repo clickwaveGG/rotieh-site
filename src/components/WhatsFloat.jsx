@@ -4,7 +4,7 @@ import { WaIcon } from './Header.jsx'
 export default function WhatsFloat() {
   return (
     <a
-      href={wa('Olá! Vim pelo site do Rotieh 👋')}
+      href={wa('Olá! Vim pelo site da Rotieh 👋')}
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"

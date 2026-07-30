@@ -1,7 +1,7 @@
 import { IMG, OCASIOES, CASAMENTO_FOTOS, FESTA_FOTOS, selecionarModalidade } from '../data.js'
 import { Sw, Label, Num, Frame, Oval } from './ui.jsx'
 
-// Carro-chefe do Rotieh: casamentos, aniversários e festas em geral.
+// Carro-chefe da Rotieh: casamentos, aniversários e festas em geral.
 // Preços públicos desde a Story 1.7 — a ficha abre com o valor da diária.
 
 const FICHA = [
@@ -16,15 +16,15 @@ export default function Eventos() {
     <section id="eventos" className="border-y border-teal/15 bg-cream-2/60 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center text-center">
-          <Label>Casamentos · Eventos · Celebrações</Label>
+          <Label>Day use · Casamentos · Eventos · Celebrações</Label>
           <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
             Feito pra <Sw>c</Sw>elebrar
           </h2>
-          <p className="mt-5 max-w-xl text-sm leading-relaxed text-teal/70">
-            O Rotieh existe pra isso: o espaço inteiro, com exclusividade, pro
-            seu casamento, aniversário, confraternização ou festa — natureza,
-            estrutura completa e a paisagem mais bonita da região, só pro seu
-            grupo.
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-teal/70">
+            A Rotieh existe pra isso: o espaço inteiro, com exclusividade, para
+            o seu casamento, aniversário, confraternização ou festa. Aqui,
+            natureza, modernidade e sofisticação andam juntas. Tudo isso com
+            exclusividade para você e seu grupo.
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function Eventos() {
             <Frame>
               <img
                 src={IMG.eventos}
-                alt="Casamento celebrado no Rotieh"
+                alt="Casamento celebrado na Rotieh"
                 className="h-80 w-full object-cover md:h-[440px]"
                 loading="lazy"
               />
@@ -46,12 +46,15 @@ export default function Eventos() {
                   <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-teal/55">
                     {k}
                   </dt>
-                  <dd className="text-right font-display text-base italic text-teal">{v}</dd>
+                  {/* Corpo em Inter, não no display itálico: a cliente pediu
+                      uma fonte mais legível nos valores (story 1.9). */}
+                  <dd className="text-right text-sm font-medium text-teal">{v}</dd>
                 </div>
               ))}
             </dl>
             <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] text-teal/45">
-              Camping incluso · datas especiais a equipe confirma no WhatsApp
+              Camping incluso na diária noturna · datas especiais a equipe
+              confirma no WhatsApp
             </p>
           </div>
 
@@ -79,10 +82,10 @@ export default function Eventos() {
         </div>
 
         {/* Galerias reais — pedido da cliente: mostrar o espaço ornamentado
-            e as festas que o Rotieh já recebeu */}
+            e as festas que a Rotieh já recebeu */}
         <div className="mt-20 grid gap-14 md:grid-cols-2 md:gap-16">
           {[
-            ['Casamentos no Rotieh', 'O espaço ornamentado do altar à mesa de doces', CASAMENTO_FOTOS],
+            ['Casamentos na Rotieh', 'O espaço ornamentado do altar à mesa de doces', CASAMENTO_FOTOS],
             ['Festas & 15 anos', 'Pista de dança, fogos frios e bolos de festa', FESTA_FOTOS],
           ].map(([titulo, sub, fotos]) => (
             <div key={titulo}>

@@ -68,7 +68,7 @@ export default function Experiencias() {
       </div>
 
       <div className="mt-8 flex justify-center">
-        <Oval href={wa('Olá! Quero saber mais sobre as experiências do Rotieh ✨')} target="_blank">
+        <Oval href={wa('Olá! Quero saber mais sobre as experiências da Rotieh ✨')} target="_blank">
           Planejar minha visita
         </Oval>
       </div>

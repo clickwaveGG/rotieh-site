@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <p className="max-w-xs text-sm leading-relaxed text-cream/60">
               Parque aquático, pousada e haras em América Dourada — BA.
-              O oásis da região de Irecê.
+              O refúgio da região de Irecê.
             </p>
             <form className="mt-8 max-w-sm" onSubmit={(e) => e.preventDefault()}>
               <label className="block border-b border-cream/30 pb-1">
@@ -54,7 +54,7 @@ export default function Footer() {
             <FooterCol
               title="Contato"
               links={[
-                ['WhatsApp', wa('Olá! Vim pelo site do Rotieh 👋')],
+                ['WhatsApp', wa('Olá! Vim pelo site da Rotieh 👋')],
                 ['Instagram', INSTAGRAM],
                 ['Google Maps', 'https://maps.google.com/?q=América+Dourada+BA'],
               ]}

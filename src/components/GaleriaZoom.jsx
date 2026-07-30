@@ -4,12 +4,12 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react'
 // Galeria imersiva de transição: fecha o bloco "parque/day use" e
 // mergulha o visitante no universo emocional (haras, pousada, eventos).
 // Colagem de 7 fotos que dá zoom conforme o scroll, terminando no
-// pôr do sol — a assinatura do Rotieh — com atalhos pras próximas seções.
+// pôr do sol — a assinatura da Rotieh — com atalhos pras próximas seções.
 
 const FOTOS = [
   {
     src: '/fotos/piscina-por-do-sol.webp',
-    alt: 'Pôr do sol refletido na piscina do Rotieh',
+    alt: 'Pôr do sol refletido na piscina da Rotieh',
     // foto central — domina a tela no fim do zoom
     pos: {},
     size: 'h-[25vh] w-[70vw] md:w-[25vw]',
@@ -31,7 +31,7 @@ const FOTOS = [
   },
   {
     src: '/fotos/camping-noite.webp',
-    alt: 'Acampamento à noite sob o céu do sertão',
+    alt: 'Acampamento à noite sob o céu aberto',
     pos: { left: '27.5vw' },
     size: 'h-[25vh] w-[30vw] md:w-[25vw]',
     scale: 5,
@@ -45,7 +45,7 @@ const FOTOS = [
   },
   {
     src: '/fotos/casamento-cerimonia.webp',
-    alt: 'Cerimônia de casamento ao entardecer no Rotieh',
+    alt: 'Cerimônia de casamento ao entardecer na Rotieh',
     pos: { top: '27.5vh', left: '-22.5vw' },
     size: 'h-[25vh] w-[50vw] md:w-[30vw]',
     scale: 8,
@@ -88,7 +88,7 @@ export default function GaleriaZoom() {
   if (reduceMotion) return <GaleriaEstatica />
 
   return (
-    <section aria-label="Galeria do Rotieh" ref={container} className="relative h-[300vh] bg-teal-deep">
+    <section aria-label="Galeria da Rotieh" ref={container} className="relative h-[300vh] bg-teal-deep">
       <div className="sticky top-0 h-screen overflow-hidden">
         {FOTOS.map((foto, index) => (
           <motion.div
@@ -121,10 +121,10 @@ export default function GaleriaZoom() {
           className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-teal-deep via-teal-deep/40 to-transparent px-6 pb-16 text-center md:pb-24"
         >
           <motion.div style={{ y: finalY }} className="flex flex-col items-center">
-            <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( O Rotieh inteiro )</span>
+            <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( A Rotieh inteira )</span>
             <h2 className="mt-4 max-w-3xl font-display text-4xl uppercase leading-[1.05] tracking-[0.03em] text-cream md:text-6xl">O dia de piscina é só o começo</h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/70">
-              Quando o sol começa a se pôr, o Rotieh mostra o que tem de mais raro:
+              Quando o sol começa a se pôr, a Rotieh mostra o que tem de mais raro:
               cavalos, céu limpo e o interior do jeito que a memória guarda.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -148,9 +148,9 @@ export default function GaleriaZoom() {
 // Fallback acessível: grid simples pra quem prefere menos movimento
 function GaleriaEstatica() {
   return (
-    <section aria-label="Galeria do Rotieh" className="bg-teal-deep px-6 py-16 md:py-24">
+    <section aria-label="Galeria da Rotieh" className="bg-teal-deep px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( O Rotieh inteiro )</span>
+        <span className="text-sm font-semibold text-gold uppercase tracking-[0.3em]">( A Rotieh inteira )</span>
         <h2 className="mt-4 max-w-3xl font-display text-4xl uppercase leading-[1.05] tracking-[0.03em] text-cream md:text-6xl">O dia de piscina é só o começo</h2>
         <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
           {FOTOS.map((foto) => (

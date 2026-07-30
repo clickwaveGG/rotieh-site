@@ -8,12 +8,13 @@ export default function Hero() {
         <source media="(max-width: 767px)" srcSet={IMG.heroMobile} />
         <img
           src={IMG.hero}
-          alt="Piscina principal do Rotieh ao entardecer"
+          alt="Piscina principal da Rotieh ao entardecer"
           className="absolute inset-0 h-full w-full object-cover"
         />
       </picture>
-      {/* grade quente estilo editorial */}
-      <div className="absolute inset-0 bg-gradient-to-b from-teal-deep/55 via-teal-deep/10 to-teal-deep/60" />
+      {/* Véu editorial. O miolo subiu de /10 pra /35 quando o subtítulo cresceu
+          (story 1.9): o texto cai justo na faixa clara da água e ficava ilegível. */}
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-deep/55 via-teal-deep/35 to-teal-deep/60" />
 
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center">
         <span className="inline-flex items-baseline gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-cream/90 md:text-[11px]">
@@ -22,28 +23,46 @@ export default function Hero() {
           <span className="font-display text-lg leading-none">)</span>
         </span>
 
-        <h1 className="mt-6 font-display uppercase leading-[0.95] text-cream">
-          <span className="block text-[15vw] tracking-[0.04em] md:text-[9vw]">
-            Seu <Sw>o</Sw>ásis
+        {/* Título de 3 linhas (era 2): cada linha com nowrap e escala reduzida
+            pra não rebentar em telas de celular. */}
+        <h1 className="mt-5 font-display uppercase leading-[0.95] text-cream">
+          <span className="block whitespace-nowrap text-[11vw] tracking-[0.04em] md:text-[7.5vw]">
+            Seu <Sw>r</Sw>efúgio
           </span>
-          <span className="block text-[15vw] tracking-[0.04em] md:text-[9vw]">
-            no sert<Sw>ã</Sw>o
+          <span className="block whitespace-nowrap text-[11vw] tracking-[0.04em] md:text-[7.5vw]">
+            no interior
+          </span>
+          <span className="block whitespace-nowrap text-[11vw] tracking-[0.04em] md:text-[7.5vw]">
+            da B<Sw>a</Sw>hia
           </span>
         </h1>
 
-        <p className="mt-7 max-w-md text-[13px] leading-relaxed text-cream/85 md:text-sm">
-          Hospede-se em chalés no meio da natureza, com piscina e sossego — e
-          quando é dia de celebrar, o espaço inteiro se veste pra casamentos,
-          aniversários e festas.
+        <p className="mt-5 max-w-xl text-[13px] leading-relaxed text-cream md:text-sm">
+          Hospedagem, lazer e eventos em um só lugar. Uma estrutura de alto
+          padrão, cercada pela natureza, onde conforto, sofisticação e
+          tranquilidade se encontram para criar momentos inesquecíveis.
         </p>
 
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <Oval href="#pousada" dark>
-            Reservar um chalé
-          </Oval>
-          <Oval href="#eventos" dark>
-            Festas & eventos
-          </Oval>
+        {/* Dois caminhos de reserva, cada um com a sua explicação — pedido da
+            cliente: o visitante precisa entender a diferença antes de clicar. */}
+        <div className="mt-7 grid w-full max-w-2xl gap-5 sm:grid-cols-2">
+          <div className="flex flex-col items-center gap-2">
+            <Oval href="#pousada" dark>
+              Reservar chalé
+            </Oval>
+            <p className="max-w-[14rem] text-[10.5px] leading-snug text-cream/75">
+              Hospedagem para quem deseja descansar em meio à natureza
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <Oval href="#eventos" dark>
+              Reservar o espaço
+            </Oval>
+            <p className="max-w-[14rem] text-[10.5px] leading-snug text-cream/75">
+              Locação completa para day use, confraternizações, casamentos e
+              eventos
+            </p>
+          </div>
         </div>
       </div>
 
