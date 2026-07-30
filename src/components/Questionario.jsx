@@ -26,7 +26,7 @@ const TIPOS_EVENTO = [
 ]
 
 const ALIMENTACAO = [
-  'Restaurante do Rotieh',
+  'Restaurante da Rotieh',
   'Vamos levar alimentos e usar a cozinha',
   'Ainda vamos decidir',
 ]

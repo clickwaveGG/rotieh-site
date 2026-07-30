@@ -1,7 +1,7 @@
 import { IMG, OCASIOES, CASAMENTO_FOTOS, FESTA_FOTOS, selecionarModalidade } from '../data.js'
 import { Sw, Label, Num, Frame, Oval } from './ui.jsx'
 
-// Carro-chefe do Rotieh: casamentos, aniversários e festas em geral.
+// Carro-chefe da Rotieh: casamentos, aniversários e festas em geral.
 // Preços públicos desde a Story 1.7 — a ficha abre com o valor da diária.
 
 const FICHA = [
@@ -33,7 +33,7 @@ export default function Eventos() {
             <Frame>
               <img
                 src={IMG.eventos}
-                alt="Casamento celebrado no Rotieh"
+                alt="Casamento celebrado na Rotieh"
                 className="h-80 w-full object-cover md:h-[440px]"
                 loading="lazy"
               />
@@ -82,10 +82,10 @@ export default function Eventos() {
         </div>
 
         {/* Galerias reais — pedido da cliente: mostrar o espaço ornamentado
-            e as festas que o Rotieh já recebeu */}
+            e as festas que a Rotieh já recebeu */}
         <div className="mt-20 grid gap-14 md:grid-cols-2 md:gap-16">
           {[
-            ['Casamentos no Rotieh', 'O espaço ornamentado do altar à mesa de doces', CASAMENTO_FOTOS],
+            ['Casamentos na Rotieh', 'O espaço ornamentado do altar à mesa de doces', CASAMENTO_FOTOS],
             ['Festas & 15 anos', 'Pista de dança, fogos frios e bolos de festa', FESTA_FOTOS],
           ].map(([titulo, sub, fotos]) => (
             <div key={titulo}>

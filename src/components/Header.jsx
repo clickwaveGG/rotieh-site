@@ -31,7 +31,7 @@ export default function Header() {
 
         <div className="flex items-center justify-self-end">
           <a
-            href={wa('Olá! Quero reservar no Rotieh 👋')}
+            href={wa('Olá! Quero reservar na Rotieh 👋')}
             target="_blank"
             rel="noreferrer"
             className="hidden items-center gap-3 rounded-full border border-white/50 px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-white hover:text-teal lg:inline-flex"
@@ -86,7 +86,7 @@ export default function Header() {
           </nav>
 
           <a
-            href={wa('Olá! Quero reservar no Rotieh 👋')}
+            href={wa('Olá! Quero reservar na Rotieh 👋')}
             target="_blank"
             rel="noreferrer"
             className="mt-auto inline-flex items-center justify-center gap-3 rounded-full bg-teal px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-cream"

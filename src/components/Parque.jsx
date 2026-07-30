@@ -51,7 +51,7 @@ export default function Parque() {
         <div className="relative mt-6 overflow-hidden">
           <img
             src={IMG.parqueA}
-            alt="Vista panorâmica das piscinas do Rotieh"
+            alt="Vista panorâmica das piscinas da Rotieh"
             className="h-80 w-full object-cover md:h-[560px]"
             loading="lazy"
           />

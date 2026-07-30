@@ -8,7 +8,7 @@ export default function Hero() {
         <source media="(max-width: 767px)" srcSet={IMG.heroMobile} />
         <img
           src={IMG.hero}
-          alt="Piscina principal do Rotieh ao entardecer"
+          alt="Piscina principal da Rotieh ao entardecer"
           className="absolute inset-0 h-full w-full object-cover"
         />
       </picture>

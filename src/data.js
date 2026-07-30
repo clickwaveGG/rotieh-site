@@ -2,7 +2,7 @@
 
 // WhatsApp oficial informado pela cliente em 2026-07-30: (74) 99912-9999.
 export const WHATSAPP = '5574999129999'
-export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real do Rotieh
+export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real da Rotieh
 
 export const wa = (msg) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
@@ -126,7 +126,7 @@ export const CASAMENTO_FOTOS = [
   ['/fotos/casamento-noiva-veu.webp', 'Noiva diante da mesa de doces no salão ornamentado'],
   ['/fotos/casamento-casal-jardim.webp', 'Casal de noivos no banco do jardim entre as flores'],
   ['/fotos/casamento-buque.webp', 'Noiva jogando o buquê na festa à beira da piscina'],
-  ['/fotos/casamento-casal-buque.webp', 'Casal sorrindo com o buquê no jardim do Rotieh'],
+  ['/fotos/casamento-casal-buque.webp', 'Casal sorrindo com o buquê no jardim da Rotieh'],
 ]
 
 export const FESTA_FOTOS = [
@@ -195,7 +195,7 @@ export const MODALIDADES = [
   {
     id: 'camping',
     titulo: 'Camping avulso',
-    chamada: 'Sob o céu do sertão',
+    chamada: 'Sob o céu aberto',
     preco: 'R$ 200',
     sufixo: '/barraca',
     resumo: 'A experiência de acampar com estrutura completa por perto.',
@@ -275,7 +275,7 @@ export const EXPERIENCIAS = [
   {
     img: '/fotos/camping-tendas.webp',
     titulo: 'Acampamento',
-    desc: 'Barracas no gramado, céu do sertão e amanhecer na natureza.',
+    desc: 'Barracas no gramado, céu aberto e amanhecer na natureza.',
   },
   {
     img: '/fotos/sala-jogos.webp',
@@ -324,7 +324,7 @@ export const FAQ = [
   },
   {
     q: 'A diária do chalé inclui café da manhã?',
-    a: 'Não — o Rotieh não opera no formato tradicional de hotelaria. O restaurante do espaço serve café da manhã, almoço, jantar, lanches, sorvetes, açaís e bebidas, vendidos à parte.',
+    a: 'Não — a Rotieh não opera no formato tradicional de hotelaria. O restaurante do espaço serve café da manhã, almoço, jantar, lanches, sorvetes, açaís e bebidas, vendidos à parte.',
   },
   {
     q: 'Posso levar comida e bebida?',

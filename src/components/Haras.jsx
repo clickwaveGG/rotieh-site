@@ -28,7 +28,7 @@ export default function Haras() {
             com os cav<Sw>a</Sw>los
           </h2>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
-            Antes do parque, o Rotieh já era haras — e essa é a nossa assinatura.
+            Antes do parque, a Rotieh já era haras — e essa é a nossa assinatura.
             Nenhum outro lazer da região oferece a vivência rural de verdade,
             com o pôr do sol dourado que deu nome à cidade.
           </p>

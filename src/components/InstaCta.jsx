@@ -6,7 +6,7 @@ export default function InstaCta() {
     <section className="relative flex min-h-[560px] items-center justify-center overflow-hidden py-20">
       <img
         src={IMG.instaCta}
-        alt="Pôr do sol dourado no Rotieh"
+        alt="Pôr do sol dourado na Rotieh"
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
       />
@@ -19,7 +19,7 @@ export default function InstaCta() {
           <span className="font-display text-lg leading-none">)</span>
         </span>
         <h2 className="mt-5 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-cream md:text-7xl">
-          O sertão d<Sw>o</Sw>urado,
+          O interi<Sw>o</Sw>r dourado,
           <br />
           t<Sw>o</Sw>do dia
         </h2>

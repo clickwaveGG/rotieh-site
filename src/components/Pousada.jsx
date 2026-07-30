@@ -13,7 +13,7 @@ export default function Pousada() {
       <div className="flex flex-col items-center text-center">
         <Label>Chalés</Label>
         <h2 className="mt-4 font-display text-5xl uppercase leading-[1.02] tracking-[0.03em] text-teal md:text-7xl">
-          Acorde no <Sw>o</Sw>ásis
+          Acorde no <Sw>r</Sw>efúgio
         </h2>
         <p className="mt-5 max-w-lg text-sm leading-relaxed text-teal/70">
           Alugue um chalé e acorde aqui: são 10 chalés com diária de 24 horas
@@ -27,7 +27,7 @@ export default function Pousada() {
           <img
             key={fotos[i]}
             src={fotos[i]}
-            alt="Chalé do Rotieh"
+            alt="Chalé da Rotieh"
             className="h-80 w-full object-cover md:h-[560px]"
           />
           <span className="absolute bottom-4 left-4 bg-cream/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal">
