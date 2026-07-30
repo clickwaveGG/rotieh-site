@@ -2,7 +2,8 @@
 
 // WhatsApp oficial informado pela cliente em 2026-07-30: (74) 99912-9999.
 export const WHATSAPP = '5574999129999'
-export const INSTAGRAM = 'https://instagram.com/' // TODO: @ real da Rotieh
+// Instagram oficial informado pela cliente em 2026-07-30.
+export const INSTAGRAM = 'https://www.instagram.com/rotieh.americadourada/'
 
 export const wa = (msg) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`
