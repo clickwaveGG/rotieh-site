@@ -22,8 +22,11 @@ export default function App() {
       <Header />
       <Hero />
       <BookingBar />
-      <Pousada />
+      {/* Story 1.12: os ambientes vêm antes dos chalés — o visitante conhece o
+          lugar antes de ver o preço da diária, e a seção de chalés fica
+          encostada na de eventos, o outro produto de reserva. */}
       <Ambientes />
+      <Pousada />
       <Eventos />
       <Parque />
       <Precos />
