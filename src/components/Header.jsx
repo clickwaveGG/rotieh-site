@@ -25,7 +25,7 @@ export default function Header() {
             R<Sw>o</Sw>tieh
           </span>
           <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.4em] text-white/70">
-            Parque · Pousada · Haras
+            Hospedagem · Lazer · Eventos
           </span>
         </a>
 
