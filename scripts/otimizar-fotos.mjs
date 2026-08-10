@@ -89,28 +89,48 @@ const LOTE_CASAMENTOS = {
   ],
 }
 
+// Artes do cardápio do restaurante (2026-08-10, story 1.15). São imagens de
+// texto: entram sem redimensionar (já vêm em 720x1280) e com qualidade maior,
+// senão os preços saem borrados.
+const LOTE_CARDAPIO = {
+  origem: 'C:/Users/PC/Downloads/drive-download-20260810T200213Z-1-001',
+  qualidade: 88,
+  semRedimensionar: true,
+  fotos: [
+    ['PHOTO-2026-08-10-13-07-03(3).jpg', 'cardapio-pastel'],
+    ['PHOTO-2026-08-10-13-07-03(4).jpg', 'cardapio-refeicoes'],
+    ['PHOTO-2026-08-10-13-07-03.jpg', 'cardapio-porcoes'],
+    ['PHOTO-2026-08-10-13-07-03(1).jpg', 'cardapio-massas'],
+    ['PHOTO-2026-08-10-13-07-02(3).jpg', 'cardapio-cuscuz'],
+    ['PHOTO-2026-08-10-13-07-03(2).jpg', 'cardapio-beju'],
+    ['PHOTO-2026-08-10-13-07-02(2).jpg', 'cardapio-lanches'],
+    ['PHOTO-2026-08-10-13-07-02(1).jpg', 'cardapio-acai-frutas'],
+    ['PHOTO-2026-08-10-13-07-02.jpg', 'cardapio-bebidas'],
+    // PHOTO-...-02(4).jpg repete o quadro de bebidas sem o refrigerante — fora.
+  ],
+}
+
 // Cada lote carrega a própria pasta de origem; o primeiro aceita override por argv.
 const LOTES = [
   { origem: ORIGEM, fotos: SELECAO },
   LOTE_HIDRO,
   LOTE_CASAMENTOS,
+  LOTE_CARDAPIO,
 ]
 
 mkdirSync(DESTINO, { recursive: true })
 
-const TODAS = LOTES.flatMap(({ origem, fotos }) =>
-  fotos.map(([src, nome]) => [join(origem, src), nome]),
+const TODAS = LOTES.flatMap(({ origem, fotos, qualidade = 78, semRedimensionar = false }) =>
+  fotos.map(([src, nome]) => [join(origem, src), nome, qualidade, semRedimensionar]),
 )
 
 let ok = 0
-for (const [entrada, nome] of TODAS) {
+for (const [entrada, nome, qualidade, semRedimensionar] of TODAS) {
   const saida = join(DESTINO, `${nome}.webp`)
   try {
-    const info = await sharp(entrada)
-      .rotate() // respeita EXIF
-      .resize(1600, 1600, { fit: 'inside', withoutEnlargement: true })
-      .webp({ quality: 78 })
-      .toFile(saida)
+    let img = sharp(entrada).rotate() // respeita EXIF
+    if (!semRedimensionar) img = img.resize(1600, 1600, { fit: 'inside', withoutEnlargement: true })
+    const info = await img.webp({ quality: qualidade }).toFile(saida)
     ok++
     console.log(`${entrada} -> ${nome}.webp (${info.width}x${info.height}, ${(info.size / 1024).toFixed(0)}KB)`)
   } catch (e) {

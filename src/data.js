@@ -255,6 +255,122 @@ export const ESTRUTURA = [
   },
 ]
 
+// ── Restaurante ──────────────────────────────────────────────────────────────
+// Cardápio transcrito das artes que a cliente enviou em 2026-08-10 (story 1.15).
+// Os preços vivem AQUI: é o único lugar a mexer quando a cozinha reajustar —
+// as artes em /fotos/cardapio-*.webp continuam com os valores da data do envio,
+// então cardápio e imagem precisam ser atualizados juntos.
+// A transcrição corrige os erros de digitação das artes (cereal, frango,
+// calabresa, adicional, maçã, água, pão de forma, limão, maracujá).
+export const CARDAPIO = [
+  {
+    grupo: 'Refeições',
+    nota: 'Todas acompanham arroz, feijão, farofa e salada',
+    itens: [
+      ['Frango assado', 'R$ 30'],
+      ['Calabresa assada', 'R$ 30'],
+      ['Bisteca', 'R$ 30'],
+      ['Carne frita', 'R$ 30'],
+      ['Filé de frango', 'R$ 30'],
+      ['Filé de tilápia', 'R$ 45'],
+      ['Adicional: macarrão, batata frita ou aipim', 'R$ 5'],
+    ],
+  },
+  {
+    grupo: 'Massas',
+    nota: 'Espaguete ou parafuso, ao molho vermelho',
+    itens: [
+      ['Massa', 'R$ 20'],
+      ['Adicional: queijo, bacon, calabresa, presunto ou salsicha', 'R$ 5'],
+    ],
+  },
+  {
+    grupo: 'Cuscuz',
+    itens: [
+      ['Com ovo', 'R$ 15'],
+      ['Com bacon', 'R$ 15'],
+      ['Com queijo', 'R$ 15'],
+      ['Com queijo e presunto', 'R$ 15'],
+      ['Com carne seca', 'R$ 20'],
+      ['Com frango desfiado', 'R$ 20'],
+      ['Farofa de cuscuz', 'R$ 20'],
+    ],
+  },
+  {
+    grupo: 'Beju',
+    itens: [
+      ['Com manteiga', 'R$ 5'],
+      ['Com queijo e presunto', 'R$ 10'],
+      ['Com queijo e calabresa', 'R$ 10'],
+      ['Com queijo e bacon', 'R$ 10'],
+      ['Com carne seca', 'R$ 10'],
+      ['Com frango', 'R$ 10'],
+    ],
+  },
+  {
+    grupo: 'Pastel',
+    nota: 'Queijo · bacon e queijo · calabresa e queijo · presunto e queijo · carne seca · frango',
+    itens: [['Qualquer sabor', 'R$ 10']],
+  },
+  {
+    grupo: 'Porções',
+    itens: [
+      ['Aipim', 'R$ 10'],
+      ['Batata doce', 'R$ 10'],
+      ['Pão de queijo', 'R$ 15'],
+      ['Batata frita', 'R$ 15'],
+      ['Calabresa', 'R$ 20'],
+      ['Frango', 'R$ 20'],
+      ['Carne', 'R$ 20'],
+    ],
+  },
+  {
+    grupo: 'Lanches',
+    itens: [
+      ['Misto — queijo, presunto e pão de forma', 'R$ 10'],
+      ['Omelete — cebola, tomate, coentro, queijo e presunto ou calabresa', 'R$ 15'],
+    ],
+  },
+  {
+    grupo: 'Açaí & frutas',
+    nota: 'Açaí com leite condensado, leite em pó, fruta e cereal ou confete',
+    itens: [
+      ['Açaí', 'R$ 16'],
+      ['Frutas cortadas', 'R$ 16'],
+      ['Cacho de uva', 'R$ 10'],
+      ['Manga, abacaxi (pedaço) ou kiwi', 'R$ 5'],
+      ['Laranja, maçã ou ameixa', 'R$ 2'],
+      ['Banana', 'R$ 1'],
+    ],
+  },
+  {
+    grupo: 'Bebidas',
+    nota: 'Sucos naturais de manga, maracujá, laranja, limão ou abacaxi',
+    itens: [
+      ['Suco natural (copo)', 'R$ 10'],
+      ['Jarra de suco natural', 'R$ 25'],
+      ['Água de coco', 'R$ 10'],
+      ['Refrigerante lata', 'R$ 6'],
+      ['Achocolatado ou café com leite', 'R$ 6'],
+      ['Café', 'R$ 3'],
+      ['Água', 'R$ 3'],
+    ],
+  },
+]
+
+// As artes do cardápio, do jeito que a cozinha divulga.
+export const CARDAPIO_ARTES = [
+  ['/fotos/cardapio-refeicoes.webp', 'Cardápio de refeições do restaurante da Rotieh'],
+  ['/fotos/cardapio-massas.webp', 'Cardápio de massas'],
+  ['/fotos/cardapio-cuscuz.webp', 'Cardápio de cuscuz'],
+  ['/fotos/cardapio-beju.webp', 'Cardápio de beju'],
+  ['/fotos/cardapio-pastel.webp', 'Cardápio de pastéis'],
+  ['/fotos/cardapio-porcoes.webp', 'Cardápio de porções'],
+  ['/fotos/cardapio-lanches.webp', 'Cardápio de lanches: misto e omelete'],
+  ['/fotos/cardapio-acai-frutas.webp', 'Cardápio de açaí e frutas'],
+  ['/fotos/cardapio-bebidas.webp', 'Cardápio de bebidas'],
+]
+
 export const OCASIOES = [
   'Férias e dias em família',
   'Confraternizações de amigos e empresas',
@@ -369,6 +485,7 @@ export const NAV = [
   ['Festas & Eventos', '#eventos'],
   ['Ambientes', '#ambientes'],
   ['Reservas', '#modalidades'],
+  ['Restaurante', '#restaurante'],
   ['Haras', '#haras'],
   ['Contato', '#contato'],
 ]

@@ -4,6 +4,7 @@ import BookingBar from './components/BookingBar.jsx'
 import Ambientes from './components/Ambientes.jsx'
 import Pousada from './components/Pousada.jsx'
 import Parque from './components/Parque.jsx'
+import Restaurante from './components/Restaurante.jsx'
 import Precos from './components/Precos.jsx'
 import GaleriaZoom from './components/GaleriaZoom.jsx'
 import Haras from './components/Haras.jsx'
@@ -29,6 +30,9 @@ export default function App() {
       <Pousada />
       <Eventos />
       <Parque />
+      {/* O restaurante vem logo depois da estrutura: o visitante acabou de ver
+          "Alimentação" na lista e aqui encontra o cardápio inteiro. */}
+      <Restaurante />
       <Precos />
       <GaleriaZoom />
       <Haras />
