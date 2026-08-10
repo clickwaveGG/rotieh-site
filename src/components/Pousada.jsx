@@ -1,6 +1,11 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { QUARTO, selecionarModalidade } from '../data.js'
 import { Sw, Label, Arrow, Oval } from './ui.jsx'
+
+// Distância que o dedo precisa percorrer para a foto virar (px).
+const LIMIAR = 60
+// Antes disso o gesto ainda não tem eixo definido — evita roubar a rolagem.
+const FOLGA = 8
 
 // O padding superior entrou na Story 1.12: antes a seção vinha logo depois do
 // bloco de resumo e herdava o respiro dele; agora vem depois dos ambientes,
@@ -10,6 +15,47 @@ export default function Pousada() {
   const fotos = QUARTO.fotos
   const next = () => setI((i + 1) % fotos.length)
   const prev = () => setI((i - 1 + fotos.length) % fotos.length)
+
+  // Arrasto lateral: o gesto natural no celular. As setas continuam valendo.
+  const [arrasto, setArrasto] = useState(0)
+  const gesto = useRef(null)
+
+  const aoPressionar = (e) => {
+    gesto.current = { x: e.clientX, y: e.clientY, eixo: null, dx: 0 }
+  }
+
+  const aoMover = (e) => {
+    const g = gesto.current
+    if (!g) return
+    const dx = e.clientX - g.x
+    const dy = e.clientY - g.y
+
+    // O eixo só é decidido depois da folga: se o visitante está rolando a
+    // página, o carrossel não interfere.
+    if (g.eixo === null) {
+      if (Math.abs(dx) < FOLGA && Math.abs(dy) < FOLGA) return
+      g.eixo = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'
+      if (g.eixo === 'x') e.currentTarget.setPointerCapture(e.pointerId)
+    }
+    if (g.eixo === 'x') {
+      // O deslocamento fica no ref além do estado: o `pointerup` pode chegar
+      // antes do React re-renderizar com o último valor.
+      g.dx = dx
+      setArrasto(dx)
+    }
+  }
+
+  const aoSoltar = () => {
+    const g = gesto.current
+    gesto.current = null
+    if (g?.eixo === 'x') {
+      if (g.dx <= -LIMIAR) next()
+      else if (g.dx >= LIMIAR) prev()
+    }
+    setArrasto(0)
+  }
+
+  const arrastando = arrasto !== 0
 
   return (
     <section id="pousada" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
@@ -26,15 +72,33 @@ export default function Pousada() {
       </div>
 
       <div className="mt-12 grid items-stretch gap-0 md:grid-cols-[1.25fr_1fr]">
-        <div className="relative overflow-hidden">
+        <div
+          className="relative cursor-grab touch-pan-y overflow-hidden active:cursor-grabbing"
+          onPointerDown={aoPressionar}
+          onPointerMove={aoMover}
+          onPointerUp={aoSoltar}
+          onPointerCancel={aoSoltar}
+        >
           <img
             key={fotos[i]}
             src={fotos[i]}
             alt="Chalé da Rotieh"
-            className="h-80 w-full object-cover md:h-[560px]"
+            draggable={false}
+            style={{
+              transform: `translateX(${arrasto * 0.35}px)`,
+              // Enquanto o dedo está na tela a foto acompanha sem atraso; ao
+              // soltar, a duração da classe volta e ela desliza de volta.
+              transitionDuration: arrastando ? '0ms' : undefined,
+            }}
+            className="h-80 w-full select-none object-cover transition-transform duration-300 motion-reduce:transition-none md:h-[560px]"
           />
           <span className="absolute bottom-4 left-4 bg-cream/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.25em] text-teal">
             {String(i + 1).padStart(2, '0')} / {String(fotos.length).padStart(2, '0')}
+          </span>
+          {/* Dica só no celular: sem ela o gesto fica escondido. Fundo sólido
+              translúcido em vez de blur — o blur trava o Safari do iPhone. */}
+          <span className="pointer-events-none absolute bottom-4 right-4 bg-teal-deep/45 px-2.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-cream md:hidden">
+            arraste para o lado
           </span>
         </div>
 
