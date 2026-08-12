@@ -23,31 +23,39 @@ export default function Restaurante() {
           </p>
         </div>
 
-        {/* Cardápio em texto: legível no celular sem precisar abrir imagem */}
-        <div className="mt-14 grid gap-x-10 gap-y-10 border-t border-teal/15 pt-10 md:grid-cols-2 lg:grid-cols-3">
+        {/* Cardápio em texto, recolhido por grupo (story 1.17). A seção subiu
+            para o meio alto do site e 45 itens com preço abertos viravam uma
+            parede antes dos chalés. Cada grupo é uma sanfona no mesmo padrão das
+            perguntas do FAQ; os títulos ficam à vista e são a própria chamada
+            ("Refeições", "Porções", "Açaí"). O texto continua no HTML — details
+            fechado é lido pelos buscadores. */}
+        <div className="mt-14 border-t border-teal/15">
           {CARDAPIO.map((g, idx) => (
-            <div key={g.grupo}>
-              <div className="flex items-baseline gap-3">
+            <details key={g.grupo} className="group border-b border-teal/15 py-5">
+              <summary className="flex cursor-pointer list-none items-baseline gap-5">
                 <Num n={idx + 1} />
-                <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-teal">
+                <span className="flex-1 text-sm font-semibold uppercase tracking-[0.15em] text-teal">
                   {g.grupo}
-                </h3>
-              </div>
+                </span>
+                <span className="font-display text-2xl leading-none text-teal/60 transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
               {g.nota && (
-                <p className="mt-2 text-[11px] leading-relaxed text-teal/50">{g.nota}</p>
+                <p className="mt-3 text-[11px] leading-relaxed text-teal/50">{g.nota}</p>
               )}
-              <dl className="mt-4">
+              <dl className="mt-3">
                 {g.itens.map(([item, preco]) => (
                   <div
                     key={item}
-                    className="flex items-baseline justify-between gap-4 border-b border-teal/10 py-2.5"
+                    className="flex items-baseline justify-between gap-4 border-b border-teal/10 py-2.5 last:border-b-0"
                   >
                     <dt className="text-[13px] leading-snug text-teal/75">{item}</dt>
                     <dd className="shrink-0 text-[13px] font-medium text-teal">{preco}</dd>
                   </div>
                 ))}
               </dl>
-            </div>
+            </details>
           ))}
         </div>
 

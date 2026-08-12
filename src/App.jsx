@@ -27,12 +27,14 @@ export default function App() {
           lugar antes de ver o preço da diária, e a seção de chalés fica
           encostada na de eventos, o outro produto de reserva. */}
       <Ambientes />
+      {/* Story 1.17: o restaurante vem logo depois dos ambientes — quem acabou de
+          percorrer o lugar quer saber o que se come nele. Vindo antes dos dois
+          produtos de reserva, derruba a objeção "o que a gente vai comer lá?"
+          antes da decisão, e chalés e eventos continuam vizinhos (story 1.12). */}
+      <Restaurante />
       <Pousada />
       <Eventos />
       <Parque />
-      {/* O restaurante vem logo depois da estrutura: o visitante acabou de ver
-          "Alimentação" na lista e aqui encontra o cardápio inteiro. */}
-      <Restaurante />
       <Precos />
       <GaleriaZoom />
       <Haras />

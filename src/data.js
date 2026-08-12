@@ -480,12 +480,15 @@ export const DISTANCIAS = [
   ['Central', '± 86 km'],
 ]
 
+// A ordem acompanha a das seções na página. O menu do desktop mostra só os
+// quatro primeiros (Header.jsx) — por isso o restaurante subiu junto com a
+// seção na story 1.17: fora desses quatro, não existia atalho para ele.
 export const NAV = [
+  ['Ambientes', '#ambientes'],
+  ['Restaurante', '#restaurante'],
   ['Chalés', '#pousada'],
   ['Festas & Eventos', '#eventos'],
-  ['Ambientes', '#ambientes'],
   ['Reservas', '#modalidades'],
-  ['Restaurante', '#restaurante'],
   ['Haras', '#haras'],
   ['Contato', '#contato'],
 ]
