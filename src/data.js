@@ -256,109 +256,75 @@ export const ESTRUTURA = [
 ]
 
 // ── Restaurante ──────────────────────────────────────────────────────────────
-// Cardápio transcrito das artes que a cliente enviou em 2026-08-10 (story 1.15).
-// Os preços vivem AQUI: é o único lugar a mexer quando a cozinha reajustar —
-// as artes em /fotos/cardapio-*.webp continuam com os valores da data do envio,
-// então cardápio e imagem precisam ser atualizados juntos.
-// A transcrição corrige os erros de digitação das artes (cereal, frango,
-// calabresa, adicional, maçã, água, pão de forma, limão, maracujá).
+// Cardápio da cliente de 2026-08-13 (story 1.18). Este é o ÚNICO lugar do site
+// com preço de comida — quando a cozinha reajustar, é aqui que se mexe.
+//
+// O cardápio novo não é um reajuste do anterior, é outra estrutura: refeição
+// passou a ser cobrada por pessoa (e não por prato), massa por tamanho de tigela
+// (e não por tipo), cuscuz virou preço único com adicional avulso. Beju, açaí,
+// frutas, misto, café e achocolatado não constam no documento novo — saíram do
+// site até a cozinha confirmar se ainda existem.
 export const CARDAPIO = [
   {
     grupo: 'Refeições',
-    nota: 'Todas acompanham arroz, feijão, farofa e salada',
+    nota: 'Servida por pessoa. O que for pedido a mais na refeição entra como porção.',
     itens: [
-      ['Frango assado', 'R$ 30'],
-      ['Calabresa assada', 'R$ 30'],
-      ['Bisteca', 'R$ 30'],
-      ['Carne frita', 'R$ 30'],
-      ['Filé de frango', 'R$ 30'],
-      ['Filé de tilápia', 'R$ 45'],
-      ['Adicional: macarrão, batata frita ou aipim', 'R$ 5'],
+      ['Para 1 pessoa', 'R$ 40'],
+      ['Para 2 pessoas', 'R$ 80'],
     ],
   },
   {
     grupo: 'Massas',
-    nota: 'Espaguete ou parafuso, ao molho vermelho',
     itens: [
-      ['Massa', 'R$ 20'],
-      ['Adicional: queijo, bacon, calabresa, presunto ou salsicha', 'R$ 5'],
+      ['Tigela grande', 'R$ 40'],
+      ['Tigela pequena', 'R$ 20'],
     ],
   },
   {
     grupo: 'Cuscuz',
     itens: [
-      ['Com ovo', 'R$ 15'],
-      ['Com bacon', 'R$ 15'],
-      ['Com queijo', 'R$ 15'],
-      ['Com queijo e presunto', 'R$ 15'],
-      ['Com carne seca', 'R$ 20'],
-      ['Com frango desfiado', 'R$ 20'],
-      ['Farofa de cuscuz', 'R$ 20'],
-    ],
-  },
-  {
-    grupo: 'Beju',
-    itens: [
-      ['Com manteiga', 'R$ 5'],
-      ['Com queijo e presunto', 'R$ 10'],
-      ['Com queijo e calabresa', 'R$ 10'],
-      ['Com queijo e bacon', 'R$ 10'],
-      ['Com carne seca', 'R$ 10'],
-      ['Com frango', 'R$ 10'],
-    ],
-  },
-  {
-    grupo: 'Pastel',
-    nota: 'Queijo · bacon e queijo · calabresa e queijo · presunto e queijo · carne seca · frango',
-    itens: [['Qualquer sabor', 'R$ 10']],
-  },
-  {
-    grupo: 'Porções',
-    itens: [
-      ['Aipim', 'R$ 10'],
-      ['Batata doce', 'R$ 10'],
-      ['Pão de queijo', 'R$ 15'],
-      ['Batata frita', 'R$ 15'],
-      ['Calabresa', 'R$ 20'],
-      ['Frango', 'R$ 20'],
-      ['Carne', 'R$ 20'],
+      ['Cuscuz', 'R$ 25'],
+      ['Adicional (cada)', 'R$ 5'],
     ],
   },
   {
     grupo: 'Lanches',
     itens: [
-      ['Misto — queijo, presunto e pão de forma', 'R$ 10'],
-      ['Omelete — cebola, tomate, coentro, queijo e presunto ou calabresa', 'R$ 15'],
+      ['Omelete', 'R$ 25'],
+      ['Pastel', 'R$ 10'],
     ],
   },
   {
-    grupo: 'Açaí & frutas',
-    nota: 'Açaí com leite condensado, leite em pó, fruta e cereal ou confete',
+    grupo: 'Porções',
     itens: [
-      ['Açaí', 'R$ 16'],
-      ['Frutas cortadas', 'R$ 16'],
-      ['Cacho de uva', 'R$ 10'],
-      ['Manga, abacaxi (pedaço) ou kiwi', 'R$ 5'],
-      ['Laranja, maçã ou ameixa', 'R$ 2'],
-      ['Banana', 'R$ 1'],
+      ['Calabresa, frango ou carne', 'R$ 40'],
+      ['Batata frita', 'R$ 25'],
+      ['Aipim', 'R$ 20'],
+      ['Batata doce', 'R$ 20'],
+      ['Pão de queijo', 'R$ 20'],
+      ['Arroz', 'R$ 20'],
+      ['Feijão', 'R$ 20'],
+      ['Macarrão', 'R$ 20'],
+      ['Salada e complementos variados', 'R$ 15'],
     ],
   },
   {
     grupo: 'Bebidas',
-    nota: 'Sucos naturais de manga, maracujá, laranja, limão ou abacaxi',
     itens: [
-      ['Suco natural (copo)', 'R$ 10'],
-      ['Jarra de suco natural', 'R$ 25'],
-      ['Água de coco', 'R$ 10'],
-      ['Refrigerante lata', 'R$ 6'],
-      ['Achocolatado ou café com leite', 'R$ 6'],
-      ['Café', 'R$ 3'],
-      ['Água', 'R$ 3'],
+      ['Copo de suco', 'R$ 15'],
+      ['Jarra de suco', 'R$ 30'],
+      ['Água de coco', 'R$ 15'],
+      ['Refrigerante', 'R$ 10'],
+      ['Leite com Nescau', 'R$ 10'],
+      ['Água', 'R$ 5'],
     ],
   },
 ]
 
-// As artes do cardápio, do jeito que a cozinha divulga.
+// As artes do cardápio, do jeito que a cozinha divulga. Fora do ar desde a story
+// 1.18: os preços estão impressos nas imagens e são os de julho, então elas
+// contradiziam a tabela acima. Voltam à seção assim que a cozinha enviar as
+// artes novas — é só reativar o bloco em Restaurante.jsx.
 export const CARDAPIO_ARTES = [
   ['/fotos/cardapio-refeicoes.webp', 'Cardápio de refeições do restaurante da Rotieh'],
   ['/fotos/cardapio-massas.webp', 'Cardápio de massas'],
@@ -407,7 +373,7 @@ export const EXPERIENCIAS = [
   {
     img: '/fotos/lazer-pizzas.webp',
     titulo: 'Sabores da casa',
-    desc: 'Do café da manhã ao açaí — restaurante dentro do espaço.',
+    desc: 'Do café da manhã ao jantar — restaurante dentro do espaço.',
   },
   {
     img: '/fotos/familia-almoco-piscina.webp',
@@ -446,7 +412,7 @@ export const FAQ = [
   },
   {
     q: 'A diária do chalé inclui café da manhã?',
-    a: 'Não — a Rotieh não opera no formato tradicional de hotelaria. O restaurante do espaço serve café da manhã, almoço, jantar, lanches, sorvetes, açaís e bebidas, vendidos à parte.',
+    a: 'Não — a Rotieh não opera no formato tradicional de hotelaria. O restaurante do espaço serve café da manhã, almoço, jantar, lanches e bebidas, vendidos à parte.',
   },
   {
     q: 'Posso levar comida e bebida?',
