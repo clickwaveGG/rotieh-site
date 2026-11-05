@@ -69,6 +69,15 @@ export default function Pousada() {
           a partir do check-in que você escolher — e acesso completo a piscina,
           lounges, redários e toda a estrutura do espaço.
         </p>
+        {/* Preço em destaque a pedido da cliente (Story 1.19): o valor estava
+            só na ficha e o pessoal continuava perguntando no WhatsApp. */}
+        <p className="mt-8 flex items-baseline gap-3 text-teal">
+          <span className="font-display text-5xl md:text-6xl">{QUARTO.preco}</span>
+          <span className="text-xs font-semibold uppercase tracking-[0.25em]">a diária de 24h</span>
+        </p>
+        <p className="mt-2 text-[13px] text-teal">
+          {QUARTO.precoGrupo} cada reservando os {QUARTO.total} chalés
+        </p>
       </div>
 
       <div className="mt-12 grid items-stretch gap-0 md:grid-cols-[1.25fr_1fr]">
@@ -127,13 +136,18 @@ export default function Pousada() {
             ))}
           </ul>
 
-          {/* A ressalva "já preparados" é da cliente: nesta modalidade as
-              cozinhas não ficam disponíveis (story 1.9). */}
+          {/* Regra de alimentação da cliente (Story 1.19, áudio de 04/11):
+              no chalé as refeições são no restaurante; só entra carne pra
+              assar, e dieta específica é a exceção. */}
           <p className="mt-5 text-[13px] leading-relaxed text-teal/70">
             Reservando os 10 chalés, a estrutura fica exclusiva pro seu grupo —
-            perfeito pra famílias e turmas de amigos. Café da manhã e refeições
-            à parte no restaurante do espaço, ou traga os seus alimentos já
-            preparados.
+            perfeito pra famílias e turmas de amigos.
+          </p>
+          <p className="mt-3 text-[13px] leading-relaxed text-teal">
+            Refeições feitas no restaurante do espaço, à parte da diária. Não é
+            permitida a entrada de comidas nem bebidas — apenas carne para
+            assar, com os acompanhamentos pedidos no restaurante. Tem dieta
+            específica? Avise a equipe na reserva.
           </p>
 
           <div className="mt-auto flex items-center justify-between pt-8">

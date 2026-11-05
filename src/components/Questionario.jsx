@@ -31,6 +31,13 @@ const ALIMENTACAO = [
   'Ainda vamos decidir',
 ]
 
+// No chalé não entra comida nem bebida, só carne pra assar (Story 1.19).
+const ALIMENTACAO_CHALE = [
+  'Restaurante da Rotieh',
+  'Restaurante + vamos trazer carne para assar',
+  'Tenho dieta específica (explico nas observações)',
+]
+
 const EXTRAS_OPCOES = [
   'Passeio a cavalo',
   'Ensaio fotográfico externo',
@@ -66,6 +73,9 @@ export default function Questionario() {
   }, [])
 
   const modoLabel = MODOS.find((m) => m.id === modo).label
+  // Trocar de modalidade pode deixar a escolha anterior fora da lista nova.
+  const opcoesAlimentacao = modo === 'quartos' ? ALIMENTACAO_CHALE : ALIMENTACAO
+  const alimentacaoAtual = opcoesAlimentacao.includes(alimentacao) ? alimentacao : opcoesAlimentacao[0]
 
   const linhas = [
     `Olá, Rotieh! Quero montar uma reserva 🌴`,
@@ -78,7 +88,7 @@ export default function Questionario() {
     modo === 'quartos' && `• Chalés: ${quartos}`,
     (modo === 'locacao' || modo === 'evento') && `• Pernoite (18h às 8h): ${pernoite ? 'sim' : 'não'}`,
     modo === 'camping' && `• Barracas: ${barracas}`,
-    `• Alimentação: ${alimentacao}`,
+    `• Alimentação: ${alimentacaoAtual}`,
     extras.length > 0 && `• Extras: ${extras.join(', ')}`,
     obs && `• Observações: ${obs}`,
     ``,
@@ -185,9 +195,14 @@ export default function Questionario() {
                 </Campo>
               )}
               <Campo label="Alimentação">
-                <select value={alimentacao} onChange={(e) => setAlimentacao(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
-                  {ALIMENTACAO.map((a) => <option key={a}>{a}</option>)}
+                <select value={alimentacaoAtual} onChange={(e) => setAlimentacao(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
+                  {opcoesAlimentacao.map((a) => <option key={a}>{a}</option>)}
                 </select>
+                {modo === 'quartos' && (
+                  <span className="mt-2 block text-[11px] leading-relaxed text-cream">
+                    No chalé não entram comidas nem bebidas — só carne para assar.
+                  </span>
+                )}
               </Campo>
             </div>
 

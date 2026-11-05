@@ -157,6 +157,7 @@ export const MODALIDADES = [
       '10 chalés: cama de casal, TV, Wi-Fi, frigobar, ar e banheiro',
       'Acesso completo a piscina, áreas de lazer e natureza',
       'Casal com 1 criança pequena fica no mesmo chalé',
+      'Refeições no restaurante — pode trazer carne para assar',
       'Reservando os 10 chalés: R$ 300 cada + espaço exclusivo',
     ],
     ideal: 'Descanso, férias, comemorações e escapadas da rotina',
@@ -416,7 +417,7 @@ export const FAQ = [
   },
   {
     q: 'Posso levar comida e bebida?',
-    a: 'Pode! Quem reserva pode trazer alimentos e bebidas. Na locação completa, dá até pra trazer panelas e utensílios e usar nossas duas cozinhas. Só pedimos que avise a equipe com antecedência sobre a logística.',
+    a: 'Depende da modalidade. Na reserva de chalés, as refeições são feitas no restaurante e não é permitida a entrada de comidas nem bebidas — apenas carne para assar, com os acompanhamentos pedidos no restaurante (quem tem dieta específica avisa a equipe). Na locação completa e nos eventos, pode trazer alimentos e bebidas, e até panelas e utensílios pra usar nossas duas cozinhas. Só pedimos que avise a equipe com antecedência sobre a logística.',
   },
   {
     q: 'Quantas pessoas cabem na locação completa?',
