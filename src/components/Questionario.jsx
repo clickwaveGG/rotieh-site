@@ -11,7 +11,6 @@ const MODOS = [
   { id: 'evento', label: 'Casamento, aniversário ou festa' },
   { id: 'locacao', label: 'Locação completa do espaço' },
   { id: 'quartos', label: 'Reserva de chalés' },
-  { id: 'camping', label: 'Camping avulso' },
 ]
 
 const TIPOS_EVENTO = [
@@ -54,7 +53,6 @@ export default function Questionario() {
   const [saida, setSaida] = useState('')
   const [pessoas, setPessoas] = useState('')
   const [quartos, setQuartos] = useState('1')
-  const [barracas, setBarracas] = useState('1')
   const [pernoite, setPernoite] = useState(false)
   const [alimentacao, setAlimentacao] = useState(ALIMENTACAO[2])
   const [extras, setExtras] = useState([])
@@ -87,7 +85,6 @@ export default function Questionario() {
     pessoas && `• Pessoas: ±${pessoas}`,
     modo === 'quartos' && `• Chalés: ${quartos}`,
     (modo === 'locacao' || modo === 'evento') && `• Pernoite (18h às 8h): ${pernoite ? 'sim' : 'não'}`,
-    modo === 'camping' && `• Barracas: ${barracas}`,
     `• Alimentação: ${alimentacaoAtual}`,
     extras.length > 0 && `• Extras: ${extras.join(', ')}`,
     obs && `• Observações: ${obs}`,
@@ -187,11 +184,6 @@ export default function Questionario() {
                       <span className={`mx-0.5 h-3.5 w-3.5 rounded-full ${pernoite ? 'bg-teal-deep' : 'bg-cream/60'}`} />
                     </span>
                   </button>
-                </Campo>
-              )}
-              {modo === 'camping' && (
-                <Campo label="Quantas barracas? (até 3 pessoas cada)">
-                  <input type="number" min="1" value={barracas} onChange={(e) => setBarracas(e.target.value)} className={inp} />
                 </Campo>
               )}
               <Campo label="Alimentação">
