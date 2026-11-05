@@ -157,6 +157,7 @@ export const MODALIDADES = [
       '10 chalés: cama de casal, TV, Wi-Fi, frigobar, ar e banheiro',
       'Acesso completo a piscina, áreas de lazer e natureza',
       'Casal com 1 criança pequena fica no mesmo chalé',
+      'Refeições no restaurante — pode trazer carne para assar',
       'Reservando os 10 chalés: R$ 300 cada + espaço exclusivo',
     ],
     ideal: 'Descanso, férias, comemorações e escapadas da rotina',
@@ -197,21 +198,6 @@ export const MODALIDADES = [
       'Restaurante no local ou duas cozinhas à disposição para preparar os alimentos',
     ],
     ideal: 'Retiros, acampamentos, encontros de família e de empresas',
-  },
-  {
-    id: 'camping',
-    titulo: 'Camping avulso',
-    chamada: 'Sob o céu aberto',
-    preco: 'R$ 200',
-    sufixo: '/barraca',
-    resumo: 'A experiência de acampar com estrutura completa por perto.',
-    itens: [
-      'Até 3 pessoas por barraca',
-      'Acesso à estrutura do espaço',
-      'Na diária noturna da locação completa, o camping é incluso',
-      'Restaurante e cozinhas de apoio',
-    ],
-    ideal: 'Quem quer natureza de verdade sem reservar tudo',
   },
 ]
 
@@ -400,7 +386,7 @@ export const EXPERIENCIAS = [
 export const FAQ = [
   {
     q: 'Posso pagar só a entrada e passar o dia?',
-    a: 'No momento não trabalhamos com entrada individual. O espaço funciona com reserva de chalés, locação completa ou camping avulso — assim cada grupo aproveita com tranquilidade e exclusividade.',
+    a: 'No momento não trabalhamos com entrada individual. O espaço funciona com reserva de chalés ou locação completa do espaço — assim cada grupo aproveita com tranquilidade e exclusividade.',
   },
   {
     q: 'Quais os dias e horários de funcionamento?',
@@ -416,7 +402,7 @@ export const FAQ = [
   },
   {
     q: 'Posso levar comida e bebida?',
-    a: 'Pode! Quem reserva pode trazer alimentos e bebidas. Na locação completa, dá até pra trazer panelas e utensílios e usar nossas duas cozinhas. Só pedimos que avise a equipe com antecedência sobre a logística.',
+    a: 'Depende da modalidade. Na reserva de chalés, as refeições são feitas no restaurante e não é permitida a entrada de comidas nem bebidas — apenas carne para assar, com os acompanhamentos pedidos no restaurante (quem tem dieta específica avisa a equipe). Na locação completa e nos eventos, pode trazer alimentos e bebidas, e até panelas e utensílios pra usar nossas duas cozinhas. Só pedimos que avise a equipe com antecedência sobre a logística.',
   },
   {
     q: 'Quantas pessoas cabem na locação completa?',
@@ -428,7 +414,7 @@ export const FAQ = [
   },
   {
     q: 'Quanto custa cada modalidade?',
-    a: 'Chalé: R$ 350 a diária de 24h (R$ 300 cada reservando os 10). Locação completa e eventos: R$ 2.000 a diária das 8h às 17h, com adicional noturno de R$ 1.000. Camping avulso: R$ 200 por barraca. Datas especiais e grupos grandes a equipe confirma no WhatsApp.',
+    a: 'Chalé: R$ 350 a diária de 24h (R$ 300 cada reservando os 10). Locação completa e eventos: R$ 2.000 a diária das 8h às 17h, com adicional noturno de R$ 1.000. Datas especiais e grupos grandes a equipe confirma no WhatsApp.',
   },
   {
     q: 'Tem algum serviço cobrado à parte?',

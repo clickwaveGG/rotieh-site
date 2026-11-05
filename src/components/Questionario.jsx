@@ -11,7 +11,6 @@ const MODOS = [
   { id: 'evento', label: 'Casamento, aniversário ou festa' },
   { id: 'locacao', label: 'Locação completa do espaço' },
   { id: 'quartos', label: 'Reserva de chalés' },
-  { id: 'camping', label: 'Camping avulso' },
 ]
 
 const TIPOS_EVENTO = [
@@ -31,6 +30,13 @@ const ALIMENTACAO = [
   'Ainda vamos decidir',
 ]
 
+// No chalé não entra comida nem bebida, só carne pra assar (Story 1.19).
+const ALIMENTACAO_CHALE = [
+  'Restaurante da Rotieh',
+  'Restaurante + vamos trazer carne para assar',
+  'Tenho dieta específica (explico nas observações)',
+]
+
 const EXTRAS_OPCOES = [
   'Passeio a cavalo',
   'Ensaio fotográfico externo',
@@ -47,7 +53,6 @@ export default function Questionario() {
   const [saida, setSaida] = useState('')
   const [pessoas, setPessoas] = useState('')
   const [quartos, setQuartos] = useState('1')
-  const [barracas, setBarracas] = useState('1')
   const [pernoite, setPernoite] = useState(false)
   const [alimentacao, setAlimentacao] = useState(ALIMENTACAO[2])
   const [extras, setExtras] = useState([])
@@ -66,6 +71,9 @@ export default function Questionario() {
   }, [])
 
   const modoLabel = MODOS.find((m) => m.id === modo).label
+  // Trocar de modalidade pode deixar a escolha anterior fora da lista nova.
+  const opcoesAlimentacao = modo === 'quartos' ? ALIMENTACAO_CHALE : ALIMENTACAO
+  const alimentacaoAtual = opcoesAlimentacao.includes(alimentacao) ? alimentacao : opcoesAlimentacao[0]
 
   const linhas = [
     `Olá, Rotieh! Quero montar uma reserva 🌴`,
@@ -77,8 +85,7 @@ export default function Questionario() {
     pessoas && `• Pessoas: ±${pessoas}`,
     modo === 'quartos' && `• Chalés: ${quartos}`,
     (modo === 'locacao' || modo === 'evento') && `• Pernoite (18h às 8h): ${pernoite ? 'sim' : 'não'}`,
-    modo === 'camping' && `• Barracas: ${barracas}`,
-    `• Alimentação: ${alimentacao}`,
+    `• Alimentação: ${alimentacaoAtual}`,
     extras.length > 0 && `• Extras: ${extras.join(', ')}`,
     obs && `• Observações: ${obs}`,
     ``,
@@ -179,15 +186,15 @@ export default function Questionario() {
                   </button>
                 </Campo>
               )}
-              {modo === 'camping' && (
-                <Campo label="Quantas barracas? (até 3 pessoas cada)">
-                  <input type="number" min="1" value={barracas} onChange={(e) => setBarracas(e.target.value)} className={inp} />
-                </Campo>
-              )}
               <Campo label="Alimentação">
-                <select value={alimentacao} onChange={(e) => setAlimentacao(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
-                  {ALIMENTACAO.map((a) => <option key={a}>{a}</option>)}
+                <select value={alimentacaoAtual} onChange={(e) => setAlimentacao(e.target.value)} className={inp + ' appearance-none [&>option]:text-teal'}>
+                  {opcoesAlimentacao.map((a) => <option key={a}>{a}</option>)}
                 </select>
+                {modo === 'quartos' && (
+                  <span className="mt-2 block text-[11px] leading-relaxed text-cream">
+                    No chalé não entram comidas nem bebidas — só carne para assar.
+                  </span>
+                )}
               </Campo>
             </div>
 

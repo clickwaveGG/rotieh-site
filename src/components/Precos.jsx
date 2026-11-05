@@ -24,11 +24,11 @@ export default function Precos() {
         </p>
       </div>
 
-      <div className="mt-14 grid border-t border-teal/15 md:grid-cols-2">
+      <div className="mt-14 grid border-t border-teal/15 lg:grid-cols-3">
         {MODALIDADES.map((m, idx) => (
           <div
             key={m.id}
-            className={`flex flex-col border-b border-teal/15 px-0 py-9 md:p-10 md:odd:border-r ${
+            className={`flex flex-col border-b border-teal/15 px-0 py-9 md:p-8 lg:p-10 lg:border-r lg:last:border-r-0 ${
               m.destaque ? 'md:bg-teal-soft/10' : ''
             }`}
           >
@@ -40,7 +40,7 @@ export default function Precos() {
                 {m.chamada}
               </span>
             </div>
-            <h3 className="mt-7 font-display text-4xl uppercase leading-[1.05] tracking-[0.02em] text-teal md:text-5xl">
+            <h3 className="mt-7 font-display text-4xl uppercase leading-[1.05] tracking-[0.02em] text-teal lg:text-[2.75rem]">
               {m.titulo}
             </h3>
             <p className="mt-3 flex items-baseline gap-1.5 font-display text-3xl text-teal md:text-4xl">
